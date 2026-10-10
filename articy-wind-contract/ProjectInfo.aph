@@ -1,0 +1,19 @@
+<ProjectInfo Version="1">
+  <Signature>70F0AC94FCC30D03DBFC7E622925EDF6E472514FD508DAF315659294CF3D55B6</Signature>
+  <Content>
+    <Project Guid="3dcbd7bd-cf61-4dac-9ea5-ce8dd079a691">
+      <DisplayName Value="Wind and Contract"/>
+      <DetailName Value=""/>
+      <MainProjectGuid Value="89f50b36-1ffb-4b8e-890d-56c79bc2b145"/>
+      <IconType Value="0"/>
+      <IdProjectIcon Value="00000000-0000-0000-0000-000000000000"/>
+      <ScmProviderGuid Value="0745c2ee-abe3-451b-934e-7f597f56c0d7"/>
+      <ScmConfiguration Value=""/>
+      <CreationTimeStamp Value="639272060970660240"/>
+      <PartitionHash Value="9EADD425A113D680013E847D68E10E0F5B1A82A234E809FE83EB12B79477B404"/>
+      <SaveFileVersion Value="60"/>
+      <ProjectType Value="0"/>
+      <IsOnlineProject Value="False"/>
+    </Project>
+  </Content>
+</ProjectInfo>
