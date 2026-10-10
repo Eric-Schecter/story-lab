@@ -16,3 +16,5 @@ npm run deploy
 网站地址：<https://eric-schecter.github.io/story-lab/>。分支上传成功与网站上线是两个步骤，以 GitHub Pages 部署成功为准。
 
 仅检查构建可以运行 `npm run build`。发布内容仅含网页及所需资源，不含原始资料、设计文档或 articy 工程。部署路径默认 `/story-lab/`；本地开发入口保持原样。
+
+网页现使用单页 Hash 路由：根地址为预加载入口，`#/home` 为目录，`#/play?story=…&chapter=…` 为试玩，`#/flow?story=…&chapter=…` 为流程图。可直接访问、刷新或使用浏览器前进后退。旧 `.html` 地址保留为跳转入口；无需服务器路由回退配置。

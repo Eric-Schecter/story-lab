@@ -1,0 +1,1 @@
+html,body{margin:0;background:#10232a}#app{min-height:100svh}.route-shell{min-height:100svh;opacity:1;animation:route-enter .45s ease-in-out}.route-shell.route-leaving{opacity:0;transition:opacity .25s ease-in-out;pointer-events:none}@keyframes route-enter{from{opacity:0}to{opacity:1}}

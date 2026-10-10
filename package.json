@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm ci --prefix web/flow && node tools/build_pages.mjs",
-    "deploy": "npm run build && gh-pages -d dist-pages --dotfiles"
+    "build": "npm ci --prefix web/flow && npm run build:app && node tools/build_pages.mjs",
+    "deploy": "npm run build && gh-pages -d dist-pages --dotfiles",
+    "build:app": "npm run build --prefix web/flow && npm run build:preloader --prefix web/flow && node tools/build_app.mjs"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
