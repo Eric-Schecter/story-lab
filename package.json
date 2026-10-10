@@ -1,0 +1,13 @@
+{
+  "name": "story-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm ci --prefix web/flow && node tools/build_pages.mjs",
+    "deploy": "npm run build && gh-pages -d dist-pages --dotfiles"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
