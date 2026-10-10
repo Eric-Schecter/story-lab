@@ -1,21 +1,27 @@
 {
-  "title": "风与契约 · 序章流程",
+  "title": "风与契约",
+  "subtitle": "序章 / 第一章 · 故事流程",
+  "routeNote": "高亮序章决策及第一章调查入口；后续保船方案需满足各自条件。",
+  "legend": "带回线的调查可反复查看；第一章选项有金币、信任或证据门槛",
   "source": "stories/wind-and-contract/ink/wind-and-contract.ink",
-  "sha256": "55b387623f1d7beb9bde840ba43fdfcbde3dfd7589f3a817c6a0542dd5856f13",
+  "sha256": "2f0141ca6690da7e944c33c95aaf7b83d506e9f2d11d2e56cb1933f9edad2952",
   "initial": {
     "money": 300,
     "guild_relation": 0,
     "port_relation": 0,
-    "decision": "尚未选择"
+    "decision": "尚未选择",
+    "crew_debt": 0,
+    "evidence": false,
+    "chapter_one_route": "尚未选择"
   },
   "nodes": [
     {
       "id": "harbor",
       "title": "暮潮港 · 启航前",
       "kind": "decision",
-      "line": 9,
-      "endLine": 23,
-      "text": "=== harbor ===\n《风与契约》——第一章：装满的货舱\n暮潮港，启航前。\n艾琳扶稳被海风吹动的帽子。甲板上，最后一箱染料正在装船。\n账房：“按时交货，商会就付你九百金币。船员的薪水，还有这艘船，都能保住。”\n信使：“船长，小港的粮食只够三天。您答应过，会替我们运粮。”\n你目前有 {money} 金币。货舱已经装满，无法同时运输两批货物。\n\n+ [先查看契约。]\n    -> contract\n+ [先听听大副的意见。]\n    -> crew\n+ [决定航向。]\n    -> choose",
+      "line": 12,
+      "endLine": 26,
+      "text": "=== harbor ===\n《风与契约》——序章：装满的货舱\n暮潮港，启航前。\n艾琳扶稳被海风吹动的帽子。甲板上，最后一箱染料正在装船。\n账房：“按时交货，商会就付你九百金币。船员的薪水，还有这艘船，都能保住。”\n信使：“船长，小港的粮食只够三天。您答应过，会替我们运粮。”\n你目前有 {money} 金币。货舱已经装满，无法同时运输两批货物。\n\n+ [先查看契约。]\n    -> contract\n+ [先听听大副的意见。]\n    -> crew\n+ [决定航向。]\n    -> choose",
       "changes": [],
       "conditions": []
     },
@@ -23,8 +29,8 @@
       "id": "harbor-choice-1",
       "title": "先查看契约。",
       "kind": "choice",
-      "line": 17,
-      "endLine": 18,
+      "line": 20,
+      "endLine": 21,
       "text": "+ [先查看契约。]\n    -> contract",
       "changes": [],
       "conditions": []
@@ -33,8 +39,8 @@
       "id": "harbor-choice-2",
       "title": "先听听大副的意见。",
       "kind": "choice",
-      "line": 19,
-      "endLine": 20,
+      "line": 22,
+      "endLine": 23,
       "text": "+ [先听听大副的意见。]\n    -> crew",
       "changes": [],
       "conditions": []
@@ -43,8 +49,8 @@
       "id": "harbor-choice-3",
       "title": "决定航向。",
       "kind": "choice",
-      "line": 21,
-      "endLine": 23,
+      "line": 24,
+      "endLine": 26,
       "text": "+ [决定航向。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -53,8 +59,8 @@
       "id": "contract",
       "title": "查看契约",
       "kind": "scene",
-      "line": 24,
-      "endLine": 29,
+      "line": 27,
+      "endLine": 32,
       "text": "=== contract ===\n契约注明：独家承运，禁止私自换货。违约将失去尾款，并面临船只追索。\n艾琳：“我原以为签下的只是货舱。”\n账房避开了她的目光：“生意总有条件。”\n-> questions",
       "changes": [],
       "conditions": []
@@ -63,8 +69,8 @@
       "id": "crew",
       "title": "听取大副意见",
       "kind": "scene",
-      "line": 30,
-      "endLine": 35,
+      "line": 33,
+      "endLine": 38,
       "text": "=== crew ===\n大副：“我妹妹就在小港。我想帮他们。但船上还有十二个人等着薪水。”\n艾琳：“如果我决定冒险，你会反对吗？”\n大副：“我会问清楚代价。然后让大家自己决定是否跟你走。”\n-> questions",
       "changes": [],
       "conditions": []
@@ -73,8 +79,8 @@
       "id": "questions",
       "title": "继续调查 / 作出决定",
       "kind": "decision",
-      "line": 36,
-      "endLine": 43,
+      "line": 39,
+      "endLine": 46,
       "text": "=== questions ===\n+ [查看契约。]\n    -> contract\n+ [听听大副的意见。]\n    -> crew\n+ [我已经想好了。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -83,8 +89,8 @@
       "id": "questions-choice-1",
       "title": "查看契约。",
       "kind": "choice",
-      "line": 37,
-      "endLine": 38,
+      "line": 40,
+      "endLine": 41,
       "text": "+ [查看契约。]\n    -> contract",
       "changes": [],
       "conditions": []
@@ -93,8 +99,8 @@
       "id": "questions-choice-2",
       "title": "听听大副的意见。",
       "kind": "choice",
-      "line": 39,
-      "endLine": 40,
+      "line": 42,
+      "endLine": 43,
       "text": "+ [听听大副的意见。]\n    -> crew",
       "changes": [],
       "conditions": []
@@ -103,8 +109,8 @@
       "id": "questions-choice-3",
       "title": "我已经想好了。",
       "kind": "choice",
-      "line": 41,
-      "endLine": 43,
+      "line": 44,
+      "endLine": 46,
       "text": "+ [我已经想好了。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -113,9 +119,9 @@
       "id": "choose",
       "title": "决定航向",
       "kind": "decision",
-      "line": 44,
-      "endLine": 78,
-      "text": "=== choose ===\n艾琳展开海图。三条路，都有她无法轻易承受的代价。\n借用旧友的船需要五百金币，你目前只有 {money}。\n\n* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath\n\n* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath\n\n* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
+      "line": 47,
+      "endLine": 82,
+      "text": "=== choose ===\n艾琳展开海图。三条路，都有她无法轻易承受的代价。\n借用旧友的船需要五百金币，你目前只有 {money}。\n\n* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath\n\n* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath\n\n* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    ~ crew_debt = 200\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
       "changes": [
         "money += 900",
         "guild_relation += 1",
@@ -129,6 +135,7 @@
         "money -= 500",
         "port_relation += 1",
         "decision = \"借款雇船\"",
+        "crew_debt = 200",
         "money += 900"
       ],
       "conditions": []
@@ -137,8 +144,8 @@
       "id": "choose-choice-1",
       "title": "履行契约，先送染料。",
       "kind": "outcome",
-      "line": 48,
-      "endLine": 57,
+      "line": 51,
+      "endLine": 60,
       "text": "* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath",
       "changes": [
         "money += 900",
@@ -152,8 +159,8 @@
       "id": "choose-choice-2",
       "title": "卸下染料，立刻运粮。",
       "kind": "outcome",
-      "line": 58,
-      "endLine": 67,
+      "line": 61,
+      "endLine": 70,
       "text": "* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath",
       "changes": [
         "money -= 200",
@@ -167,14 +174,15 @@
       "id": "choose-choice-3",
       "title": "向船员借两百金币，凑钱雇旧友的船。",
       "kind": "outcome",
-      "line": 68,
-      "endLine": 78,
-      "text": "* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
+      "line": 71,
+      "endLine": 82,
+      "text": "* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    ~ crew_debt = 200\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
       "changes": [
         "money += 200",
         "money -= 500",
         "port_relation += 1",
         "decision = \"借款雇船\"",
+        "crew_debt = 200",
         "money += 900"
       ],
       "conditions": []
@@ -183,8 +191,8 @@
       "id": "aftermath",
       "title": "结算选择后果",
       "kind": "decision",
-      "line": 79,
-      "endLine": 90,
+      "line": 83,
+      "endLine": 94,
       "text": "=== aftermath ===\n本次选择：{decision}。\n现有金币：{money}。\n{guild_relation > 0:商会愿意继续合作。}\n{guild_relation < 0:商会正在追索船只。}\n{port_relation > 0:小港愿意帮助你。}\n{port_relation < 0:小港对你的承诺失去了信心。}\n{decision == \"借款雇船\":未偿债务：欠船员两百金币。}\n\n* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
       "changes": [],
       "conditions": [
@@ -199,8 +207,8 @@
       "id": "aftermath-choice-1",
       "title": "夜里，查看父亲留下的旧账册。",
       "kind": "choice",
-      "line": 88,
-      "endLine": 90,
+      "line": 92,
+      "endLine": 94,
       "text": "* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
       "changes": [],
       "conditions": []
@@ -208,20 +216,236 @@
     {
       "id": "reveal",
       "title": "旧账册 · 隐瞒浮现",
-      "kind": "scene",
-      "line": 91,
-      "endLine": 98,
-      "text": "=== reveal ===\n账册中夹着一封商会提前寄来的信，里面写明了收购运力的计划。\n落款旁，是账房熟悉的笔迹：“请勿告知艾琳。”\n艾琳：“你早就知道，小港会买不到粮？”\n门外的脚步声停住了。\n——试水章节结束——\n点击 Inky 右侧的“重新开始剧本”，可以比较其他选择。\n-> END",
+      "kind": "decision",
+      "line": 95,
+      "endLine": 102,
+      "text": "=== reveal ===\n账册中夹着一封商会提前寄来的信，里面写明了收购运力的计划。\n落款旁，是账房熟悉的笔迹：“请勿告知艾琳。”\n艾琳：“你早就知道，小港会买不到粮？”\n门外的脚步声停住了。\n* [打开舱门，让账房进来。]\n    -> ch1_notice",
       "changes": [],
       "conditions": []
     },
     {
+      "id": "reveal-choice-1",
+      "title": "打开舱门，让账房进来。",
+      "kind": "choice",
+      "line": 100,
+      "endLine": 102,
+      "text": "* [打开舱门，让账房进来。]\n    -> ch1_notice",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_notice",
+      "title": "第一章 · 追索令",
+      "kind": "scene",
+      "line": 103,
+      "endLine": 116,
+      "text": "=== ch1_notice ===\n《风与契约》——第一章：追索令\n暮潮港，次日清晨。\n账房：“我抄过那封信。你父亲欠商会的船款还没有结清，我怕你看见它，就再也不肯签约。”\n艾琳：“所以你替我选了。连小港的人也一起替他们选了。”\n账房把一张盖着红印的文书放在灯下。\n{decision == \"违约运粮\":文书要求日落前交出船契：擅换货物使原有船贷提前到期。}\n{decision != \"违约运粮\":文书要求日落前重新核验船契：染料货款虽已结清，旧船贷却被另行列入担保审查。}\n账房：“交六百金币作暂缓保证金，能换七天。钱会被冻结，七天后仍须解决旧债。否则，船就不能离港。”\n大副：“货款是货款，船贷是船贷。可为什么偏偏今天查？”\n艾琳看着文书上的日期。签发于三天前，早于她决定航向的那一夜。\n艾琳：“他们不是在等我犯错。他们是在等我回来。”\n-> ch1_investigate",
+      "changes": [],
+      "conditions": [
+        "{decision == \"违约运粮\":文书要求日落前交出船契：擅换货物使原有船贷提前到期。}",
+        "{decision != \"违约运粮\":文书要求日落前重新核验船契：染料货款虽已结清，旧船贷却被另行列入担保审查。}"
+      ]
+    },
+    {
+      "id": "ch1_investigate",
+      "title": "码头调查",
+      "kind": "decision",
+      "line": 117,
+      "endLine": 127,
+      "text": "=== ch1_investigate ===\n码头的铁链还没有锁上。离日落，只剩一轮潮水。\n+ [核对账册与追索令的日期。]\n    -> ch1_ledger\n+ [去小港的粮商那里打听货源。]\n    -> ch1_supplier\n+ [先和船员谈谈欠款与去留。]\n    -> ch1_crew\n+ [召集大家，决定保船的办法。]\n    -> ch1_decide",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_investigate-choice-1",
+      "title": "核对账册与追索令的日期。",
+      "kind": "choice",
+      "line": 119,
+      "endLine": 120,
+      "text": "+ [核对账册与追索令的日期。]\n    -> ch1_ledger",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_investigate-choice-2",
+      "title": "去小港的粮商那里打听货源。",
+      "kind": "choice",
+      "line": 121,
+      "endLine": 122,
+      "text": "+ [去小港的粮商那里打听货源。]\n    -> ch1_supplier",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_investigate-choice-3",
+      "title": "先和船员谈谈欠款与去留。",
+      "kind": "choice",
+      "line": 123,
+      "endLine": 124,
+      "text": "+ [先和船员谈谈欠款与去留。]\n    -> ch1_crew",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_investigate-choice-4",
+      "title": "召集大家，决定保船的办法。",
+      "kind": "choice",
+      "line": 125,
+      "endLine": 127,
+      "text": "+ [召集大家，决定保船的办法。]\n    -> ch1_decide",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_ledger",
+      "title": "还款记录",
+      "kind": "scene",
+      "line": 128,
+      "endLine": 136,
+      "text": "=== ch1_ledger ===\n~ evidence = true\n账册记着父亲最后一次还款，收款栏有商会的骑缝章；追索令却没有扣掉这一笔。\n艾琳：“这里少算了四百。不是小数。”\n账房：“原始收据在商会库房。只有这页抄账，他们会说是我写错。”\n艾琳：“那就让他们当着港务官的面说。”\n她将这页抄账封好。它足以要求复核，还不足以证明整笔债务已经清偿。\n-> ch1_investigate",
+      "changes": [
+        "evidence = true"
+      ],
+      "conditions": []
+    },
+    {
+      "id": "ch1_supplier",
+      "title": "灰礁港盐货订单",
+      "kind": "scene",
+      "line": 137,
+      "endLine": 145,
+      "text": "=== ch1_supplier ===\n粮商在空货架上摊开一张粗盐订单。北面的灰礁港缺盐，却不在商会独家货单之内。\n粮商：“运一趟，扣掉进货和港费，净赚三百。但盐场只收现款，要先压一百。”\n{port_relation > 0:粮商：“小港记得你送来的粮。我可以替你向港务所具保，换一次出港机会。”}\n{port_relation <= 0:粮商：“小港卖船买粮的那天，你的染料船驶过去了。现在叫我替你担保，我做不到。”}\n艾琳：“这张订单还有效吗？”\n粮商：“到今晚。过了潮水，买家会找别的船。”\n-> ch1_investigate",
+      "changes": [],
+      "conditions": [
+        "{port_relation > 0:粮商：“小港记得你送来的粮。我可以替你向港务所具保，换一次出港机会。”}",
+        "{port_relation <= 0:粮商：“小港卖船买粮的那天，你的染料船驶过去了。现在叫我替你担保，我做不到。”}"
+      ]
+    },
+    {
+      "id": "ch1_crew",
+      "title": "船员与欠款",
+      "kind": "scene",
+      "line": 146,
+      "endLine": 154,
+      "text": "=== ch1_crew ===\n{crew_debt > 0:船员们的两百金币还在账上。大副把借据放到桌面，没有催她，也没有收回。}\n{crew_debt == 0:船员们把下一趟航程的口粮摆在桌上，等她说船还能不能开。}\n大副：“我们可以陪你冒险。但谁的钱会被押住，谁会被留在港里，先说清楚。”\n{crew_debt > 0:艾琳：“我记得欠款。它不会因为船遇到麻烦就消失。”}\n大副：“还有账房。有人想把他赶下船。”\n艾琳：“他要把知道的说完。信任能不能回来，是另一回事。”\n-> ch1_investigate",
+      "changes": [],
+      "conditions": [
+        "{crew_debt > 0:船员们的两百金币还在账上。大副把借据放到桌面，没有催她，也没有收回。}",
+        "{crew_debt == 0:船员们把下一趟航程的口粮摆在桌上，等她说船还能不能开。}",
+        "{crew_debt > 0:艾琳：“我记得欠款。它不会因为船遇到麻烦就消失。”}"
+      ]
+    },
+    {
+      "id": "ch1_decide",
+      "title": "决定保船办法",
+      "kind": "decision",
+      "line": 155,
+      "endLine": 187,
+      "text": "=== ch1_decide ===\n可用金币：{money}。欠船员：{crew_debt}。\n交保证金需要六百；小港具保运盐需要一百现款和小港信任；申请账目复核需要那页还款记录。\n{money < 600:目前付不起保证金。}\n{port_relation <= 0:小港目前不愿替你具保。}\n{not evidence:尚未核对还款记录，可以返回调查。}\n+ [再查一查。]\n    -> ch1_investigate\n* {money >= 600} [交六百保证金，换七天时间。]\n    ~ money -= 600\n    ~ chapter_one_route = \"保证金暂缓\"\n    六百金币被封入港务所的专用钱箱。收据写着“冻结”，不是“清偿”。\n    {crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}\n    大副：“七天后呢？”\n    艾琳：“去灰礁港。我们需要商会之外的买家，也需要那张原始收据。”\n    -> ch1_depart\n* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]\n    ~ money -= 100\n    ~ chapter_one_route = \"小港具保\"\n    粮商签下担保。若艾琳不回来，商会可以追偿他名下的仓库。\n    艾琳：“你知道自己押上的是什么吗？”\n    粮商：“知道。所以你要回来。别只寄一封道歉的信。”\n    一百金币付给盐场，货还在岸上；三百净收益，要等灰礁港交货后才能兑现。\n    -> ch1_depart\n* {evidence} [提交还款记录，请港务官复核。]\n    ~ guild_relation -= 1\n    ~ chapter_one_route = \"公开复核\"\n    港务官比对日期，准许一次往返航行，命商会在七日内提交原始收据。船契仍由港务所保管。\n    商会代表：“抄账可以伪造。你要为这项指控负责。”\n    艾琳：“我没有说债都还清了。我只要求，你们把收过的钱算进去。”\n    账房按下手印。他的证词也会被查验，再没有退回沉默的余地。\n    -> ch1_depart",
+      "changes": [
+        "money -= 600",
+        "chapter_one_route = \"保证金暂缓\"",
+        "money -= 100",
+        "chapter_one_route = \"小港具保\"",
+        "guild_relation -= 1",
+        "chapter_one_route = \"公开复核\""
+      ],
+      "conditions": [
+        "{money < 600:目前付不起保证金。}",
+        "{port_relation <= 0:小港目前不愿替你具保。}",
+        "{not evidence:尚未核对还款记录，可以返回调查。}",
+        "* {money >= 600} [交六百保证金，换七天时间。]",
+        "{crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}",
+        "* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]",
+        "* {evidence} [提交还款记录，请港务官复核。]"
+      ]
+    },
+    {
+      "id": "ch1_decide-choice-1",
+      "title": "再查一查。",
+      "kind": "choice",
+      "line": 161,
+      "endLine": 162,
+      "text": "+ [再查一查。]\n    -> ch1_investigate",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_decide-choice-2",
+      "title": "交六百保证金，换七天时间。",
+      "kind": "outcome",
+      "line": 163,
+      "endLine": 170,
+      "text": "* {money >= 600} [交六百保证金，换七天时间。]\n    ~ money -= 600\n    ~ chapter_one_route = \"保证金暂缓\"\n    六百金币被封入港务所的专用钱箱。收据写着“冻结”，不是“清偿”。\n    {crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}\n    大副：“七天后呢？”\n    艾琳：“去灰礁港。我们需要商会之外的买家，也需要那张原始收据。”\n    -> ch1_depart",
+      "changes": [
+        "money -= 600",
+        "chapter_one_route = \"保证金暂缓\""
+      ],
+      "conditions": [
+        "* {money >= 600} [交六百保证金，换七天时间。]",
+        "{crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}"
+      ]
+    },
+    {
+      "id": "ch1_decide-choice-3",
+      "title": "接受小港具保，押一百金币运盐。",
+      "kind": "outcome",
+      "line": 171,
+      "endLine": 178,
+      "text": "* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]\n    ~ money -= 100\n    ~ chapter_one_route = \"小港具保\"\n    粮商签下担保。若艾琳不回来，商会可以追偿他名下的仓库。\n    艾琳：“你知道自己押上的是什么吗？”\n    粮商：“知道。所以你要回来。别只寄一封道歉的信。”\n    一百金币付给盐场，货还在岸上；三百净收益，要等灰礁港交货后才能兑现。\n    -> ch1_depart",
+      "changes": [
+        "money -= 100",
+        "chapter_one_route = \"小港具保\""
+      ],
+      "conditions": [
+        "* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]"
+      ]
+    },
+    {
+      "id": "ch1_decide-choice-4",
+      "title": "提交还款记录，请港务官复核。",
+      "kind": "outcome",
+      "line": 179,
+      "endLine": 187,
+      "text": "* {evidence} [提交还款记录，请港务官复核。]\n    ~ guild_relation -= 1\n    ~ chapter_one_route = \"公开复核\"\n    港务官比对日期，准许一次往返航行，命商会在七日内提交原始收据。船契仍由港务所保管。\n    商会代表：“抄账可以伪造。你要为这项指控负责。”\n    艾琳：“我没有说债都还清了。我只要求，你们把收过的钱算进去。”\n    账房按下手印。他的证词也会被查验，再没有退回沉默的余地。\n    -> ch1_depart",
+      "changes": [
+        "guild_relation -= 1",
+        "chapter_one_route = \"公开复核\""
+      ],
+      "conditions": [
+        "* {evidence} [提交还款记录，请港务官复核。]"
+      ]
+    },
+    {
+      "id": "ch1_depart",
+      "title": "无旗快船",
+      "kind": "scene",
+      "line": 188,
+      "endLine": 196,
+      "text": "=== ch1_depart ===\n铁链被收回岸上。艾琳带着七日的期限走上甲板。\n大副：“有人看见账房昨晚去过商会。”\n账房：“我去取原始收据。他们说，收据已经送到灰礁港的分会了。”\n艾琳：“从现在起，你写的每笔账都交给大副核对。到了灰礁港，你跟我一起去取。”\n账房点头，却不敢看船尾。\n那里停着一艘没有升旗的快船。艾琳的船离开泊位时，它也松开了缆绳。\n-> ch1_close",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch1_close",
+      "title": "第一章结算",
+      "kind": "scene",
+      "line": 197,
+      "endLine": 205,
+      "text": "=== ch1_close ===\n第一章结算：{chapter_one_route}。\n可用金币：{money}。欠船员：{crew_debt}。\n{chapter_one_route == \"保证金暂缓\":另有六百金币被冻结，尚未退回。}\n{chapter_one_route == \"小港具保\":一百金币已作盐货预付款；订单尚未交付，收益未结算。}\n下一站：灰礁港。期限：七日。\n——第一章结束：追索令——\n下一章预告：没有标价的航线。\n-> END",
+      "changes": [],
+      "conditions": [
+        "{chapter_one_route == \"保证金暂缓\":另有六百金币被冻结，尚未退回。}",
+        "{chapter_one_route == \"小港具保\":一百金币已作盐货预付款；订单尚未交付，收益未结算。}"
+      ]
+    },
+    {
       "id": "END",
-      "title": "序章结束",
+      "title": "第一章结束",
       "kind": "end",
-      "line": 98,
-      "endLine": 98,
-      "text": "此处结束现有试玩剧本；后续章节尚在规划。",
+      "line": 205,
+      "endLine": 205,
+      "text": "现有试玩包含序章与第一章；第二章尚在规划。",
       "changes": [],
       "conditions": []
     }
@@ -360,8 +584,146 @@
       "label": ""
     },
     {
-      "id": "reveal--END",
+      "id": "reveal--reveal-choice-1",
       "source": "reveal",
+      "target": "reveal-choice-1",
+      "label": ""
+    },
+    {
+      "id": "reveal-choice-1--ch1_notice",
+      "source": "reveal-choice-1",
+      "target": "ch1_notice",
+      "label": ""
+    },
+    {
+      "id": "ch1_notice--ch1_investigate",
+      "source": "ch1_notice",
+      "target": "ch1_investigate",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate--ch1_investigate-choice-1",
+      "source": "ch1_investigate",
+      "target": "ch1_investigate-choice-1",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate-choice-1--ch1_ledger",
+      "source": "ch1_investigate-choice-1",
+      "target": "ch1_ledger",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate--ch1_investigate-choice-2",
+      "source": "ch1_investigate",
+      "target": "ch1_investigate-choice-2",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate-choice-2--ch1_supplier",
+      "source": "ch1_investigate-choice-2",
+      "target": "ch1_supplier",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate--ch1_investigate-choice-3",
+      "source": "ch1_investigate",
+      "target": "ch1_investigate-choice-3",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate-choice-3--ch1_crew",
+      "source": "ch1_investigate-choice-3",
+      "target": "ch1_crew",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate--ch1_investigate-choice-4",
+      "source": "ch1_investigate",
+      "target": "ch1_investigate-choice-4",
+      "label": ""
+    },
+    {
+      "id": "ch1_investigate-choice-4--ch1_decide",
+      "source": "ch1_investigate-choice-4",
+      "target": "ch1_decide",
+      "label": ""
+    },
+    {
+      "id": "ch1_ledger--ch1_investigate",
+      "source": "ch1_ledger",
+      "target": "ch1_investigate",
+      "label": ""
+    },
+    {
+      "id": "ch1_supplier--ch1_investigate",
+      "source": "ch1_supplier",
+      "target": "ch1_investigate",
+      "label": ""
+    },
+    {
+      "id": "ch1_crew--ch1_investigate",
+      "source": "ch1_crew",
+      "target": "ch1_investigate",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide--ch1_decide-choice-1",
+      "source": "ch1_decide",
+      "target": "ch1_decide-choice-1",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide-choice-1--ch1_investigate",
+      "source": "ch1_decide-choice-1",
+      "target": "ch1_investigate",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide--ch1_decide-choice-2",
+      "source": "ch1_decide",
+      "target": "ch1_decide-choice-2",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide-choice-2--ch1_depart",
+      "source": "ch1_decide-choice-2",
+      "target": "ch1_depart",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide--ch1_decide-choice-3",
+      "source": "ch1_decide",
+      "target": "ch1_decide-choice-3",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide-choice-3--ch1_depart",
+      "source": "ch1_decide-choice-3",
+      "target": "ch1_depart",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide--ch1_decide-choice-4",
+      "source": "ch1_decide",
+      "target": "ch1_decide-choice-4",
+      "label": ""
+    },
+    {
+      "id": "ch1_decide-choice-4--ch1_depart",
+      "source": "ch1_decide-choice-4",
+      "target": "ch1_depart",
+      "label": ""
+    },
+    {
+      "id": "ch1_depart--ch1_close",
+      "source": "ch1_depart",
+      "target": "ch1_close",
+      "label": ""
+    },
+    {
+      "id": "ch1_close--END",
+      "source": "ch1_close",
       "target": "END",
       "label": ""
     }
@@ -378,7 +740,9 @@
         "aftermath",
         "aftermath-choice-1",
         "reveal",
-        "END"
+        "reveal-choice-1",
+        "ch1_notice",
+        "ch1_investigate"
       ],
       "result": "1200 金币；商会关系 +1，小港关系 −1。"
     },
@@ -393,7 +757,9 @@
         "aftermath",
         "aftermath-choice-1",
         "reveal",
-        "END"
+        "reveal-choice-1",
+        "ch1_notice",
+        "ch1_investigate"
       ],
       "result": "100 金币；商会关系 −1，小港关系 +1。"
     },
@@ -408,7 +774,9 @@
         "aftermath",
         "aftermath-choice-1",
         "reveal",
-        "END"
+        "reveal-choice-1",
+        "ch1_notice",
+        "ch1_investigate"
       ],
       "result": "900 金币；小港关系 +1；另欠船员 200 金币。"
     }
