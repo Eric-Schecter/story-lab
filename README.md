@@ -26,3 +26,9 @@ Git 操作：修改前 `git status`；完成后先验证，再 `git add <文件>
 修改本故事 `.ink` 后运行 `python3 tools/build_wind_flow.py` 重新提取图数据（当前提取器针对本剧本所用的 knot、选项和直接跳转语法，不是通用 Ink 解析器）。画面标题、节点类型与路线结算为整理标注，源文件 SHA-256 和行号保存在 `web/flow/story.json`。
 
 修改前端时在 `web/flow` 执行 `npm ci`、`npm run build`。依赖与许可证来自 npm 官方包，构建输出 `dist/` 提交到 Git，日常浏览无需安装 Node 或联网。Fishing 尚未接入此流程图入口。
+
+## 统一预加载
+
+目录、试玩与故事流程使用 `web/preloader/Preloader.jsx`。组件与样式改编自本机 `audio-lab/src/Preloader.tsx`、`src/preloader.css`，保留黑底标题、资源进度与淡出动效；audio-lab 未修改。这里不加载 audio-lab 的音频，按页面加载实际封面、背景、头像、Ink JSON 或流程数据。每个资源独立超时，失败后仍可进入页面；离开加载界面后恢复滚动和键盘交互。
+
+使用已有 React 构建环境：`npm ci --prefix web/flow` 后运行 `npm run build:preloader --prefix web/flow`。产物保存在 `web/preloader/dist/`，静态页面以独立 React 挂载点接入，无需整体迁移。
