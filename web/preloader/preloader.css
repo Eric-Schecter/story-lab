@@ -101,4 +101,3 @@
 
 body[data-preloading] > :not(#preloader-root):not(script):not(style){opacity:0;pointer-events:none}
 body > :not(#preloader-root):not(script):not(style){transition:opacity .9s ease-in-out}
-@media(prefers-reduced-motion:reduce){.preloader,.preloader .load-line,.preloader .load-kicker,.preloader .load-progress-fill{animation:none;transition:none;opacity:1}.preloader.leaving{opacity:0}body > :not(#preloader-root){transition:none}}
