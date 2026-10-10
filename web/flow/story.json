@@ -1,0 +1,416 @@
+{
+  "title": "风与契约 · 序章流程",
+  "source": "stories/wind-and-contract/ink/wind-and-contract.ink",
+  "sha256": "55b387623f1d7beb9bde840ba43fdfcbde3dfd7589f3a817c6a0542dd5856f13",
+  "initial": {
+    "money": 300,
+    "guild_relation": 0,
+    "port_relation": 0,
+    "decision": "尚未选择"
+  },
+  "nodes": [
+    {
+      "id": "harbor",
+      "title": "暮潮港 · 启航前",
+      "kind": "decision",
+      "line": 9,
+      "endLine": 23,
+      "text": "=== harbor ===\n《风与契约》——第一章：装满的货舱\n暮潮港，启航前。\n艾琳扶稳被海风吹动的帽子。甲板上，最后一箱染料正在装船。\n账房：“按时交货，商会就付你九百金币。船员的薪水，还有这艘船，都能保住。”\n信使：“船长，小港的粮食只够三天。您答应过，会替我们运粮。”\n你目前有 {money} 金币。货舱已经装满，无法同时运输两批货物。\n\n+ [先查看契约。]\n    -> contract\n+ [先听听大副的意见。]\n    -> crew\n+ [决定航向。]\n    -> choose",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "harbor-choice-1",
+      "title": "先查看契约。",
+      "kind": "choice",
+      "line": 17,
+      "endLine": 18,
+      "text": "+ [先查看契约。]\n    -> contract",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "harbor-choice-2",
+      "title": "先听听大副的意见。",
+      "kind": "choice",
+      "line": 19,
+      "endLine": 20,
+      "text": "+ [先听听大副的意见。]\n    -> crew",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "harbor-choice-3",
+      "title": "决定航向。",
+      "kind": "choice",
+      "line": 21,
+      "endLine": 23,
+      "text": "+ [决定航向。]\n    -> choose",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "contract",
+      "title": "查看契约",
+      "kind": "scene",
+      "line": 24,
+      "endLine": 29,
+      "text": "=== contract ===\n契约注明：独家承运，禁止私自换货。违约将失去尾款，并面临船只追索。\n艾琳：“我原以为签下的只是货舱。”\n账房避开了她的目光：“生意总有条件。”\n-> questions",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "crew",
+      "title": "听取大副意见",
+      "kind": "scene",
+      "line": 30,
+      "endLine": 35,
+      "text": "=== crew ===\n大副：“我妹妹就在小港。我想帮他们。但船上还有十二个人等着薪水。”\n艾琳：“如果我决定冒险，你会反对吗？”\n大副：“我会问清楚代价。然后让大家自己决定是否跟你走。”\n-> questions",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "questions",
+      "title": "继续调查 / 作出决定",
+      "kind": "decision",
+      "line": 36,
+      "endLine": 43,
+      "text": "=== questions ===\n+ [查看契约。]\n    -> contract\n+ [听听大副的意见。]\n    -> crew\n+ [我已经想好了。]\n    -> choose",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "questions-choice-1",
+      "title": "查看契约。",
+      "kind": "choice",
+      "line": 37,
+      "endLine": 38,
+      "text": "+ [查看契约。]\n    -> contract",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "questions-choice-2",
+      "title": "听听大副的意见。",
+      "kind": "choice",
+      "line": 39,
+      "endLine": 40,
+      "text": "+ [听听大副的意见。]\n    -> crew",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "questions-choice-3",
+      "title": "我已经想好了。",
+      "kind": "choice",
+      "line": 41,
+      "endLine": 43,
+      "text": "+ [我已经想好了。]\n    -> choose",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "choose",
+      "title": "决定航向",
+      "kind": "decision",
+      "line": 44,
+      "endLine": 78,
+      "text": "=== choose ===\n艾琳展开海图。三条路，都有她无法轻易承受的代价。\n借用旧友的船需要五百金币，你目前只有 {money}。\n\n* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath\n\n* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath\n\n* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
+      "changes": [
+        "money += 900",
+        "guild_relation += 1",
+        "port_relation -= 1",
+        "decision = \"履行契约\"",
+        "money -= 200",
+        "guild_relation -= 1",
+        "port_relation += 1",
+        "decision = \"违约运粮\"",
+        "money += 200",
+        "money -= 500",
+        "port_relation += 1",
+        "decision = \"借款雇船\"",
+        "money += 900"
+      ],
+      "conditions": []
+    },
+    {
+      "id": "choose-choice-1",
+      "title": "履行契约，先送染料。",
+      "kind": "outcome",
+      "line": 48,
+      "endLine": 57,
+      "text": "* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath",
+      "changes": [
+        "money += 900",
+        "guild_relation += 1",
+        "port_relation -= 1",
+        "decision = \"履行契约\""
+      ],
+      "conditions": []
+    },
+    {
+      "id": "choose-choice-2",
+      "title": "卸下染料，立刻运粮。",
+      "kind": "outcome",
+      "line": 58,
+      "endLine": 67,
+      "text": "* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath",
+      "changes": [
+        "money -= 200",
+        "guild_relation -= 1",
+        "port_relation += 1",
+        "decision = \"违约运粮\""
+      ],
+      "conditions": []
+    },
+    {
+      "id": "choose-choice-3",
+      "title": "向船员借两百金币，凑钱雇旧友的船。",
+      "kind": "outcome",
+      "line": 68,
+      "endLine": 78,
+      "text": "* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
+      "changes": [
+        "money += 200",
+        "money -= 500",
+        "port_relation += 1",
+        "decision = \"借款雇船\"",
+        "money += 900"
+      ],
+      "conditions": []
+    },
+    {
+      "id": "aftermath",
+      "title": "结算选择后果",
+      "kind": "decision",
+      "line": 79,
+      "endLine": 90,
+      "text": "=== aftermath ===\n本次选择：{decision}。\n现有金币：{money}。\n{guild_relation > 0:商会愿意继续合作。}\n{guild_relation < 0:商会正在追索船只。}\n{port_relation > 0:小港愿意帮助你。}\n{port_relation < 0:小港对你的承诺失去了信心。}\n{decision == \"借款雇船\":未偿债务：欠船员两百金币。}\n\n* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
+      "changes": [],
+      "conditions": [
+        "{guild_relation > 0:商会愿意继续合作。}",
+        "{guild_relation < 0:商会正在追索船只。}",
+        "{port_relation > 0:小港愿意帮助你。}",
+        "{port_relation < 0:小港对你的承诺失去了信心。}",
+        "{decision == \"借款雇船\":未偿债务：欠船员两百金币。}"
+      ]
+    },
+    {
+      "id": "aftermath-choice-1",
+      "title": "夜里，查看父亲留下的旧账册。",
+      "kind": "choice",
+      "line": 88,
+      "endLine": 90,
+      "text": "* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "reveal",
+      "title": "旧账册 · 隐瞒浮现",
+      "kind": "scene",
+      "line": 91,
+      "endLine": 98,
+      "text": "=== reveal ===\n账册中夹着一封商会提前寄来的信，里面写明了收购运力的计划。\n落款旁，是账房熟悉的笔迹：“请勿告知艾琳。”\n艾琳：“你早就知道，小港会买不到粮？”\n门外的脚步声停住了。\n——试水章节结束——\n点击 Inky 右侧的“重新开始剧本”，可以比较其他选择。\n-> END",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "END",
+      "title": "序章结束",
+      "kind": "end",
+      "line": 98,
+      "endLine": 98,
+      "text": "此处结束现有试玩剧本；后续章节尚在规划。",
+      "changes": [],
+      "conditions": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "harbor--harbor-choice-1",
+      "source": "harbor",
+      "target": "harbor-choice-1",
+      "label": ""
+    },
+    {
+      "id": "harbor-choice-1--contract",
+      "source": "harbor-choice-1",
+      "target": "contract",
+      "label": ""
+    },
+    {
+      "id": "harbor--harbor-choice-2",
+      "source": "harbor",
+      "target": "harbor-choice-2",
+      "label": ""
+    },
+    {
+      "id": "harbor-choice-2--crew",
+      "source": "harbor-choice-2",
+      "target": "crew",
+      "label": ""
+    },
+    {
+      "id": "harbor--harbor-choice-3",
+      "source": "harbor",
+      "target": "harbor-choice-3",
+      "label": ""
+    },
+    {
+      "id": "harbor-choice-3--choose",
+      "source": "harbor-choice-3",
+      "target": "choose",
+      "label": ""
+    },
+    {
+      "id": "contract--questions",
+      "source": "contract",
+      "target": "questions",
+      "label": ""
+    },
+    {
+      "id": "crew--questions",
+      "source": "crew",
+      "target": "questions",
+      "label": ""
+    },
+    {
+      "id": "questions--questions-choice-1",
+      "source": "questions",
+      "target": "questions-choice-1",
+      "label": ""
+    },
+    {
+      "id": "questions-choice-1--contract",
+      "source": "questions-choice-1",
+      "target": "contract",
+      "label": ""
+    },
+    {
+      "id": "questions--questions-choice-2",
+      "source": "questions",
+      "target": "questions-choice-2",
+      "label": ""
+    },
+    {
+      "id": "questions-choice-2--crew",
+      "source": "questions-choice-2",
+      "target": "crew",
+      "label": ""
+    },
+    {
+      "id": "questions--questions-choice-3",
+      "source": "questions",
+      "target": "questions-choice-3",
+      "label": ""
+    },
+    {
+      "id": "questions-choice-3--choose",
+      "source": "questions-choice-3",
+      "target": "choose",
+      "label": ""
+    },
+    {
+      "id": "choose--choose-choice-1",
+      "source": "choose",
+      "target": "choose-choice-1",
+      "label": ""
+    },
+    {
+      "id": "choose-choice-1--aftermath",
+      "source": "choose-choice-1",
+      "target": "aftermath",
+      "label": ""
+    },
+    {
+      "id": "choose--choose-choice-2",
+      "source": "choose",
+      "target": "choose-choice-2",
+      "label": ""
+    },
+    {
+      "id": "choose-choice-2--aftermath",
+      "source": "choose-choice-2",
+      "target": "aftermath",
+      "label": ""
+    },
+    {
+      "id": "choose--choose-choice-3",
+      "source": "choose",
+      "target": "choose-choice-3",
+      "label": ""
+    },
+    {
+      "id": "choose-choice-3--aftermath",
+      "source": "choose-choice-3",
+      "target": "aftermath",
+      "label": ""
+    },
+    {
+      "id": "aftermath--aftermath-choice-1",
+      "source": "aftermath",
+      "target": "aftermath-choice-1",
+      "label": ""
+    },
+    {
+      "id": "aftermath-choice-1--reveal",
+      "source": "aftermath-choice-1",
+      "target": "reveal",
+      "label": ""
+    },
+    {
+      "id": "reveal--END",
+      "source": "reveal",
+      "target": "END",
+      "label": ""
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-1",
+      "title": "履行契约",
+      "nodes": [
+        "harbor",
+        "harbor-choice-3",
+        "choose",
+        "choose-choice-1",
+        "aftermath",
+        "aftermath-choice-1",
+        "reveal",
+        "END"
+      ],
+      "result": "1200 金币；商会关系 +1，小港关系 −1。"
+    },
+    {
+      "id": "route-2",
+      "title": "违约运粮",
+      "nodes": [
+        "harbor",
+        "harbor-choice-3",
+        "choose",
+        "choose-choice-2",
+        "aftermath",
+        "aftermath-choice-1",
+        "reveal",
+        "END"
+      ],
+      "result": "100 金币；商会关系 −1，小港关系 +1。"
+    },
+    {
+      "id": "route-3",
+      "title": "借款雇船",
+      "nodes": [
+        "harbor",
+        "harbor-choice-3",
+        "choose",
+        "choose-choice-3",
+        "aftermath",
+        "aftermath-choice-1",
+        "reveal",
+        "END"
+      ],
+      "result": "900 金币；小港关系 +1；另欠船员 200 金币。"
+    }
+  ]
+}

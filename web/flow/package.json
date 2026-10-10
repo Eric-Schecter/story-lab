@@ -1,0 +1,1 @@
+{"name":"story-lab-flow","private":true,"type":"module","scripts":{"build":"esbuild app.jsx --bundle --minify --outfile=dist/app.js --loader:.css=css"},"dependencies":{"@xyflow/react":"12.9.3","elkjs":"0.11.0","react":"19.2.0","react-dom":"19.2.0"},"devDependencies":{"esbuild":"0.25.11"}}
