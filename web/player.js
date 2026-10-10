@@ -6,12 +6,31 @@ function reset(){$('next').hidden=false;$('next').innerHTML='继续 <span>▸</s
 $('restart').onclick=reset;$('next').onclick=step;$('history').onclick=()=>{$('entries').replaceChildren(...log.map(t=>{const p=document.createElement('p');p.textContent=t;return p;}));$('log').showModal();};$('close').onclick=()=>$('log').close();document.addEventListener('keydown',e=>{if(e.code==='Space'&&!$('log').open&&e.target===document.body){e.preventDefault();if(!$('next').hidden)$('next').click();}});
 loadStory();
 
+async function preloadStoryImage(source){
+ const image=new Image();
+ image.src=source;
+ await image.decode();
+ return image;
+}
+function revealStory(){
+ // Keep the first rendered frame behind the loading gate, including cached visits.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.removeAttribute('data-story-loading')));
+}
 async function loadStory(){
  const id=new URLSearchParams(location.search).get('story');
  config=window.STORIES.find(item=>item.id===id);
- if(!config){$('speaker').textContent='故事未找到';$('line').textContent='请返回故事目录，选择已有作品。';$('next').hidden=true;$('restart').disabled=true;return;}
+ if(!config){$('speaker').textContent='故事未找到';$('line').textContent='请返回故事目录，选择已有作品。';$('next').hidden=true;$('restart').disabled=true;revealStory();return;}
  document.title=config.title+' · 故事试玩';$('story-title').textContent=config.title;$('chapter').textContent=config.chapter;$('episode').textContent=config.episode;$('location').textContent=config.location;$('story-note').textContent=config.note+' · 点击继续 / 空格推进';$('stage').style.backgroundImage=`url("${config.background}")`;
  $('next').disabled=true;$('restart').disabled=true;
- try{const response=await fetch(config.ink);if(!response.ok)throw Error(response.status);storyData=await response.json();reset();$('next').disabled=false;$('restart').disabled=false;}
- catch(error){$('speaker').textContent='暂时无法打开故事';$('line').textContent='剧本加载失败，请返回目录重试。';$('next').hidden=true;}
+ try{
+ const images=Array.from(new Set([config.background,...Object.values(config.portraits),'/stories/wind-and-contract/avg/assets/unknown.svg']));
+ // Start image decode and script loading together; do not reveal an undecoded background.
+ const [data]=await Promise.all([
+  fetch(config.ink).then(response=>{if(!response.ok)throw Error(response.status);return response.json();}),
+  Promise.all(images.map(preloadStoryImage))
+ ]);
+ storyData=data;reset();$('next').disabled=false;$('restart').disabled=false;
+ }
+ catch(error){$('speaker').textContent='暂时无法打开故事';$('line').textContent='故事资源加载失败，请返回目录重试。';$('next').hidden=true;}
+ finally{revealStory();}
 }
