@@ -1,0 +1,143 @@
+{
+  "steps": [
+    {
+      "id": "t_gear_trial",
+      "chapter": 0,
+      "text": "新钓具试用：离港后新钓获 1 条鱼",
+      "type": "trial_catch",
+      "target": 1,
+      "dialog": "新钓具装好了。先出海试钓一条鱼，感受一下它的变化，再回码头吧。"
+    },
+    {
+      "id": "t_gear_return",
+      "chapter": 0,
+      "text": "试钓完成：结束本杆后返回码头",
+      "type": "trial_return",
+      "target": 0,
+      "dialog": "新钓具用起来顺手多了。把这一杆收好，再回码头，准备下一趟出海。"
+    },
+    {
+      "id": "m_fishing_trip",
+      "chapter": 1,
+      "text": "第一章 · 谋生：新钓获 3 条鱼",
+      "type": "catch",
+      "target": 3,
+      "dialog": "先独立出一次海。带回三条鱼，试试自己能不能靠这片海生活。"
+    },
+    {
+      "id": "m_trip_sale",
+      "chapter": 1,
+      "text": "第一章 · 谋生：返港售卖本次渔获",
+      "type": "sale",
+      "target": 1,
+      "dialog": "把这趟渔获带回码头卖掉。航行、钓鱼和买卖，得连起来才是一门生计。"
+    },
+    {
+      "id": "m_coins",
+      "chapter": 1,
+      "text": "第一章 · 谋生：留出 300 金币修塔",
+      "type": "coins",
+      "target": 300,
+      "dialog": "有了稳定的收入，该给旧灯塔留一笔修缮的钱了。"
+    },
+    {
+      "id": "m_route_survey",
+      "chapter": 2,
+      "text": "第二章 · 灯塔：前往金色标记勘察航线",
+      "type": "survey",
+      "target": 0,
+      "dialog": "老林让我先去标记处看看航线。记住这片海的样子，塔亮后再来走一趟。",
+      "distance_from_port": 1250.0
+    },
+    {
+      "id": "m_lighthouse",
+      "chapter": 2,
+      "text": "第二章 · 灯塔：返港建造灯塔",
+      "type": "building",
+      "target": 0,
+      "dialog": "航线已经摸清。回港建造灯塔，让下一趟出海有个能望见的归处。"
+    },
+    {
+      "id": "m_lighthouse_trial",
+      "chapter": 2,
+      "text": "第二章 · 灯塔：抵达航线标记，再返回码头",
+      "type": "voyage",
+      "target": 0,
+      "dialog": "塔亮了。沿金色标记再跑一趟，然后回到码头，试试这条航线是否好走了。",
+      "distance_from_port": 1250.0
+    },
+    {
+      "id": "m_market_variety",
+      "chapter": 3,
+      "text": "第三章 · 烟火气：新钓获 2 种不同的鱼",
+      "type": "variety",
+      "target": 2,
+      "dialog": "港口不能只有一种鱼。去不同水域转转，带回两种渔获，为鱼市备货。"
+    },
+    {
+      "id": "m_market",
+      "chapter": 3,
+      "text": "第三章 · 烟火气：返港建造鱼市",
+      "type": "building",
+      "target": 0,
+      "dialog": "有了几样渔获，才有摆摊的底气。回港建鱼市，给这里添点人气。"
+    },
+    {
+      "id": "m_market_trade",
+      "chapter": 3,
+      "text": "第三章 · 烟火气：在鱼市售卖一批鱼",
+      "type": "sale",
+      "target": 1,
+      "dialog": "鱼市开张了，把船上的鱼卖一批，看看新市场带来的收益。"
+    },
+    {
+      "id": "m_searchlight",
+      "chapter": 4,
+      "text": "第四章 · 雾鲸：提交 2 条鲈鱼，修复探照灯",
+      "type": "unlock",
+      "target": 0,
+      "dialog": "老林终于愿意谈雾海了。先在码头交两条鲈鱼，修好探照灯，再去深海。"
+    },
+    {
+      "id": "m_deep_fishing",
+      "chapter": 4,
+      "text": "第四章 · 雾鲸：新钓获 2 条深海鱼",
+      "type": "deep_catch",
+      "target": 2,
+      "location_hint": "参考海域：X 1000 · Y 1000 附近（深海）",
+      "dialog": "别急着去找鲸落。先试钓两条深海鱼，熟悉雾里航行和避开海怪的节奏。往东南远离岛屿，在参考坐标周边找找，不用停在精确的一点。白天可以钓金枪鱼，夜晚还有鱿鱼、灯笼鱼等。"
+    },
+    {
+      "id": "m_sea_clue",
+      "chapter": 4,
+      "text": "第四章 · 雾鲸：寻找一个漂流瓶碎片",
+      "type": "clue",
+      "target": 1,
+      "dialog": "雾里漂着旧瓶子。先找一个，看看守塔人留下了什么线索。"
+    },
+    {
+      "id": "m_whalefall",
+      "chapter": 4,
+      "text": "第四章 · 雾鲸：前往深海，打捞鲸落之光",
+      "type": "recover",
+      "target": 0,
+      "dialog": "线索指向深海最深处。循着紫色标记去找鲸落之光，小心周围的海怪。"
+    },
+    {
+      "id": "m_whalefall_return",
+      "chapter": 4,
+      "text": "第四章 · 雾鲸：带着鲸落之光返回码头",
+      "type": "return",
+      "target": 0,
+      "dialog": "光已经在船上了。先安全回到码头，再决定它的归处。"
+    },
+    {
+      "id": "m_choice",
+      "chapter": 5,
+      "text": "终章 · 抉择：决定鲸落之光的归处",
+      "type": "ending",
+      "target": 0,
+      "dialog": "回到港口了。这束光该照亮航路，还是留给雾鲸的梦？"
+    }
+  ]
+}

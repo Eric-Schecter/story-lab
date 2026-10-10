@@ -1,0 +1,16 @@
+{
+  "project": "/Users/eric/Documents/repos/ai/fishing",
+  "commit": "333e97f6ee6605843e7b0d9f73eaac3e825cff5d",
+  "files": {
+    "chapter_tasks.json": "6404ae01814f439d9a9df4169b9cb2335a6a7a68e3ec668f612b3cca6b048c0d",
+    "commissions.gd": "1a40efd1fe495c378b866fba7fb904bad7da72c86a6ba29d8dbf3c56bd8fd2af",
+    "dialog_box.gd": "697d4ca6a6d2865121f7e523b7e68e95e429bae43a620f37cf31056fe68acfa6",
+    "ending_panel.gd": "92926d3364ad69e28f213f5755e946b3a94b59d98787f0fe5eeff303e0c0ca9e",
+    "fish.json": "dc730fa3aed013990d819b8ad0e79a266e74c8559a73229babcc414e54dc2cf9",
+    "fragments.gd": "315443f69f2b8568b84f33aeab16816c615fc8d3ec7a914f6b5a74458bde6ce7",
+    "fragments.json": "b04fb22deba9b5b70ab32333499bcd833d7ef7ef0754ad9c5d063d1a1b41848c",
+    "main.gd": "2413473b19a7ce92031903d0435a88a37e747c4c4e3b8b5216e86db623a985f9",
+    "objectives.gd": "42b2586c16cfd123510a969bdd5db6f1c56a50b7ba24974e09e8750c8f9cc088",
+    "story.gd": "5e53ac0ef8feab80c1de74c58567e9e0b3948b2d85571e2e6313b80e8f783930"
+  }
+}
