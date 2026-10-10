@@ -1,4 +1,36 @@
 {
+  "chapters": [
+    {
+      "id": "prologue",
+      "title": "序章 · 雾海",
+      "quote": "三年前那个晚上，灯塔的灯突然灭了。"
+    },
+    {
+      "id": "ch1",
+      "title": "第一章 · 谋生",
+      "quote": "先活下去，再谈真相。"
+    },
+    {
+      "id": "ch2",
+      "title": "第二章 · 灯塔",
+      "quote": "先找到路，再让塔亮起来。"
+    },
+    {
+      "id": "ch3",
+      "title": "第三章 · 烟火气",
+      "quote": "把一船渔获，变成一港烟火。"
+    },
+    {
+      "id": "ch4",
+      "title": "第四章 · 雾鲸",
+      "quote": "雾是它的梦，别吵醒它。"
+    },
+    {
+      "id": "finale",
+      "title": "终章 · 抉择",
+      "quote": "光，还是梦，选一个。"
+    }
+  ],
   "title": "雾海传说",
   "subtitle": "六章 · 故事流程",
   "storyId": "fishing",
@@ -10,6 +42,7 @@
   "legend": "实线：主线推进 · 虚线：支线解锁或资料关联",
   "nodes": [
     {
+      "chapter": "prologue",
       "id": "opening",
       "title": "开场｜三年前的熄灯",
       "kind": "scene",
@@ -19,6 +52,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_move",
       "title": "教学｜开船（W 前进，A/D 转向）",
       "kind": "scene",
@@ -28,6 +62,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_spot",
       "title": "教学｜开船到小地图金色标记处",
       "kind": "scene",
@@ -37,6 +72,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_cast",
       "title": "教学｜按 E 抛竿",
       "kind": "scene",
@@ -46,6 +82,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_catch",
       "title": "教学｜钓到 3 条鱼",
       "kind": "scene",
@@ -55,6 +92,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_dock",
       "title": "教学｜靠近码头，按 E 进入菜单",
       "kind": "scene",
@@ -64,6 +102,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_sell",
       "title": "教学｜在码头卖掉鱼",
       "kind": "scene",
@@ -73,6 +112,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "tutorial_upgrade",
       "title": "教学｜用卖鱼收入升级鱼竿、卷线器或鱼饵，再出海试钓",
       "kind": "scene",
@@ -82,6 +122,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "t_gear_trial",
       "title": "新钓具试用：离港后新钓获 1 条鱼",
       "kind": "scene",
@@ -93,6 +134,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "prologue",
       "id": "t_gear_return",
       "title": "试钓完成：结束本杆后返回码头",
       "kind": "scene",
@@ -104,6 +146,7 @@
       "sourceLabel": "序章 · 雾海"
     },
     {
+      "chapter": "ch1",
       "id": "m_fishing_trip",
       "title": "第一章 · 谋生：新钓获 3 条鱼",
       "kind": "scene",
@@ -115,6 +158,7 @@
       "sourceLabel": "第一章 · 谋生"
     },
     {
+      "chapter": "ch1",
       "id": "m_trip_sale",
       "title": "第一章 · 谋生：返港售卖本次渔获",
       "kind": "scene",
@@ -126,6 +170,7 @@
       "sourceLabel": "第一章 · 谋生"
     },
     {
+      "chapter": "ch1",
       "id": "m_coins",
       "title": "第一章 · 谋生：留出 300 金币修塔",
       "kind": "scene",
@@ -137,6 +182,7 @@
       "sourceLabel": "第一章 · 谋生"
     },
     {
+      "chapter": "ch2",
       "id": "m_route_survey",
       "title": "第二章 · 灯塔：前往金色标记勘察航线",
       "kind": "scene",
@@ -148,6 +194,7 @@
       "sourceLabel": "第二章 · 灯塔"
     },
     {
+      "chapter": "ch2",
       "id": "m_lighthouse",
       "title": "第二章 · 灯塔：返港建造灯塔",
       "kind": "scene",
@@ -159,6 +206,7 @@
       "sourceLabel": "第二章 · 灯塔"
     },
     {
+      "chapter": "ch2",
       "id": "m_lighthouse_trial",
       "title": "第二章 · 灯塔：抵达航线标记，再返回码头",
       "kind": "scene",
@@ -170,6 +218,7 @@
       "sourceLabel": "第二章 · 灯塔"
     },
     {
+      "chapter": "ch3",
       "id": "m_market_variety",
       "title": "第三章 · 烟火气：新钓获 2 种不同的鱼",
       "kind": "scene",
@@ -181,6 +230,7 @@
       "sourceLabel": "第三章 · 烟火气"
     },
     {
+      "chapter": "ch3",
       "id": "m_market",
       "title": "第三章 · 烟火气：返港建造鱼市",
       "kind": "scene",
@@ -192,6 +242,7 @@
       "sourceLabel": "第三章 · 烟火气"
     },
     {
+      "chapter": "ch3",
       "id": "m_market_trade",
       "title": "第三章 · 烟火气：在鱼市售卖一批鱼",
       "kind": "scene",
@@ -203,6 +254,7 @@
       "sourceLabel": "第三章 · 烟火气"
     },
     {
+      "chapter": "ch4",
       "id": "m_searchlight",
       "title": "第四章 · 雾鲸：提交 2 条鲈鱼，修复探照灯",
       "kind": "scene",
@@ -214,6 +266,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "m_deep_fishing",
       "title": "第四章 · 雾鲸：新钓获 2 条深海鱼",
       "kind": "scene",
@@ -225,6 +278,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "m_sea_clue",
       "title": "第四章 · 雾鲸：寻找一个漂流瓶碎片",
       "kind": "scene",
@@ -236,6 +290,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "m_whalefall",
       "title": "第四章 · 雾鲸：前往深海，打捞鲸落之光",
       "kind": "scene",
@@ -247,6 +302,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "m_whalefall_return",
       "title": "第四章 · 雾鲸：带着鲸落之光返回码头",
       "kind": "scene",
@@ -258,6 +314,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "finale",
       "id": "m_choice",
       "title": "终章 · 抉择：决定鲸落之光的归处",
       "kind": "decision",
@@ -269,6 +326,7 @@
       "sourceLabel": "终章 · 抉择"
     },
     {
+      "chapter": "ch4",
       "id": "confession",
       "title": "老林自白｜鲸落之光",
       "kind": "scene",
@@ -278,6 +336,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "log_1",
       "title": "线索｜气象记录残页",
       "kind": "clue",
@@ -287,6 +346,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "log_2",
       "title": "线索｜守塔人日志残页",
       "kind": "clue",
@@ -296,6 +356,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "fisher_tale",
       "title": "线索｜老渔民口述",
       "kind": "clue",
@@ -305,6 +366,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "last_note",
       "title": "线索｜最后的纸条",
       "kind": "clue",
@@ -314,6 +376,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "ch4",
       "id": "salvage",
       "title": "线索｜打捞队记录",
       "kind": "clue",
@@ -323,6 +386,7 @@
       "sourceLabel": "第四章 · 雾鲸"
     },
     {
+      "chapter": "finale",
       "id": "ending_light",
       "title": "结局｜点亮探照灯",
       "kind": "end",
@@ -334,6 +398,7 @@
       "sourceLabel": "终章 · 抉择"
     },
     {
+      "chapter": "finale",
       "id": "ending_entrust",
       "title": "结局｜交给老林",
       "kind": "end",
@@ -347,6 +412,7 @@
       "sourceLabel": "终章 · 抉择"
     },
     {
+      "chapter": "finale",
       "id": "ending_gentle",
       "title": "结局｜柔光",
       "kind": "end",
@@ -359,6 +425,7 @@
       "sourceLabel": "终章 · 抉择"
     },
     {
+      "chapter": "ch1",
       "id": "sardines_for_ahai",
       "title": "支线｜老船工阿海",
       "kind": "sidequest",
@@ -370,6 +437,7 @@
       "sourceLabel": "支线与审阅资料"
     },
     {
+      "chapter": "ch3",
       "id": "tuna_for_market",
       "title": "支线｜鱼市老板娘",
       "kind": "sidequest",
@@ -381,6 +449,7 @@
       "sourceLabel": "支线与审阅资料"
     },
     {
+      "chapter": "ch4",
       "id": "review",
       "title": "待确认｜雾鲸的生死",
       "kind": "review",
@@ -656,7 +725,8 @@
         "m_choice",
         "ending_light"
       ],
-      "result": "无需额外收集条件"
+      "result": "无需额外收集条件",
+      "chapter": "finale"
     },
     {
       "id": "ending_entrust",
@@ -689,7 +759,8 @@
         "m_choice",
         "ending_entrust"
       ],
-      "result": "无需额外收集条件"
+      "result": "无需额外收集条件",
+      "chapter": "finale"
     },
     {
       "id": "ending_gentle",
@@ -722,7 +793,8 @@
         "m_choice",
         "ending_gentle"
       ],
-      "result": "当前碎片数量 ≥ 5，且收集完整十种鱼图鉴；碎片庇护 300 秒后到期并清空；历史累计数量不算。"
+      "result": "当前碎片数量 ≥ 5，且收集完整十种鱼图鉴；碎片庇护 300 秒后到期并清空；历史累计数量不算。",
+      "chapter": "finale"
     }
   ]
 }

@@ -10,7 +10,8 @@ for n in m['nodes']:
     if n['id'] == 'Fishing_Story' or n['id'] in chapters:
         continue
     kind = 'end' if n['id'].startswith('ending_') else 'decision' if n['id'] == 'm_choice' else 'scene' if n['kind'] == 'flow' else n['kind']
-    nodes.append(dict(id=n['id'], title=n['title'], kind=kind, text=n['text'], changes=[], conditions=[n['condition']] if n.get('condition') else [], sourceLabel=chapters.get(n['parent'], '支线与审阅资料')))
+    chapter = n['parent'] if n['parent'] in chapters else {'sardines_for_ahai':'ch1','tuna_for_market':'ch3','review':'ch4'}[n['id']]
+    nodes.append(dict(chapter=chapter,id=n['id'], title=n['title'], kind=kind, text=n['text'], changes=[], conditions=[n['condition']] if n.get('condition') else [], sourceLabel=chapters.get(n['parent'], '支线与审阅资料')))
 by_id = {n['id']: n for n in nodes}
 by_id['ending_entrust']['changes'] = ['奖励：500 金币']
 by_id['ending_gentle']['conditions'] = ['当前碎片数量 ≥ 5，且收集完整十种鱼图鉴', '碎片庇护 300 秒后到期并清空；历史累计数量不算。']
@@ -29,5 +30,6 @@ for n in nodes:
         reference('m_sea_clue', n['id'], '可选线索·顺序自由')
 main = [a for a,b,label in m['edges'][:24]] + ['m_choice']
 routes = [dict(id=end, title=by_id[end]['title'], nodes=main+[end], result='；'.join(by_id[end]['conditions'])) for end in ['ending_light','ending_entrust','ending_gentle']]
-result = dict(title='雾海传说', subtitle='六章 · 故事流程', storyId='fishing', initial='opening', source=str(source.relative_to(root)), source_commit=m['source_commit'], textHeading='原文与任务整理', routeNote='高亮主线通往该结局的路径；虚线为支线解锁或资料关联，不代表必经顺序。', legend='实线：主线推进 · 虚线：支线解锁或资料关联', nodes=nodes, edges=edges, routes=routes)
+for route in routes: route['chapter']='finale'
+result = dict(chapters=m['chapters'],title='雾海传说', subtitle='六章 · 故事流程', storyId='fishing', initial='opening', source=str(source.relative_to(root)), source_commit=m['source_commit'], textHeading='原文与任务整理', routeNote='高亮主线通往该结局的路径；虚线为支线解锁或资料关联，不代表必经顺序。', legend='实线：主线推进 · 虚线：支线解锁或资料关联', nodes=nodes, edges=edges, routes=routes)
 (root/'web/flow/fishing.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
