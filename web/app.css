@@ -1,0 +1,1 @@
+html,body{margin:0;background:#10232a}#app{min-height:100svh;background:#10232a}.route-shell{min-height:100svh;opacity:0;transition:opacity .45s ease-in-out}.route-shell.route-enter{opacity:1}.route-shell.route-out{opacity:0;transition-duration:.25s;pointer-events:none}.route-shell.route-hidden{opacity:0;transition:none;pointer-events:none}
