@@ -1,5 +1,13 @@
 let story,storyData,config;const $=id=>document.getElementById(id),log=[];
-function start(){story=new inkjs.Story(storyData);log.length=0;$('choices').replaceChildren();step();}
+function start(){story=new inkjs.Story(storyData);log.length=0;$('choices').replaceChildren();if(config.id==='wind-and-contract'&&new URLSearchParams(location.search).get('chapter')==='ch1'){chapterSetup();return;}step();}
+function chapterSetup(){
+ $('chapter').textContent='第一章';$('episode').textContent='追索令';$('location').textContent='承接序章的选择';
+ display('进入第一章前，选择序章中艾琳的决定。此入口使用对应结算状态开始第一章；从序章游玩则自动延续你的实际选择。');$('next').hidden=true;
+ for(const [label,money,guild,port,debt,decision] of [['履行契约 · 1200 金币',1200,1,-1,0,'履行契约'],['违约运粮 · 100 金币',100,-1,1,0,'违约运粮'],['借款雇船 · 900 金币，欠船员 200',900,0,1,200,'借款雇船']]){
+ const b=document.createElement('button');b.textContent=label;b.onclick=()=>{for(const [key,value] of Object.entries({money,guild_relation:guild,port_relation:port,crew_debt:debt,decision}))story.variablesState[key]=value;story.ChoosePathString('ch1_notice');$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);
+ }
+}
+
 function display(text){if(text.startsWith('《风与契约》——第一章：')){$('chapter').textContent='第一章';$('episode').textContent='追索令';$('location').textContent='暮潮港 · 七日之限';}else if(text.startsWith('《风与契约》——序章：')){$('chapter').textContent='序章';$('episode').textContent='装满的货舱';$('location').textContent=config.location;}text=text.replace('《风与契约》——第一章：装满的货舱','《风与契约》——序章：装满的货舱').replace('点击 Inky 右侧的“重新开始剧本”，可以比较其他选择。','点击右上角“重新开始”，可以比较其他选择。');const m=text.match(/^([^：“]{1,12})：“([\s\S]*)”$/);const name=m?m[1]:null; $('portrait').hidden=!name; $('dialogue').classList.toggle('has-portrait',!!name); $('portrait').classList.toggle('is-captain',!!config.portraits[name]); if(name){$('portrait-image').src=!!config.portraits[name]?config.portraits[name]:'/stories/wind-and-contract/avg/assets/unknown.svg';$('portrait-image').alt=!!config.portraits[name]?name+'头像':name+'（临时剪影头像）';}else{$('portrait-image').removeAttribute('src');$('portrait-image').alt='';} $('speaker').textContent=name||'旁白';$('line').textContent=m?m[2]:text;log.push(text);}
 function step(){if($('choices').childElementCount)return;if(story.canContinue){let t=story.Continue().trim();if(!t)return step();display(t);return;}if(story.currentChoices.length){$('next').hidden=true;story.currentChoices.forEach(c=>{const b=document.createElement('button');b.textContent=c.text;b.onclick=()=>{story.ChooseChoiceIndex(c.index);$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);});}else{$('next').textContent='故事结束 · 再体验另一条路';$('next').onclick=()=>{reset();};}}
 function reset(){$('next').hidden=false;$('next').innerHTML='继续 <span>▸</span>';$('next').onclick=step;start();}

@@ -18,7 +18,7 @@ titles = {'harbor': '暮潮港 · 启航前', 'contract': '查看契约', 'crew'
 nodes, edges = [], []
 
 def node(id, title, kind, start, end, text):
-    nodes.append(dict(id=id, title=title, kind=kind, line=start+1, endLine=end,
+    nodes.append(dict(chapter='ch1' if id.startswith('ch1_') or id=='END' else 'prologue',id=id, title=title, kind=kind, line=start+1, endLine=end,
                       text='\n'.join(text).strip(), changes=[x.strip()[2:].strip() for x in text if x.strip().startswith('~ ')],
                       conditions=[x.strip() for x in text if x.strip().startswith('{') or re.match(r'^[+*] \{', x.strip())]))
 
@@ -56,5 +56,9 @@ model = dict(title='风与契约', subtitle='序章 / 第一章 · 故事流程'
                               ('履行契约','1200 金币；商会关系 +1，小港关系 −1。'),
                               ('违约运粮','100 金币；商会关系 −1，小港关系 +1。'),
                               ('借款雇船','900 金币；小港关系 +1；另欠船员 200 金币。')])])
+model['chapters']=[{'id':'prologue','title':'序章 · 装满的货舱'},{'id':'ch1','title':'第一章 · 追索令'}]
+for i,(title,result) in enumerate([('保证金暂缓','需至少 600 金币；冻结保证金，换七日。'),('小港具保','需小港信任和至少 100 金币；盐货收益尚未结算。'),('公开复核','需核对还款记录；商会关系 −1。')]):
+    model['routes'].append(dict(id=f'ch1-route-{i+1}',chapter='ch1',title=title,result=result,nodes=['ch1_notice','ch1_investigate','ch1_investigate-choice-1','ch1_ledger','ch1_investigate','ch1_investigate-choice-4','ch1_decide',f'ch1_decide-choice-{i+2}','ch1_depart','ch1_close','END']))
+for route in model['routes'][:3]: route['chapter']='prologue'
 Path('web/flow/story.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n')
 print(f'{len(nodes)} nodes, {len(edges)} edges; source {source}')

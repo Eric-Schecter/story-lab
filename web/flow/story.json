@@ -16,6 +16,7 @@
   },
   "nodes": [
     {
+      "chapter": "prologue",
       "id": "harbor",
       "title": "暮潮港 · 启航前",
       "kind": "decision",
@@ -26,6 +27,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "harbor-choice-1",
       "title": "先查看契约。",
       "kind": "choice",
@@ -36,6 +38,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "harbor-choice-2",
       "title": "先听听大副的意见。",
       "kind": "choice",
@@ -46,6 +49,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "harbor-choice-3",
       "title": "决定航向。",
       "kind": "choice",
@@ -56,6 +60,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "contract",
       "title": "查看契约",
       "kind": "scene",
@@ -66,6 +71,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "crew",
       "title": "听取大副意见",
       "kind": "scene",
@@ -76,6 +82,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "questions",
       "title": "继续调查 / 作出决定",
       "kind": "decision",
@@ -86,6 +93,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "questions-choice-1",
       "title": "查看契约。",
       "kind": "choice",
@@ -96,6 +104,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "questions-choice-2",
       "title": "听听大副的意见。",
       "kind": "choice",
@@ -106,6 +115,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "questions-choice-3",
       "title": "我已经想好了。",
       "kind": "choice",
@@ -116,6 +126,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "choose",
       "title": "决定航向",
       "kind": "decision",
@@ -141,6 +152,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "choose-choice-1",
       "title": "履行契约，先送染料。",
       "kind": "outcome",
@@ -156,6 +168,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "choose-choice-2",
       "title": "卸下染料，立刻运粮。",
       "kind": "outcome",
@@ -171,6 +184,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "choose-choice-3",
       "title": "向船员借两百金币，凑钱雇旧友的船。",
       "kind": "outcome",
@@ -188,6 +202,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "aftermath",
       "title": "结算选择后果",
       "kind": "decision",
@@ -204,6 +219,7 @@
       ]
     },
     {
+      "chapter": "prologue",
       "id": "aftermath-choice-1",
       "title": "夜里，查看父亲留下的旧账册。",
       "kind": "choice",
@@ -214,6 +230,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "reveal",
       "title": "旧账册 · 隐瞒浮现",
       "kind": "decision",
@@ -224,6 +241,7 @@
       "conditions": []
     },
     {
+      "chapter": "prologue",
       "id": "reveal-choice-1",
       "title": "打开舱门，让账房进来。",
       "kind": "choice",
@@ -234,6 +252,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_notice",
       "title": "第一章 · 追索令",
       "kind": "scene",
@@ -247,6 +266,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_investigate",
       "title": "码头调查",
       "kind": "decision",
@@ -257,6 +277,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_investigate-choice-1",
       "title": "核对账册与追索令的日期。",
       "kind": "choice",
@@ -267,6 +288,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_investigate-choice-2",
       "title": "去小港的粮商那里打听货源。",
       "kind": "choice",
@@ -277,6 +299,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_investigate-choice-3",
       "title": "先和船员谈谈欠款与去留。",
       "kind": "choice",
@@ -287,6 +310,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_investigate-choice-4",
       "title": "召集大家，决定保船的办法。",
       "kind": "choice",
@@ -297,6 +321,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_ledger",
       "title": "还款记录",
       "kind": "scene",
@@ -309,6 +334,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_supplier",
       "title": "灰礁港盐货订单",
       "kind": "scene",
@@ -322,6 +348,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_crew",
       "title": "船员与欠款",
       "kind": "scene",
@@ -336,6 +363,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_decide",
       "title": "决定保船办法",
       "kind": "decision",
@@ -361,6 +389,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_decide-choice-1",
       "title": "再查一查。",
       "kind": "choice",
@@ -371,6 +400,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_decide-choice-2",
       "title": "交六百保证金，换七天时间。",
       "kind": "outcome",
@@ -387,6 +417,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_decide-choice-3",
       "title": "接受小港具保，押一百金币运盐。",
       "kind": "outcome",
@@ -402,6 +433,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_decide-choice-4",
       "title": "提交还款记录，请港务官复核。",
       "kind": "outcome",
@@ -417,6 +449,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "ch1_depart",
       "title": "无旗快船",
       "kind": "scene",
@@ -427,6 +460,7 @@
       "conditions": []
     },
     {
+      "chapter": "ch1",
       "id": "ch1_close",
       "title": "第一章结算",
       "kind": "scene",
@@ -440,6 +474,7 @@
       ]
     },
     {
+      "chapter": "ch1",
       "id": "END",
       "title": "第一章结束",
       "kind": "end",
@@ -744,7 +779,8 @@
         "ch1_notice",
         "ch1_investigate"
       ],
-      "result": "1200 金币；商会关系 +1，小港关系 −1。"
+      "result": "1200 金币；商会关系 +1，小港关系 −1。",
+      "chapter": "prologue"
     },
     {
       "id": "route-2",
@@ -761,7 +797,8 @@
         "ch1_notice",
         "ch1_investigate"
       ],
-      "result": "100 金币；商会关系 −1，小港关系 +1。"
+      "result": "100 金币；商会关系 −1，小港关系 +1。",
+      "chapter": "prologue"
     },
     {
       "id": "route-3",
@@ -778,7 +815,75 @@
         "ch1_notice",
         "ch1_investigate"
       ],
-      "result": "900 金币；小港关系 +1；另欠船员 200 金币。"
+      "result": "900 金币；小港关系 +1；另欠船员 200 金币。",
+      "chapter": "prologue"
+    },
+    {
+      "id": "ch1-route-1",
+      "chapter": "ch1",
+      "title": "保证金暂缓",
+      "result": "需至少 600 金币；冻结保证金，换七日。",
+      "nodes": [
+        "ch1_notice",
+        "ch1_investigate",
+        "ch1_investigate-choice-1",
+        "ch1_ledger",
+        "ch1_investigate",
+        "ch1_investigate-choice-4",
+        "ch1_decide",
+        "ch1_decide-choice-2",
+        "ch1_depart",
+        "ch1_close",
+        "END"
+      ]
+    },
+    {
+      "id": "ch1-route-2",
+      "chapter": "ch1",
+      "title": "小港具保",
+      "result": "需小港信任和至少 100 金币；盐货收益尚未结算。",
+      "nodes": [
+        "ch1_notice",
+        "ch1_investigate",
+        "ch1_investigate-choice-1",
+        "ch1_ledger",
+        "ch1_investigate",
+        "ch1_investigate-choice-4",
+        "ch1_decide",
+        "ch1_decide-choice-3",
+        "ch1_depart",
+        "ch1_close",
+        "END"
+      ]
+    },
+    {
+      "id": "ch1-route-3",
+      "chapter": "ch1",
+      "title": "公开复核",
+      "result": "需核对还款记录；商会关系 −1。",
+      "nodes": [
+        "ch1_notice",
+        "ch1_investigate",
+        "ch1_investigate-choice-1",
+        "ch1_ledger",
+        "ch1_investigate",
+        "ch1_investigate-choice-4",
+        "ch1_decide",
+        "ch1_decide-choice-4",
+        "ch1_depart",
+        "ch1_close",
+        "END"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "prologue",
+      "title": "序章 · 装满的货舱"
+    },
+    {
+      "id": "ch1",
+      "title": "第一章 · 追索令"
     }
   ]
 }
