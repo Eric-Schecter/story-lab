@@ -104,3 +104,9 @@ body > :not(#preloader-root):not(script):not(style){transition:opacity .9s ease-
 
 html[data-preload-seen] #preloader-root{display:none}
 html[data-preload-seen] body[data-preloading] > :not(#preloader-root):not(script):not(style){opacity:1;pointer-events:auto;transition:none}
+
+/* Every page switch fades; the branded intro still plays only once. */
+@keyframes story-page-enter{from{opacity:0}to{opacity:1}}
+@keyframes story-page-leave{from{opacity:1}to{opacity:0}}
+body[data-page-entering] > :is(header,main,footer,#root){animation:story-page-enter .45s ease-in-out both}
+body[data-page-leaving] > :is(header,main,footer,#root){animation:story-page-leave .25s ease-in-out both;pointer-events:none}
