@@ -101,3 +101,6 @@
 
 body[data-preloading] > :not(#preloader-root):not(script):not(style){opacity:0;pointer-events:none}
 body > :not(#preloader-root):not(script):not(style){transition:opacity .9s ease-in-out}
+
+html[data-preload-seen] #preloader-root{display:none}
+html[data-preload-seen] body[data-preloading] > :not(#preloader-root):not(script):not(style){opacity:1;pointer-events:auto;transition:none}

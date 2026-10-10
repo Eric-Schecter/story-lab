@@ -29,6 +29,6 @@ Git 操作：修改前 `git status`；完成后先验证，再 `git add <文件>
 
 ## 统一预加载
 
-目录、试玩与故事流程使用 `web/preloader/Preloader.jsx`。组件与样式改编自本机 `audio-lab/src/Preloader.tsx`、`src/preloader.css`，保留黑底标题、资源进度与淡出动效；audio-lab 未修改。这里不加载 audio-lab 的音频，按页面加载实际封面、背景、头像、Ink JSON 或流程数据。每个资源独立超时，失败后仍可进入页面；离开加载界面后恢复滚动和键盘交互。
+目录、试玩与故事流程使用 `web/preloader/Preloader.jsx`。预加载入场仅在当前标签页首次访问时播放，完成后以 sessionStorage 记录；切换作品、返回目录、查看流程或刷新均跳过。组件与样式改编自本机 `audio-lab/src/Preloader.tsx`、`src/preloader.css`，保留黑底标题、资源进度与淡出动效；audio-lab 未修改。这里不加载 audio-lab 的音频，按页面加载实际封面、背景、头像、Ink JSON 或流程数据。每个资源独立超时，失败后仍可进入页面；离开加载界面后恢复滚动和键盘交互。
 
 使用已有 React 构建环境：`npm ci --prefix web/flow` 后运行 `npm run build:preloader --prefix web/flow`。产物保存在 `web/preloader/dist/`，静态页面以独立 React 挂载点接入，无需整体迁移。
