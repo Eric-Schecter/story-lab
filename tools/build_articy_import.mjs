@@ -10,6 +10,9 @@ const before = await wb.render({sheetName:'Entities',range:'A1:F6',scale:1,forma
 await fs.writeFile('/private/tmp/articy-import-before.png', new Uint8Array(await before.arrayBuffer()));
 for (const [sheetName, records, parentDefault] of [['Entities',model.characters,'Entities'],['Flow Fragments',model.nodes,'Flow']]) {
   const sheet = wb.worksheets.getItem(sheetName);
+  // The artifact importer can turn articy's empty shared-string cell into "1".
+  // These objects intentionally have no template. Explicitly clear the header.
+  sheet.getRange('B2').clear({applyTo:'contents'});
   sheet.getRange('A5:J100').clear({applyTo:'contents'});
   const rows = records.map(n => ['',n.title,'Fishing_'+n.id,n.parent === 'Flow' || !n.parent ? parentDefault : 'Fishing_'+n.parent,n.kind === 'review' ? '#F2C580' : '#C8E2E7',n.text,'','','fishing:'+n.id,'']);
   sheet.getRange(`A5:J${4+rows.length}`).values=rows;
