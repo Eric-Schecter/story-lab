@@ -1,4 +1,4 @@
-export function mountPlayer(search){
+export function mountPlayer(search,onReady=()=>{}){
 let active=true;document.body.setAttribute('data-story-loading','');
 let story,storyData,config;const $=id=>document.getElementById(id),log=[];
 function start(){story=new inkjs.Story(storyData);log.length=0;$('choices').replaceChildren();if(config.id==='wind-and-contract'&&new URLSearchParams(search).get('chapter')==='ch1'){chapterSetup();return;}if(config.id==='fishing'&&fishingChapterSetup())return;step();}
@@ -34,7 +34,7 @@ async function preloadStoryImage(source){
 }
 function revealStory(){
  // Keep the first rendered frame behind the loading gate, including cached visits.
- requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active)document.body.removeAttribute('data-story-loading')}));
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active){document.body.removeAttribute('data-story-loading');onReady();}}));
 }
 async function loadStory(){
  const id=new URLSearchParams(search).get('story');
