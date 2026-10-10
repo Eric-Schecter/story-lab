@@ -3,7 +3,7 @@ import{createRoot}from'react-dom/client';
 import Preloader from './Preloader';
 const stories=window.STORIES||[];
 const selected=stories.find(s=>s.id===new URLSearchParams(location.search).get('story'));
-const sources=Array.from(new Set(location.pathname.startsWith('/web/flow')?['/web/flow/story.json']:selected?[selected.background,selected.ink,...Object.values(selected.portraits)]:stories.flatMap(s=>[s.background,s.cover]).filter(Boolean)));
+const sources=Array.from(new Set(location.pathname.startsWith('/web/flow')?[new URLSearchParams(location.search).get('story')==='fishing'?'/web/flow/fishing.json':'/web/flow/story.json']:selected?[selected.background,selected.ink,...Object.values(selected.portraits)]:stories.flatMap(s=>[s.background,s.cover]).filter(Boolean)));
 const root=document.getElementById('preloader-root');
 const sessionKey='story-lab:intro-seen';
 let seen=false;

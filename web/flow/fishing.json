@@ -1,0 +1,728 @@
+{
+  "title": "雾海传说",
+  "subtitle": "六章 · 故事流程",
+  "storyId": "fishing",
+  "initial": "opening",
+  "source": "stories/fishing/design/story-model.json",
+  "source_commit": "333e97f6ee6605843e7b0d9f73eaac3e825cff5d",
+  "textHeading": "原文与任务整理",
+  "routeNote": "高亮主线通往该结局的路径；虚线为支线解锁或资料关联，不代表必经顺序。",
+  "legend": "实线：主线推进 · 虚线：支线解锁或资料关联",
+  "nodes": [
+    {
+      "id": "opening",
+      "title": "开场｜三年前的熄灯",
+      "kind": "scene",
+      "text": "三年前那个晚上，灯塔的灯突然灭了。第二天一早，深海就被雾吞了，再没散过。\n守塔的老林说，灯里藏着这片海最大的秘密——探照灯修好的那天，雾就会散。可他不肯再多说一个字。\n我得先活下去。钓鱼，卖钱，攒家当……然后去深海，把真相捞出来。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_move",
+      "title": "教学｜开船（W 前进，A/D 转向）",
+      "kind": "scene",
+      "text": "玩法目标：开船（W 前进，A/D 转向）\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_spot",
+      "title": "教学｜开船到小地图金色标记处",
+      "kind": "scene",
+      "text": "玩法目标：开船到小地图金色标记处\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_cast",
+      "title": "教学｜按 E 抛竿",
+      "kind": "scene",
+      "text": "玩法目标：按 E 抛竿\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_catch",
+      "title": "教学｜钓到 3 条鱼",
+      "kind": "scene",
+      "text": "玩法目标：钓到 3 条鱼\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_dock",
+      "title": "教学｜靠近码头，按 E 进入菜单",
+      "kind": "scene",
+      "text": "玩法目标：靠近码头，按 E 进入菜单\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_sell",
+      "title": "教学｜在码头卖掉鱼",
+      "kind": "scene",
+      "text": "玩法目标：在码头卖掉鱼\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "tutorial_upgrade",
+      "title": "教学｜用卖鱼收入升级鱼竿、卷线器或鱼饵，再出海试钓",
+      "kind": "scene",
+      "text": "玩法目标：用卖鱼收入升级鱼竿、卷线器或鱼饵，再出海试钓\n原始判定：objectives.gd::_check。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "t_gear_trial",
+      "title": "新钓具试用：离港后新钓获 1 条鱼",
+      "kind": "scene",
+      "text": "新钓具装好了。先出海试钓一条鱼，感受一下它的变化，再回码头吧。\n\n推进条件：类型=trial_catch；目标=1",
+      "changes": [],
+      "conditions": [
+        "类型=trial_catch；目标=1"
+      ],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "t_gear_return",
+      "title": "试钓完成：结束本杆后返回码头",
+      "kind": "scene",
+      "text": "新钓具用起来顺手多了。把这一杆收好，再回码头，准备下一趟出海。\n\n推进条件：类型=trial_return；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=trial_return；目标=0"
+      ],
+      "sourceLabel": "序章 · 雾海"
+    },
+    {
+      "id": "m_fishing_trip",
+      "title": "第一章 · 谋生：新钓获 3 条鱼",
+      "kind": "scene",
+      "text": "先独立出一次海。带回三条鱼，试试自己能不能靠这片海生活。\n\n推进条件：类型=catch；目标=3",
+      "changes": [],
+      "conditions": [
+        "类型=catch；目标=3"
+      ],
+      "sourceLabel": "第一章 · 谋生"
+    },
+    {
+      "id": "m_trip_sale",
+      "title": "第一章 · 谋生：返港售卖本次渔获",
+      "kind": "scene",
+      "text": "把这趟渔获带回码头卖掉。航行、钓鱼和买卖，得连起来才是一门生计。\n\n推进条件：类型=sale；目标=1",
+      "changes": [],
+      "conditions": [
+        "类型=sale；目标=1"
+      ],
+      "sourceLabel": "第一章 · 谋生"
+    },
+    {
+      "id": "m_coins",
+      "title": "第一章 · 谋生：留出 300 金币修塔",
+      "kind": "scene",
+      "text": "有了稳定的收入，该给旧灯塔留一笔修缮的钱了。\n\n推进条件：类型=coins；目标=300",
+      "changes": [],
+      "conditions": [
+        "类型=coins；目标=300"
+      ],
+      "sourceLabel": "第一章 · 谋生"
+    },
+    {
+      "id": "m_route_survey",
+      "title": "第二章 · 灯塔：前往金色标记勘察航线",
+      "kind": "scene",
+      "text": "老林让我先去标记处看看航线。记住这片海的样子，塔亮后再来走一趟。\n\n推进条件：类型=survey；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=survey；目标=0"
+      ],
+      "sourceLabel": "第二章 · 灯塔"
+    },
+    {
+      "id": "m_lighthouse",
+      "title": "第二章 · 灯塔：返港建造灯塔",
+      "kind": "scene",
+      "text": "航线已经摸清。回港建造灯塔，让下一趟出海有个能望见的归处。\n\n推进条件：类型=building；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=building；目标=0"
+      ],
+      "sourceLabel": "第二章 · 灯塔"
+    },
+    {
+      "id": "m_lighthouse_trial",
+      "title": "第二章 · 灯塔：抵达航线标记，再返回码头",
+      "kind": "scene",
+      "text": "塔亮了。沿金色标记再跑一趟，然后回到码头，试试这条航线是否好走了。\n\n推进条件：类型=voyage；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=voyage；目标=0"
+      ],
+      "sourceLabel": "第二章 · 灯塔"
+    },
+    {
+      "id": "m_market_variety",
+      "title": "第三章 · 烟火气：新钓获 2 种不同的鱼",
+      "kind": "scene",
+      "text": "港口不能只有一种鱼。去不同水域转转，带回两种渔获，为鱼市备货。\n\n推进条件：类型=variety；目标=2",
+      "changes": [],
+      "conditions": [
+        "类型=variety；目标=2"
+      ],
+      "sourceLabel": "第三章 · 烟火气"
+    },
+    {
+      "id": "m_market",
+      "title": "第三章 · 烟火气：返港建造鱼市",
+      "kind": "scene",
+      "text": "有了几样渔获，才有摆摊的底气。回港建鱼市，给这里添点人气。\n\n推进条件：类型=building；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=building；目标=0"
+      ],
+      "sourceLabel": "第三章 · 烟火气"
+    },
+    {
+      "id": "m_market_trade",
+      "title": "第三章 · 烟火气：在鱼市售卖一批鱼",
+      "kind": "scene",
+      "text": "鱼市开张了，把船上的鱼卖一批，看看新市场带来的收益。\n\n推进条件：类型=sale；目标=1",
+      "changes": [],
+      "conditions": [
+        "类型=sale；目标=1"
+      ],
+      "sourceLabel": "第三章 · 烟火气"
+    },
+    {
+      "id": "m_searchlight",
+      "title": "第四章 · 雾鲸：提交 2 条鲈鱼，修复探照灯",
+      "kind": "scene",
+      "text": "老林终于愿意谈雾海了。先在码头交两条鲈鱼，修好探照灯，再去深海。\n\n推进条件：类型=unlock；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=unlock；目标=0"
+      ],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "m_deep_fishing",
+      "title": "第四章 · 雾鲸：新钓获 2 条深海鱼",
+      "kind": "scene",
+      "text": "别急着去找鲸落。先试钓两条深海鱼，熟悉雾里航行和避开海怪的节奏。往东南远离岛屿，在参考坐标周边找找，不用停在精确的一点。白天可以钓金枪鱼，夜晚还有鱿鱼、灯笼鱼等。\n\n推进条件：类型=deep_catch；目标=2",
+      "changes": [],
+      "conditions": [
+        "类型=deep_catch；目标=2"
+      ],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "m_sea_clue",
+      "title": "第四章 · 雾鲸：寻找一个漂流瓶碎片",
+      "kind": "scene",
+      "text": "雾里漂着旧瓶子。先找一个，看看守塔人留下了什么线索。\n\n推进条件：类型=clue；目标=1",
+      "changes": [],
+      "conditions": [
+        "类型=clue；目标=1"
+      ],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "m_whalefall",
+      "title": "第四章 · 雾鲸：前往深海，打捞鲸落之光",
+      "kind": "scene",
+      "text": "线索指向深海最深处。循着紫色标记去找鲸落之光，小心周围的海怪。\n\n推进条件：类型=recover；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=recover；目标=0"
+      ],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "m_whalefall_return",
+      "title": "第四章 · 雾鲸：带着鲸落之光返回码头",
+      "kind": "scene",
+      "text": "光已经在船上了。先安全回到码头，再决定它的归处。\n\n推进条件：类型=return；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=return；目标=0"
+      ],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "m_choice",
+      "title": "终章 · 抉择：决定鲸落之光的归处",
+      "kind": "decision",
+      "text": "回到港口了。这束光该照亮航路，还是留给雾鲸的梦？\n\n推进条件：类型=ending；目标=0",
+      "changes": [],
+      "conditions": [
+        "类型=ending；目标=0"
+      ],
+      "sourceLabel": "终章 · 抉择"
+    },
+    {
+      "id": "confession",
+      "title": "老林自白｜鲸落之光",
+      "kind": "scene",
+      "text": "老林：雾鲸……是我害死的。当年我为了多打鱼，用强光把它从深海里逼了出来。\n老林：它临死前掉了一块光——'鲸落之光'。拿回来，也许雾就能散了。\n老林：去深海最深处找它。小心，海怪最近很暴躁。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "log_1",
+      "title": "线索｜气象记录残页",
+      "kind": "clue",
+      "text": "港务局气象记录：三年前的那个晚上，风力 2 级，能见度良好。“风暴”的说法，是后来才传开的。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "log_2",
+      "title": "线索｜守塔人日志残页",
+      "kind": "clue",
+      "text": "守塔人日志：它每晚都靠近一点。灯越亮，它游得越近。我把灯调暗了，它停下了。原来它要的不是船，是光。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "fisher_tale",
+      "title": "线索｜老渔民口述",
+      "kind": "clue",
+      "text": "老渔民口述：雾最浓的那几天，海面下有声音，像打呼噜。雾一浓，它就睡得沉。雾是它呼出来的——它在做梦呢。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "last_note",
+      "title": "线索｜最后的纸条",
+      "kind": "clue",
+      "text": "如果有人看到这个，别点灯。灯是我吹灭的，不是我失职，是我故意的。让它以为我们已经走了。——老林",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "salvage",
+      "title": "线索｜打捞队记录",
+      "kind": "clue",
+      "text": "沉船里找到半张图纸：灯罩内壁刻满细纹，旁边注着一行小字——“强光惊它，柔光引路。光要软得像月光，它才不会醒。”",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "第四章 · 雾鲸"
+    },
+    {
+      "id": "ending_light",
+      "title": "结局｜点亮探照灯",
+      "kind": "end",
+      "text": "你亲手把鲸落之光装进探照灯。\n光柱刺破雾海，深海的雾开始散了。码头上的人们欢呼起来。\n但海面下，有巨大的阴影翻了个身。\n老林按住你的肩膀：“从今天起，守夜的人，多了一个。”\n—— 主线完成。雾海散了，但深海里有什么，醒了。\n\n条件：无需额外收集条件",
+      "changes": [],
+      "conditions": [
+        "无需额外收集条件"
+      ],
+      "sourceLabel": "终章 · 抉择"
+    },
+    {
+      "id": "ending_entrust",
+      "title": "结局｜交给老林",
+      "kind": "end",
+      "text": "你把鲸落之光交给了老林。\n他看了很久，把它沉进了海里。“有些秘密，守比说难。”\n“三年了，我一个人守。现在，有你陪我了。”\n他塞给你 500 金币：“拿去，别说出去。”\n—— 主线完成。雾还在，但你们守住了比雾更重要的东西。\n\n条件：无需额外收集条件",
+      "changes": [
+        "奖励：500 金币"
+      ],
+      "conditions": [
+        "无需额外收集条件"
+      ],
+      "sourceLabel": "终章 · 抉择"
+    },
+    {
+      "id": "ending_gentle",
+      "title": "结局｜柔光",
+      "kind": "end",
+      "text": "你想起碎片里的记载：雾鲸怕的不是光，是强光。\n你用剩下的碎片图纸，在作坊里打出了柔光罩。\n光变得温和，既照亮了航道，又没有惊醒它。\n雾散了。雾鲸还在睡。老林第一次笑了：“你比我聪明。”\n—— 主线完成（隐藏结局）。你找到了第三条路。\n\n条件：碎片当前数量 ≥ 5 且完整鱼类图鉴",
+      "changes": [],
+      "conditions": [
+        "当前碎片数量 ≥ 5，且收集完整十种鱼图鉴",
+        "碎片庇护 300 秒后到期并清空；历史累计数量不算。"
+      ],
+      "sourceLabel": "终章 · 抉择"
+    },
+    {
+      "id": "sardines_for_ahai",
+      "title": "支线｜老船工阿海",
+      "kind": "sidequest",
+      "text": "年轻人，出海前给我捎 3 条沙丁鱼下酒，怎么样？浅滩上随便钓钓就有。\n奖励：80 金币\n解锁：完成新手引导后，阿海会有事找你。\n支线按阿海→老板娘顺序提供，不阻断主线。",
+      "changes": [],
+      "conditions": [
+        "新手引导完成；提交 3 条沙丁鱼。"
+      ],
+      "sourceLabel": "支线与审阅资料"
+    },
+    {
+      "id": "tuna_for_market",
+      "title": "支线｜鱼市老板娘",
+      "kind": "sidequest",
+      "text": "听说深海有金枪鱼？给我弄 1 条来镇场子，价钱好说！\n奖励：300 金币，5 鱼饵\n解锁：需要先建造鱼市，老板娘才会来码头。\n支线按阿海→老板娘顺序提供，不阻断主线。",
+      "changes": [],
+      "conditions": [
+        "阿海委托已完成，且鱼市已建成；提交 1 条金枪鱼。"
+      ],
+      "sourceLabel": "支线与审阅资料"
+    },
+    {
+      "id": "review",
+      "title": "待确认｜雾鲸的生死",
+      "kind": "review",
+      "text": "main.gd 的老林自白称“雾鲸……是我害死的”；ending_panel.gd 与碎片称它在睡梦中，强光会唤醒。原文均保留。\n另：碎片庇护在300秒后到期并清空当前收集，隐藏结局检查当前数量，而不是历史收集。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "支线与审阅资料"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "opening",
+      "target": "tutorial_move",
+      "label": "目标达成"
+    },
+    {
+      "id": "e1",
+      "source": "tutorial_move",
+      "target": "tutorial_spot",
+      "label": "目标达成"
+    },
+    {
+      "id": "e2",
+      "source": "tutorial_spot",
+      "target": "tutorial_cast",
+      "label": "目标达成"
+    },
+    {
+      "id": "e3",
+      "source": "tutorial_cast",
+      "target": "tutorial_catch",
+      "label": "目标达成"
+    },
+    {
+      "id": "e4",
+      "source": "tutorial_catch",
+      "target": "tutorial_dock",
+      "label": "目标达成"
+    },
+    {
+      "id": "e5",
+      "source": "tutorial_dock",
+      "target": "tutorial_sell",
+      "label": "目标达成"
+    },
+    {
+      "id": "e6",
+      "source": "tutorial_sell",
+      "target": "tutorial_upgrade",
+      "label": "目标达成"
+    },
+    {
+      "id": "e7",
+      "source": "tutorial_upgrade",
+      "target": "t_gear_trial",
+      "label": "条件达成"
+    },
+    {
+      "id": "e8",
+      "source": "t_gear_trial",
+      "target": "t_gear_return",
+      "label": "条件达成"
+    },
+    {
+      "id": "e9",
+      "source": "t_gear_return",
+      "target": "m_fishing_trip",
+      "label": "条件达成"
+    },
+    {
+      "id": "e10",
+      "source": "m_fishing_trip",
+      "target": "m_trip_sale",
+      "label": "条件达成"
+    },
+    {
+      "id": "e11",
+      "source": "m_trip_sale",
+      "target": "m_coins",
+      "label": "条件达成"
+    },
+    {
+      "id": "e12",
+      "source": "m_coins",
+      "target": "m_route_survey",
+      "label": "条件达成"
+    },
+    {
+      "id": "e13",
+      "source": "m_route_survey",
+      "target": "m_lighthouse",
+      "label": "条件达成"
+    },
+    {
+      "id": "e14",
+      "source": "m_lighthouse",
+      "target": "m_lighthouse_trial",
+      "label": "条件达成"
+    },
+    {
+      "id": "e15",
+      "source": "m_lighthouse_trial",
+      "target": "m_market_variety",
+      "label": "条件达成"
+    },
+    {
+      "id": "e16",
+      "source": "m_market_variety",
+      "target": "m_market",
+      "label": "条件达成"
+    },
+    {
+      "id": "e17",
+      "source": "m_market",
+      "target": "m_market_trade",
+      "label": "条件达成"
+    },
+    {
+      "id": "e18",
+      "source": "m_market_trade",
+      "target": "m_searchlight",
+      "label": "条件达成"
+    },
+    {
+      "id": "e19",
+      "source": "m_searchlight",
+      "target": "m_deep_fishing",
+      "label": "条件达成"
+    },
+    {
+      "id": "e20",
+      "source": "m_deep_fishing",
+      "target": "m_sea_clue",
+      "label": "条件达成"
+    },
+    {
+      "id": "e21",
+      "source": "m_sea_clue",
+      "target": "m_whalefall",
+      "label": "条件达成"
+    },
+    {
+      "id": "e22",
+      "source": "m_whalefall",
+      "target": "m_whalefall_return",
+      "label": "条件达成"
+    },
+    {
+      "id": "e23",
+      "source": "m_whalefall_return",
+      "target": "m_choice",
+      "label": "条件达成"
+    },
+    {
+      "id": "e24",
+      "source": "m_choice",
+      "target": "ending_light",
+      "label": "无需额外收集条件"
+    },
+    {
+      "id": "e25",
+      "source": "m_choice",
+      "target": "ending_entrust",
+      "label": "无需额外收集条件"
+    },
+    {
+      "id": "e26",
+      "source": "m_choice",
+      "target": "ending_gentle",
+      "label": "碎片当前数量 ≥ 5 且完整鱼类图鉴"
+    },
+    {
+      "id": "e27",
+      "source": "tutorial_upgrade",
+      "target": "sardines_for_ahai",
+      "label": "支线解锁参考",
+      "reference": true
+    },
+    {
+      "id": "e28",
+      "source": "sardines_for_ahai",
+      "target": "tuna_for_market",
+      "label": "另需鱼市建成",
+      "reference": true
+    },
+    {
+      "id": "e29",
+      "source": "m_market",
+      "target": "tuna_for_market",
+      "label": "另需阿海委托完成",
+      "reference": true
+    },
+    {
+      "id": "e30",
+      "source": "m_searchlight",
+      "target": "confession",
+      "label": "相关对白资料",
+      "reference": true
+    },
+    {
+      "id": "e31",
+      "source": "confession",
+      "target": "review",
+      "label": "原作矛盾审阅",
+      "reference": true
+    },
+    {
+      "id": "e32",
+      "source": "m_sea_clue",
+      "target": "log_1",
+      "label": "可选线索·顺序自由",
+      "reference": true
+    },
+    {
+      "id": "e33",
+      "source": "m_sea_clue",
+      "target": "log_2",
+      "label": "可选线索·顺序自由",
+      "reference": true
+    },
+    {
+      "id": "e34",
+      "source": "m_sea_clue",
+      "target": "fisher_tale",
+      "label": "可选线索·顺序自由",
+      "reference": true
+    },
+    {
+      "id": "e35",
+      "source": "m_sea_clue",
+      "target": "last_note",
+      "label": "可选线索·顺序自由",
+      "reference": true
+    },
+    {
+      "id": "e36",
+      "source": "m_sea_clue",
+      "target": "salvage",
+      "label": "可选线索·顺序自由",
+      "reference": true
+    }
+  ],
+  "routes": [
+    {
+      "id": "ending_light",
+      "title": "结局｜点亮探照灯",
+      "nodes": [
+        "opening",
+        "tutorial_move",
+        "tutorial_spot",
+        "tutorial_cast",
+        "tutorial_catch",
+        "tutorial_dock",
+        "tutorial_sell",
+        "tutorial_upgrade",
+        "t_gear_trial",
+        "t_gear_return",
+        "m_fishing_trip",
+        "m_trip_sale",
+        "m_coins",
+        "m_route_survey",
+        "m_lighthouse",
+        "m_lighthouse_trial",
+        "m_market_variety",
+        "m_market",
+        "m_market_trade",
+        "m_searchlight",
+        "m_deep_fishing",
+        "m_sea_clue",
+        "m_whalefall",
+        "m_whalefall_return",
+        "m_choice",
+        "ending_light"
+      ],
+      "result": "无需额外收集条件"
+    },
+    {
+      "id": "ending_entrust",
+      "title": "结局｜交给老林",
+      "nodes": [
+        "opening",
+        "tutorial_move",
+        "tutorial_spot",
+        "tutorial_cast",
+        "tutorial_catch",
+        "tutorial_dock",
+        "tutorial_sell",
+        "tutorial_upgrade",
+        "t_gear_trial",
+        "t_gear_return",
+        "m_fishing_trip",
+        "m_trip_sale",
+        "m_coins",
+        "m_route_survey",
+        "m_lighthouse",
+        "m_lighthouse_trial",
+        "m_market_variety",
+        "m_market",
+        "m_market_trade",
+        "m_searchlight",
+        "m_deep_fishing",
+        "m_sea_clue",
+        "m_whalefall",
+        "m_whalefall_return",
+        "m_choice",
+        "ending_entrust"
+      ],
+      "result": "无需额外收集条件"
+    },
+    {
+      "id": "ending_gentle",
+      "title": "结局｜柔光",
+      "nodes": [
+        "opening",
+        "tutorial_move",
+        "tutorial_spot",
+        "tutorial_cast",
+        "tutorial_catch",
+        "tutorial_dock",
+        "tutorial_sell",
+        "tutorial_upgrade",
+        "t_gear_trial",
+        "t_gear_return",
+        "m_fishing_trip",
+        "m_trip_sale",
+        "m_coins",
+        "m_route_survey",
+        "m_lighthouse",
+        "m_lighthouse_trial",
+        "m_market_variety",
+        "m_market",
+        "m_market_trade",
+        "m_searchlight",
+        "m_deep_fishing",
+        "m_sea_clue",
+        "m_whalefall",
+        "m_whalefall_return",
+        "m_choice",
+        "ending_gentle"
+      ],
+      "result": "当前碎片数量 ≥ 5，且收集完整十种鱼图鉴；碎片庇护 300 秒后到期并清空；历史累计数量不算。"
+    }
+  ]
+}

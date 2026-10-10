@@ -39,3 +39,7 @@
 Inky：已编译并通过实际 inklecate 运行路径检查。
 
 articy：已在应用中创建独立原生工程 Fishing - Fog Sea，导入44个剧情/资料节点与5个人物实体，报告无错误，已保存并验证六章目录。工程入口为 `../articy/project/ProjectInfo.aph`。流程连线、脚本和模拟器尚未完成；JSON结构模型用于记录连接关系。
+
+## 网页流程图
+
+入口：`/web/flow/?story=fishing`，故事目录也提供链接。运行 `python3 tools/build_fishing_flow.py` 从现有结构模型生成 `web/flow/fishing.json`。37 个内容节点保留任务 ID、整理文本与结局条件；章节容器仅作为节点所属章节展示。实线沿用模型主线连接，虚线为本次新增的资料关联/支线解锁参考，不表示必经顺序或新的游戏触发时机。三条结局路线可高亮查看。网页只读，不改变 Inky 或 articy 工程。
