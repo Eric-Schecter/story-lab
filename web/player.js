@@ -9,7 +9,7 @@ loadStory();
 async function preloadStoryImage(source){
  const image=new Image();
  image.src=source;
- await image.decode();
+ await Promise.race([image.decode(),new Promise((_,reject)=>setTimeout(()=>reject(Error('图片加载超时')),8000))]);
  return image;
 }
 function revealStory(){
@@ -26,8 +26,8 @@ async function loadStory(){
  const images=Array.from(new Set([config.background,...Object.values(config.portraits),'/stories/wind-and-contract/avg/assets/unknown.svg']));
  // Start image decode and script loading together; do not reveal an undecoded background.
  const [data]=await Promise.all([
-  fetch(config.ink).then(response=>{if(!response.ok)throw Error(response.status);return response.json();}),
-  Promise.all(images.map(preloadStoryImage))
+  fetch(config.ink,{signal:AbortSignal.timeout(15000)}).then(response=>{if(!response.ok)throw Error(response.status);return response.json();}),
+  Promise.allSettled(images.map(preloadStoryImage))
  ]);
  storyData=data;reset();$('next').disabled=false;$('restart').disabled=false;
  }
