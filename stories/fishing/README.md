@@ -10,12 +10,14 @@
 
 ## articy 状态
 
-`articy/fishing-import.xlsx` 根据 articy 自己导出的往返模板生成，包含44个流程/资料节点与5个人物实体。尚未成功通过应用内导入验证，不能视为原生工程。导入不包含流程连接和可执行脚本，连接关系保存在 `design/story-model.json`。
+原生工程为 `articy/project/ProjectInfo.aph`（Fishing - Fog Sea），已在 articy 4.3.16 中成功导入并保存：44个剧情/资料节点、5个人物实体，导入报告无错误。
 
-原作条件、任务ID和数据快照已保存。下一步是完成原生工程导入、排版与连线，再验证预览。不要重复导入未经处理的空ID表，以免产生重复节点。
+在左侧展开 `Flow → 雾海传说｜剧情总览` 可浏览六章主线、两条支线与矛盾审阅节点；`Entities` 保存人物卡。当前可浏览章节和原文，尚未添加流程连线、可执行条件及模拟器。连接关系另存于 `design/story-model.json`；互动试玩使用 Inky。
+
+`articy/fishing-import-fixed.xlsx` 是本次验证成功的导入文件，项目标识匹配上述原生工程。不要再次导入：空ID行会新建重复节点。`fishing-import.xlsx` 为修复前的生成文件。
 
 ## 可重复生成与检查
 
 在仓库根目录运行 `python3 tools/build_fishing.py`，再使用 Inky 附带 inklecate 编译 `ink/fishing.ink`。运行 `python3 tools/check_fishing.py` 可验证三种结局及隐藏结局锁定边界。
 
-`tools/build_articy_import.mjs <articy官方往返模板路径>` 用 bundled artifact-tool 生成导入候选文件。模板的项目标识属于当前风与契约工程，新建独立工程时应从目标工程重新导出模板。
+`tools/build_articy_import.mjs <articy官方往返模板路径>` 用 bundled artifact-tool 生成导入候选文件。随后运行 `python3 tools/fix_articy_headers.py stories/fishing/articy/fishing-import.xlsx stories/fishing/articy/project/ProjectInfo.aph`，修复空模板名并匹配目标工程标识。新建独立工程时应使用目标工程自身的往返模板。

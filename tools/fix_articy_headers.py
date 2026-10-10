@@ -3,7 +3,6 @@
 This is an OpenXML compatibility repair after artifact-tool authoring. Some
 readers distinguish an absent/empty cell from an explicitly empty shared string.
 """
-import copy
 import sys
 import zipfile
 import xml.etree.ElementTree as ET
@@ -28,6 +27,15 @@ for sheet in ['sheet1', 'sheet2']:
     cell.clear()
     cell.attrib.update(r='B2', s='1', t='s')
     ET.SubElement(cell, f'{{{namespace}}}v').text = str(empty_index)
+    if len(sys.argv) > 2:
+        project = ET.parse(sys.argv[2]).find('Content/Project')
+        for address, value in [('D1', project.find('DisplayName').get('Value')), ('D2', project.get('Guid'))]:
+            index = len(strings)
+            ET.SubElement(ET.SubElement(strings, f'{{{namespace}}}si'), f'{{{namespace}}}t').text = value
+            header = root.find(f'.//x:c[@r="{address}"]', ns)
+            header.clear()
+            header.attrib.update(r=address, s='1', t='s')
+            ET.SubElement(header, f'{{{namespace}}}v').text = str(index)
     contents[name] = ET.tostring(root, encoding='utf-8', xml_declaration=True)
     print(f'{sheet}: Template Name = explicit empty string')
 strings.set('uniqueCount', str(len(strings)))

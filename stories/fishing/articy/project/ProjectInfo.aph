@@ -1,0 +1,19 @@
+<ProjectInfo Version="1">
+  <Signature>50820217AE4ED1AB8169EABAD30DF2591451613A0B3E7B42E84DDD6347B7E6D4</Signature>
+  <Content>
+    <Project Guid="477a5936-34e3-4e8b-9e28-c9ba790e884c">
+      <DisplayName Value="Fishing - Fog Sea"/>
+      <DetailName Value=""/>
+      <MainProjectGuid Value="fe89c4b1-d19b-4958-b0f5-c409b4c0db29"/>
+      <IconType Value="0"/>
+      <IdProjectIcon Value="00000000-0000-0000-0000-000000000000"/>
+      <ScmProviderGuid Value="0745c2ee-abe3-451b-934e-7f597f56c0d7"/>
+      <ScmConfiguration Value=""/>
+      <CreationTimeStamp Value="639272131209010160"/>
+      <PartitionHash Value="5C46FC2A158BBD81D8247D0E8009BB4D65CF31093471120B05E80701327D3E79"/>
+      <SaveFileVersion Value="60"/>
+      <ProjectType Value="0"/>
+      <IsOnlineProject Value="False"/>
+    </Project>
+  </Content>
+</ProjectInfo>
