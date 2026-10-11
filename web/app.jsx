@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useLayoutEffect,useRef,useCallback} from 'react';
 import {createRoot} from 'react-dom/client';
+import StoryView from './story';
 import CharacterView from './character';
 import FlowView from './flow/app';
 import Preloader from './preloader/Preloader';
@@ -8,7 +9,7 @@ import {mountPlayer} from './player';
 import {homeMarkup,playerMarkup} from './templates';
 import {currentRoute} from './routes';
 const sources=[...new Set(window.STORIES.flatMap(s=>[s.background,s.cover,s.ink]).filter(Boolean))];
-const styleSets={character:['/web/character.css'],home:['/web/library.css?v=book-library-1'],play:['/stories/wind-and-contract/avg/style.css','/web/player.css'],flow:['/web/flow/dist/app.css']};
+const styleSets={story:['/web/library.css?v=book-details-1'],character:['/web/character.css'],home:['/web/library.css?v=book-details-1'],play:['/stories/wind-and-contract/avg/style.css','/web/player.css'],flow:['/web/flow/dist/app.css']};
 function stylesFor(name){return Promise.all((styleSets[name]||styleSets.home).map(href=>new Promise(resolve=>{
  const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.media='not all';link.dataset.routeStyle='';link.onload=()=>resolve(link);link.onerror=()=>resolve(link);document.head.append(link);
 })));}
@@ -31,7 +32,7 @@ function Application(){
  // Activate destination styles only after the outgoing content is invisible.
  old.forEach(el=>el.remove());links.forEach(el=>el.media='all');
  document.body.removeAttribute('data-story-loading');setPhase(name?'hidden':'enter');setRoute(next);setReady(true);window.scrollTo(0,0);
- if(name&&!['home','play','flow','character'].includes(name))reveal();
+ if(name&&!['home','play','flow','character','story'].includes(name))reveal();
  };
  const changed=()=>void navigate();window.addEventListener('hashchange',changed);void navigate(true);
  return()=>{disposed=true;version++;window.removeEventListener('hashchange',changed)};
@@ -39,7 +40,7 @@ function Application(){
  const name=route.pathname.slice(1);
  const enter=()=>window.setTimeout(()=>location.replace('#/home'),900);
  return <div className={'route-shell route-'+phase} aria-busy={phase==='hidden'}><div key={route.pathname+'?'+route.search}>
- {ready&&(!name?<div id="preloader-root"><Preloader sources={sources} onEnter={enter}/></div>:name==='character'?<CharacterView onReady={reveal}/>:name==='flow'?<FlowView search={route.search} onReady={reveal}/>:name==='home'||name==='play'?<PageMarkup name={name} search={route.search} onReady={reveal}/>:<main><h1>页面不存在</h1><a href="#/home">返回故事目录</a></main>)}
+ {ready&&(!name?<div id="preloader-root"><Preloader sources={sources} onEnter={enter}/></div>:name==='story'?<StoryView search={route.search} onReady={reveal}/>:name==='character'?<CharacterView onReady={reveal}/>:name==='flow'?<FlowView search={route.search} onReady={reveal}/>:name==='home'||name==='play'?<PageMarkup name={name} search={route.search} onReady={reveal}/>:<main><h1>页面不存在</h1><a href="#/home">返回故事目录</a></main>)}
  </div></div>;
 }
 createRoot(document.getElementById('app')).render(<Application/>);
