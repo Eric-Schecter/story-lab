@@ -4,3 +4,5 @@
 
 .chapter-picker{display:flex;align-items:center;gap:12px;color:#b6ab91;font-size:12px;margin-bottom:14px}.chapter-picker select{flex:1;min-width:0;font:inherit;font-size:14px;color:#efe5cf;background:#243e46;border:1px solid #c8aa6d55;border-radius:4px;padding:9px 12px}
 .chapter-picker select{appearance:none;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23efe5cf' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:12px 8px}
+
+.character-link,.character-spacer{display:block;min-height:32px;text-align:center;font-size:13px;padding:4px;margin-top:4px}.character-link{color:#b9c6b8}.character-link:hover{text-decoration:underline}
