@@ -18,7 +18,7 @@ titles = {'harbor': '暮潮港 · 启航前', 'contract': '查看契约', 'crew'
 nodes, edges = [], []
 
 def node(id, title, kind, start, end, text):
-    nodes.append(dict(chapter='ch1' if id.startswith('ch1_') or id=='END' else 'prologue',id=id, title=title, kind=kind, line=start+1, endLine=end,
+    nodes.append(dict(chapter=next((c for c in ['ch1','ch2','ch3','ch4','ch5','finale'] if id.startswith(c+'_')), 'finale' if id.startswith('ending_') or id in ['story_end','END'] else 'prologue'),id=id, title=title, kind=kind, line=start+1, endLine=end,
                       text='\n'.join(text).strip(), changes=[x.strip()[2:].strip() for x in text if x.strip().startswith('~ ')],
                       conditions=[x.strip() for x in text if x.strip().startswith('{') or re.match(r'^[+*] \{', x.strip())]))
 
@@ -47,7 +47,7 @@ for index, (start, name) in enumerate(headers):
         targets = [x.strip()[3:] for x in prefix if x.strip().startswith('-> ')]
         assert len(targets) == 1, name
         edge(name, targets[0])
-node('END', '第一章结束', 'end', len(lines)-1, len(lines), ['现有试玩包含序章与第一章；第二章尚在规划。'])
+node('END', '第一部结束', 'end', len(lines)-1, len(lines), ['七篇章试玩结束，未清责任延续至下一季。'])
 assert all(e['target'] in {n['id'] for n in nodes} for e in edges)
 model = dict(title='风与契约', subtitle='序章 / 第一章 · 故事流程', routeNote='高亮序章决策及第一章调查入口；后续保船方案需满足各自条件。', legend='带回线的调查可反复查看；第一章选项有金币、信任或证据门槛', source=str(source), sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
              initial={'money':300,'guild_relation':0,'port_relation':0,'decision':'尚未选择','crew_debt':0,'evidence':False,'chapter_one_route':'尚未选择'}, nodes=nodes, edges=edges,
@@ -58,37 +58,17 @@ model = dict(title='风与契约', subtitle='序章 / 第一章 · 故事流程'
                               ('借款雇船','900 金币；小港关系 +1；另欠船员 200 金币。')])])
 model['chapters']=[{'id':'prologue','title':'序章 · 装满的货舱'},{'id':'ch1','title':'第一章 · 追索令'}]
 for i,(title,result) in enumerate([('保证金暂缓','需至少 600 金币；冻结保证金，换七日。'),('小港具保','需小港信任和至少 100 金币；盐货收益尚未结算。'),('公开复核','需核对还款记录；商会关系 −1。')]):
-    model['routes'].append(dict(id=f'ch1-route-{i+1}',chapter='ch1',title=title,result=result,nodes=['ch1_notice','ch1_investigate','ch1_investigate-choice-1','ch1_ledger','ch1_investigate','ch1_investigate-choice-4','ch1_decide',f'ch1_decide-choice-{i+2}','ch1_depart','ch1_close','END']))
+    model['routes'].append(dict(id=f'ch1-route-{i+1}',chapter='ch1',title=title,result=result,nodes=['ch1_notice','ch1_investigate','ch1_investigate-choice-1','ch1_ledger','ch1_investigate','ch1_investigate-choice-4','ch1_decide',f'ch1_decide-choice-{i+2}','ch1_depart','ch1_close']))
 for route in model['routes'][:3]: route['chapter']='prologue'
-# Future chapters are design references, never executable Ink branches.
 bible = json.loads(Path('stories/wind-and-contract/design/story-bible.json').read_text())
-model['chapters'] = [dict(id=c['id'], title=c['title'] + (' · 规划' if c['state'] != '可试玩' else ''), planned=c['state'] != '可试玩') for c in bible['chapters']]
-for c in bible['chapters'][2:]:
-    cid = c['id']
-    def planned_node(suffix, title, kind, text):
-        nid = cid + '-plan-' + suffix
-        nodes.append(dict(id=nid, chapter=cid, title=title, kind=kind, planned=True, sourceLabel='剧情规划 · 人物与章节设定草案', text=text, changes=[], conditions=[]))
-        return nid
-    event = planned_node('event', c['title'], 'scene', c['event'] + '\n\n前因：' + c['carry'])
-    decision = planned_node('decision', '玩家的艰难选择', 'decision', c['choice'])
-    growth = planned_node('growth', c['stage'], 'outcome', c['growth'] + '\n\n人物关系：' + c['relationship'] + '\n\n台词方向：“' + c['line'] + '”')
-    closing = planned_node('next', '本章后果与下一步', 'end', c['next'])
-    pairs = [(event,decision),(decision,growth),(growth,closing)]
-    if cid != 'finale':
-        options = re.split('、|，或', c['choice'].split('。')[0].rstrip('。'))
-        pairs = [(event,decision),(growth,closing)]
-        for i, option in enumerate(options):
-            branch = planned_node('choice-' + str(i), option, 'choice', '选择方向：' + option + '\n\n' + c['growth'] + '\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。')
-            pairs.extend([(decision,branch),(branch,growth)])
-    if cid == 'finale':
-        pairs = [(event,decision)]
-        for i, ending in enumerate(bible['endings']):
-            end = planned_node('ending-' + str(i), ending['title'], 'outcome', ending['gain'] + '\n\n代价：' + ending['cost'] + '\n\n' + ending['variation'])
-            pairs.extend([(decision,end),(end,growth)])
-        pairs.append((growth,closing))
-    for a,b in pairs:
-        edges.append(dict(id=a+'--'+b,source=a,target=b,reference=True,label='规划关系',style={'strokeDasharray':'6 4'}))
-model['subtitle'] = '章节故事流程'
-model['legend'] += '；虚线为后续剧情规划，尚未开放试玩'
+model['chapters'] = [dict(id=c['id'],title=c['title'],planned=False) for c in bible['chapters']]
+titles.update({})
+chapter_titles = {c['id']:c['title'] for c in bible['chapters']}
+labels = {'ch2_arrival':'第二章 · 灰礁港抵达','ch2_market':'没有标价的航线 · 选择交易','ch2_receipt':'原始收据与父亲附件','ch3_return':'第三章 · 核定旧债','ch3_account':'决定如何公开旧账','ch3_luca':'决定卢卡去留','ch3_close':'责任与欠款结算','ch4_council':'第四章 · 旧船坞议事','ch4_rules':'选择同盟规则','ch4_trial':'短程试运与收益','ch5_offer':'第五章 · 维克的条件','ch5_decide':'最后一份契约','ch5_close':'退还保证金与清偿顺序','finale_settle':'终章 · 清偿账目','finale_direction':'选择下一季航向','ending_guild':'商会之旗','ending_alliance':'同盟之旗','ending_voyage':'远航之旗','story_end':'第一部后日谈'}
+for n in nodes:
+    if n['id'] in labels:n['title']=labels[n['id']]
+model['subtitle']='序章至终章 · 故事流程'
+model['legend']='所有节点来自可试玩 Ink 剧本；条件选项由前章选择解锁，跨章连接在全部章节视图中可见'
+model['routeNote']='路线展示关键决策；实际结局还取决于交易、证据公开、授权和契约选择。'
 Path('web/flow/story.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n')
 print(f'{len(nodes)} nodes, {len(edges)} edges; source {source}')

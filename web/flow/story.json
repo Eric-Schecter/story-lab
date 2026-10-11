@@ -1,10 +1,10 @@
 {
   "title": "风与契约",
-  "subtitle": "章节故事流程",
-  "routeNote": "高亮序章决策及第一章调查入口；后续保船方案需满足各自条件。",
-  "legend": "带回线的调查可反复查看；第一章选项有金币、信任或证据门槛；虚线为后续剧情规划，尚未开放试玩",
+  "subtitle": "序章至终章 · 故事流程",
+  "routeNote": "路线展示关键决策；实际结局还取决于交易、证据公开、授权和契约选择。",
+  "legend": "所有节点来自可试玩 Ink 剧本；条件选项由前章选择解锁，跨章连接在全部章节视图中可见",
   "source": "stories/wind-and-contract/ink/wind-and-contract.ink",
-  "sha256": "2f0141ca6690da7e944c33c95aaf7b83d506e9f2d11d2e56cb1933f9edad2952",
+  "sha256": "7ca74f6d1ec5135052cbd75944846cfe3148b4a55abae66c261925f6c1164289",
   "initial": {
     "money": 300,
     "guild_relation": 0,
@@ -20,8 +20,8 @@
       "id": "harbor",
       "title": "暮潮港 · 启航前",
       "kind": "decision",
-      "line": 12,
-      "endLine": 26,
+      "line": 25,
+      "endLine": 39,
       "text": "=== harbor ===\n《风与契约》——序章：装满的货舱\n暮潮港，启航前。\n艾琳扶稳被海风吹动的帽子。甲板上，最后一箱染料正在装船。\n账房：“按时交货，商会就付你九百金币。船员的薪水，还有这艘船，都能保住。”\n信使：“船长，小港的粮食只够三天。您答应过，会替我们运粮。”\n你目前有 {money} 金币。货舱已经装满，无法同时运输两批货物。\n\n+ [先查看契约。]\n    -> contract\n+ [先听听大副的意见。]\n    -> crew\n+ [决定航向。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -31,8 +31,8 @@
       "id": "harbor-choice-1",
       "title": "先查看契约。",
       "kind": "choice",
-      "line": 20,
-      "endLine": 21,
+      "line": 33,
+      "endLine": 34,
       "text": "+ [先查看契约。]\n    -> contract",
       "changes": [],
       "conditions": []
@@ -42,8 +42,8 @@
       "id": "harbor-choice-2",
       "title": "先听听大副的意见。",
       "kind": "choice",
-      "line": 22,
-      "endLine": 23,
+      "line": 35,
+      "endLine": 36,
       "text": "+ [先听听大副的意见。]\n    -> crew",
       "changes": [],
       "conditions": []
@@ -53,8 +53,8 @@
       "id": "harbor-choice-3",
       "title": "决定航向。",
       "kind": "choice",
-      "line": 24,
-      "endLine": 26,
+      "line": 37,
+      "endLine": 39,
       "text": "+ [决定航向。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -64,8 +64,8 @@
       "id": "contract",
       "title": "查看契约",
       "kind": "scene",
-      "line": 27,
-      "endLine": 32,
+      "line": 40,
+      "endLine": 45,
       "text": "=== contract ===\n契约注明：独家承运，禁止私自换货。违约将失去尾款，并面临船只追索。\n艾琳：“我原以为签下的只是货舱。”\n账房避开了她的目光：“生意总有条件。”\n-> questions",
       "changes": [],
       "conditions": []
@@ -75,8 +75,8 @@
       "id": "crew",
       "title": "听取大副意见",
       "kind": "scene",
-      "line": 33,
-      "endLine": 38,
+      "line": 46,
+      "endLine": 51,
       "text": "=== crew ===\n大副：“我妹妹就在小港。我想帮他们。但船上还有十二个人等着薪水。”\n艾琳：“如果我决定冒险，你会反对吗？”\n大副：“我会问清楚代价。然后让大家自己决定是否跟你走。”\n-> questions",
       "changes": [],
       "conditions": []
@@ -86,8 +86,8 @@
       "id": "questions",
       "title": "继续调查 / 作出决定",
       "kind": "decision",
-      "line": 39,
-      "endLine": 46,
+      "line": 52,
+      "endLine": 59,
       "text": "=== questions ===\n+ [查看契约。]\n    -> contract\n+ [听听大副的意见。]\n    -> crew\n+ [我已经想好了。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -97,8 +97,8 @@
       "id": "questions-choice-1",
       "title": "查看契约。",
       "kind": "choice",
-      "line": 40,
-      "endLine": 41,
+      "line": 53,
+      "endLine": 54,
       "text": "+ [查看契约。]\n    -> contract",
       "changes": [],
       "conditions": []
@@ -108,8 +108,8 @@
       "id": "questions-choice-2",
       "title": "听听大副的意见。",
       "kind": "choice",
-      "line": 42,
-      "endLine": 43,
+      "line": 55,
+      "endLine": 56,
       "text": "+ [听听大副的意见。]\n    -> crew",
       "changes": [],
       "conditions": []
@@ -119,8 +119,8 @@
       "id": "questions-choice-3",
       "title": "我已经想好了。",
       "kind": "choice",
-      "line": 44,
-      "endLine": 46,
+      "line": 57,
+      "endLine": 59,
       "text": "+ [我已经想好了。]\n    -> choose",
       "changes": [],
       "conditions": []
@@ -130,8 +130,8 @@
       "id": "choose",
       "title": "决定航向",
       "kind": "decision",
-      "line": 47,
-      "endLine": 82,
+      "line": 60,
+      "endLine": 95,
       "text": "=== choose ===\n艾琳展开海图。三条路，都有她无法轻易承受的代价。\n借用旧友的船需要五百金币，你目前只有 {money}。\n\n* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath\n\n* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath\n\n* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    ~ crew_debt = 200\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
       "changes": [
         "money += 900",
@@ -156,8 +156,8 @@
       "id": "choose-choice-1",
       "title": "履行契约，先送染料。",
       "kind": "outcome",
-      "line": 51,
-      "endLine": 60,
+      "line": 64,
+      "endLine": 73,
       "text": "* [履行契约，先送染料。]\n    ~ money += 900\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    ~ decision = \"履行契约\"\n    染料准时交付，九百金币到账。\n    小港靠高价粮撑过危机，有人卖掉了渔船。信使没有收下你的谢礼。\n    大副：“钱收到了。下次靠岸，我想请一天假。”\n    -> aftermath",
       "changes": [
         "money += 900",
@@ -172,8 +172,8 @@
       "id": "choose-choice-2",
       "title": "卸下染料，立刻运粮。",
       "kind": "outcome",
-      "line": 61,
-      "endLine": 70,
+      "line": 74,
+      "endLine": 83,
       "text": "* [卸下染料，立刻运粮。]\n    ~ money -= 200\n    ~ guild_relation -= 1\n    ~ port_relation += 1\n    ~ decision = \"违约运粮\"\n    你花了两百金币购买粮食，及时抵达小港。\n    回到暮潮港，商会的追索通知已经贴在泊位上。\n    大副：“人救下来了。接下来，我们一起想办法保住船。”\n    -> aftermath",
       "changes": [
         "money -= 200",
@@ -188,8 +188,8 @@
       "id": "choose-choice-3",
       "title": "向船员借两百金币，凑钱雇旧友的船。",
       "kind": "outcome",
-      "line": 71,
-      "endLine": 82,
+      "line": 84,
+      "endLine": 95,
       "text": "* [向船员借两百金币，凑钱雇旧友的船。]\n    ~ money += 200\n    ~ money -= 500\n    ~ port_relation += 1\n    ~ decision = \"借款雇船\"\n    ~ crew_debt = 200\n    船员把积蓄凑到桌上，你雇到了船，自己则继续运输染料。\n    ~ money += 900\n    粮船晚到两天，小港缓解了危机。染料尾款到账，但你还欠船员两百金币。\n    旧友：“下次你找到好货源，记得先来找我。”\n    -> aftermath",
       "changes": [
         "money += 200",
@@ -206,8 +206,8 @@
       "id": "aftermath",
       "title": "结算选择后果",
       "kind": "decision",
-      "line": 83,
-      "endLine": 94,
+      "line": 96,
+      "endLine": 107,
       "text": "=== aftermath ===\n本次选择：{decision}。\n现有金币：{money}。\n{guild_relation > 0:商会愿意继续合作。}\n{guild_relation < 0:商会正在追索船只。}\n{port_relation > 0:小港愿意帮助你。}\n{port_relation < 0:小港对你的承诺失去了信心。}\n{decision == \"借款雇船\":未偿债务：欠船员两百金币。}\n\n* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
       "changes": [],
       "conditions": [
@@ -223,8 +223,8 @@
       "id": "aftermath-choice-1",
       "title": "夜里，查看父亲留下的旧账册。",
       "kind": "choice",
-      "line": 92,
-      "endLine": 94,
+      "line": 105,
+      "endLine": 107,
       "text": "* [夜里，查看父亲留下的旧账册。]\n    -> reveal",
       "changes": [],
       "conditions": []
@@ -234,8 +234,8 @@
       "id": "reveal",
       "title": "旧账册 · 隐瞒浮现",
       "kind": "decision",
-      "line": 95,
-      "endLine": 102,
+      "line": 108,
+      "endLine": 115,
       "text": "=== reveal ===\n账册中夹着一封商会提前寄来的信，里面写明了收购运力的计划。\n落款旁，是账房熟悉的笔迹：“请勿告知艾琳。”\n艾琳：“你早就知道，小港会买不到粮？”\n门外的脚步声停住了。\n* [打开舱门，让账房进来。]\n    -> ch1_notice",
       "changes": [],
       "conditions": []
@@ -245,8 +245,8 @@
       "id": "reveal-choice-1",
       "title": "打开舱门，让账房进来。",
       "kind": "choice",
-      "line": 100,
-      "endLine": 102,
+      "line": 113,
+      "endLine": 115,
       "text": "* [打开舱门，让账房进来。]\n    -> ch1_notice",
       "changes": [],
       "conditions": []
@@ -256,8 +256,8 @@
       "id": "ch1_notice",
       "title": "第一章 · 追索令",
       "kind": "scene",
-      "line": 103,
-      "endLine": 116,
+      "line": 116,
+      "endLine": 129,
       "text": "=== ch1_notice ===\n《风与契约》——第一章：追索令\n暮潮港，次日清晨。\n账房：“我抄过那封信。你父亲欠商会的船款还没有结清，我怕你看见它，就再也不肯签约。”\n艾琳：“所以你替我选了。连小港的人也一起替他们选了。”\n账房把一张盖着红印的文书放在灯下。\n{decision == \"违约运粮\":文书要求日落前交出船契：擅换货物使原有船贷提前到期。}\n{decision != \"违约运粮\":文书要求日落前重新核验船契：染料货款虽已结清，旧船贷却被另行列入担保审查。}\n账房：“交六百金币作暂缓保证金，能换七天。钱会被冻结，七天后仍须解决旧债。否则，船就不能离港。”\n大副：“货款是货款，船贷是船贷。可为什么偏偏今天查？”\n艾琳看着文书上的日期。签发于三天前，早于她决定航向的那一夜。\n艾琳：“他们不是在等我犯错。他们是在等我回来。”\n-> ch1_investigate",
       "changes": [],
       "conditions": [
@@ -270,8 +270,8 @@
       "id": "ch1_investigate",
       "title": "码头调查",
       "kind": "decision",
-      "line": 117,
-      "endLine": 127,
+      "line": 130,
+      "endLine": 140,
       "text": "=== ch1_investigate ===\n码头的铁链还没有锁上。离日落，只剩一轮潮水。\n+ [核对账册与追索令的日期。]\n    -> ch1_ledger\n+ [去小港的粮商那里打听货源。]\n    -> ch1_supplier\n+ [先和船员谈谈欠款与去留。]\n    -> ch1_crew\n+ [召集大家，决定保船的办法。]\n    -> ch1_decide",
       "changes": [],
       "conditions": []
@@ -281,8 +281,8 @@
       "id": "ch1_investigate-choice-1",
       "title": "核对账册与追索令的日期。",
       "kind": "choice",
-      "line": 119,
-      "endLine": 120,
+      "line": 132,
+      "endLine": 133,
       "text": "+ [核对账册与追索令的日期。]\n    -> ch1_ledger",
       "changes": [],
       "conditions": []
@@ -292,8 +292,8 @@
       "id": "ch1_investigate-choice-2",
       "title": "去小港的粮商那里打听货源。",
       "kind": "choice",
-      "line": 121,
-      "endLine": 122,
+      "line": 134,
+      "endLine": 135,
       "text": "+ [去小港的粮商那里打听货源。]\n    -> ch1_supplier",
       "changes": [],
       "conditions": []
@@ -303,8 +303,8 @@
       "id": "ch1_investigate-choice-3",
       "title": "先和船员谈谈欠款与去留。",
       "kind": "choice",
-      "line": 123,
-      "endLine": 124,
+      "line": 136,
+      "endLine": 137,
       "text": "+ [先和船员谈谈欠款与去留。]\n    -> ch1_crew",
       "changes": [],
       "conditions": []
@@ -314,8 +314,8 @@
       "id": "ch1_investigate-choice-4",
       "title": "召集大家，决定保船的办法。",
       "kind": "choice",
-      "line": 125,
-      "endLine": 127,
+      "line": 138,
+      "endLine": 140,
       "text": "+ [召集大家，决定保船的办法。]\n    -> ch1_decide",
       "changes": [],
       "conditions": []
@@ -325,8 +325,8 @@
       "id": "ch1_ledger",
       "title": "还款记录",
       "kind": "scene",
-      "line": 128,
-      "endLine": 136,
+      "line": 141,
+      "endLine": 149,
       "text": "=== ch1_ledger ===\n~ evidence = true\n账册记着父亲最后一次还款，收款栏有商会的骑缝章；追索令却没有扣掉这一笔。\n艾琳：“这里少算了四百。不是小数。”\n账房：“原始收据在商会库房。只有这页抄账，他们会说是我写错。”\n艾琳：“那就让他们当着港务官的面说。”\n她将这页抄账封好。它足以要求复核，还不足以证明整笔债务已经清偿。\n-> ch1_investigate",
       "changes": [
         "evidence = true"
@@ -338,8 +338,8 @@
       "id": "ch1_supplier",
       "title": "灰礁港盐货订单",
       "kind": "scene",
-      "line": 137,
-      "endLine": 145,
+      "line": 150,
+      "endLine": 158,
       "text": "=== ch1_supplier ===\n粮商在空货架上摊开一张粗盐订单。北面的灰礁港缺盐，却不在商会独家货单之内。\n粮商：“运一趟，扣掉进货和港费，净赚三百。但盐场只收现款，要先压一百。”\n{port_relation > 0:粮商：“小港记得你送来的粮。我可以替你向港务所具保，换一次出港机会。”}\n{port_relation <= 0:粮商：“小港卖船买粮的那天，你的染料船驶过去了。现在叫我替你担保，我做不到。”}\n艾琳：“这张订单还有效吗？”\n粮商：“到今晚。过了潮水，买家会找别的船。”\n-> ch1_investigate",
       "changes": [],
       "conditions": [
@@ -352,8 +352,8 @@
       "id": "ch1_crew",
       "title": "船员与欠款",
       "kind": "scene",
-      "line": 146,
-      "endLine": 154,
+      "line": 159,
+      "endLine": 167,
       "text": "=== ch1_crew ===\n{crew_debt > 0:船员们的两百金币还在账上。大副把借据放到桌面，没有催她，也没有收回。}\n{crew_debt == 0:船员们把下一趟航程的口粮摆在桌上，等她说船还能不能开。}\n大副：“我们可以陪你冒险。但谁的钱会被押住，谁会被留在港里，先说清楚。”\n{crew_debt > 0:艾琳：“我记得欠款。它不会因为船遇到麻烦就消失。”}\n大副：“还有账房。有人想把他赶下船。”\n艾琳：“他要把知道的说完。信任能不能回来，是另一回事。”\n-> ch1_investigate",
       "changes": [],
       "conditions": [
@@ -367,8 +367,8 @@
       "id": "ch1_decide",
       "title": "决定保船办法",
       "kind": "decision",
-      "line": 155,
-      "endLine": 187,
+      "line": 168,
+      "endLine": 200,
       "text": "=== ch1_decide ===\n可用金币：{money}。欠船员：{crew_debt}。\n交保证金需要六百；小港具保运盐需要一百现款和小港信任；申请账目复核需要那页还款记录。\n{money < 600:目前付不起保证金。}\n{port_relation <= 0:小港目前不愿替你具保。}\n{not evidence:尚未核对还款记录，可以返回调查。}\n+ [再查一查。]\n    -> ch1_investigate\n* {money >= 600} [交六百保证金，换七天时间。]\n    ~ money -= 600\n    ~ chapter_one_route = \"保证金暂缓\"\n    六百金币被封入港务所的专用钱箱。收据写着“冻结”，不是“清偿”。\n    {crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}\n    大副：“七天后呢？”\n    艾琳：“去灰礁港。我们需要商会之外的买家，也需要那张原始收据。”\n    -> ch1_depart\n* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]\n    ~ money -= 100\n    ~ chapter_one_route = \"小港具保\"\n    粮商签下担保。若艾琳不回来，商会可以追偿他名下的仓库。\n    艾琳：“你知道自己押上的是什么吗？”\n    粮商：“知道。所以你要回来。别只寄一封道歉的信。”\n    一百金币付给盐场，货还在岸上；三百净收益，要等灰礁港交货后才能兑现。\n    -> ch1_depart\n* {evidence} [提交还款记录，请港务官复核。]\n    ~ guild_relation -= 1\n    ~ chapter_one_route = \"公开复核\"\n    港务官比对日期，准许一次往返航行，命商会在七日内提交原始收据。船契仍由港务所保管。\n    商会代表：“抄账可以伪造。你要为这项指控负责。”\n    艾琳：“我没有说债都还清了。我只要求，你们把收过的钱算进去。”\n    账房按下手印。他的证词也会被查验，再没有退回沉默的余地。\n    -> ch1_depart",
       "changes": [
         "money -= 600",
@@ -393,8 +393,8 @@
       "id": "ch1_decide-choice-1",
       "title": "再查一查。",
       "kind": "choice",
-      "line": 161,
-      "endLine": 162,
+      "line": 174,
+      "endLine": 175,
       "text": "+ [再查一查。]\n    -> ch1_investigate",
       "changes": [],
       "conditions": []
@@ -404,8 +404,8 @@
       "id": "ch1_decide-choice-2",
       "title": "交六百保证金，换七天时间。",
       "kind": "outcome",
-      "line": 163,
-      "endLine": 170,
+      "line": 176,
+      "endLine": 183,
       "text": "* {money >= 600} [交六百保证金，换七天时间。]\n    ~ money -= 600\n    ~ chapter_one_route = \"保证金暂缓\"\n    六百金币被封入港务所的专用钱箱。收据写着“冻结”，不是“清偿”。\n    {crew_debt > 0:船员的两百欠款仍未偿还。大副在借据背面又添了一行日期。}\n    大副：“七天后呢？”\n    艾琳：“去灰礁港。我们需要商会之外的买家，也需要那张原始收据。”\n    -> ch1_depart",
       "changes": [
         "money -= 600",
@@ -421,8 +421,8 @@
       "id": "ch1_decide-choice-3",
       "title": "接受小港具保，押一百金币运盐。",
       "kind": "outcome",
-      "line": 171,
-      "endLine": 178,
+      "line": 184,
+      "endLine": 191,
       "text": "* {port_relation > 0 && money >= 100} [接受小港具保，押一百金币运盐。]\n    ~ money -= 100\n    ~ chapter_one_route = \"小港具保\"\n    粮商签下担保。若艾琳不回来，商会可以追偿他名下的仓库。\n    艾琳：“你知道自己押上的是什么吗？”\n    粮商：“知道。所以你要回来。别只寄一封道歉的信。”\n    一百金币付给盐场，货还在岸上；三百净收益，要等灰礁港交货后才能兑现。\n    -> ch1_depart",
       "changes": [
         "money -= 100",
@@ -437,8 +437,8 @@
       "id": "ch1_decide-choice-4",
       "title": "提交还款记录，请港务官复核。",
       "kind": "outcome",
-      "line": 179,
-      "endLine": 187,
+      "line": 192,
+      "endLine": 200,
       "text": "* {evidence} [提交还款记录，请港务官复核。]\n    ~ guild_relation -= 1\n    ~ chapter_one_route = \"公开复核\"\n    港务官比对日期，准许一次往返航行，命商会在七日内提交原始收据。船契仍由港务所保管。\n    商会代表：“抄账可以伪造。你要为这项指控负责。”\n    艾琳：“我没有说债都还清了。我只要求，你们把收过的钱算进去。”\n    账房按下手印。他的证词也会被查验，再没有退回沉默的余地。\n    -> ch1_depart",
       "changes": [
         "guild_relation -= 1",
@@ -453,8 +453,8 @@
       "id": "ch1_depart",
       "title": "无旗快船",
       "kind": "scene",
-      "line": 188,
-      "endLine": 196,
+      "line": 201,
+      "endLine": 209,
       "text": "=== ch1_depart ===\n铁链被收回岸上。艾琳带着七日的期限走上甲板。\n大副：“有人看见账房昨晚去过商会。”\n账房：“我去取原始收据。他们说，收据已经送到灰礁港的分会了。”\n艾琳：“从现在起，你写的每笔账都交给大副核对。到了灰礁港，你跟我一起去取。”\n账房点头，却不敢看船尾。\n那里停着一艘没有升旗的快船。艾琳的船离开泊位时，它也松开了缆绳。\n-> ch1_close",
       "changes": [],
       "conditions": []
@@ -463,10 +463,10 @@
       "chapter": "ch1",
       "id": "ch1_close",
       "title": "第一章结算",
-      "kind": "scene",
-      "line": 197,
-      "endLine": 205,
-      "text": "=== ch1_close ===\n第一章结算：{chapter_one_route}。\n可用金币：{money}。欠船员：{crew_debt}。\n{chapter_one_route == \"保证金暂缓\":另有六百金币被冻结，尚未退回。}\n{chapter_one_route == \"小港具保\":一百金币已作盐货预付款；订单尚未交付，收益未结算。}\n下一站：灰礁港。期限：七日。\n——第一章结束：追索令——\n下一章预告：没有标价的航线。\n-> END",
+      "kind": "decision",
+      "line": 210,
+      "endLine": 220,
+      "text": "=== ch1_close ===\n第一章结算：{chapter_one_route}。\n可用金币：{money}。欠船员：{crew_debt}。\n{chapter_one_route == \"保证金暂缓\":另有六百金币被冻结，尚未退回。}\n{chapter_one_route == \"小港具保\":一百金币已作盐货预付款；订单尚未交付，收益未结算。}\n下一站：灰礁港。期限：七日。\n——第一章结束：追索令——\n* [驶向灰礁港。]\n    -> ch2_arrival",
       "changes": [],
       "conditions": [
         "{chapter_one_route == \"保证金暂缓\":另有六百金币被冻结，尚未退回。}",
@@ -475,397 +475,727 @@
     },
     {
       "chapter": "ch1",
-      "id": "END",
-      "title": "第一章结束",
-      "kind": "end",
-      "line": 205,
-      "endLine": 205,
-      "text": "现有试玩包含序章与第一章；第二章尚在规划。",
+      "id": "ch1_close-choice-1",
+      "title": "驶向灰礁港。",
+      "kind": "choice",
+      "line": 217,
+      "endLine": 220,
+      "text": "* [驶向灰礁港。]\n    -> ch2_arrival",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "ch2-plan-event",
       "chapter": "ch2",
-      "title": "第二章 · 没有标价的航线",
+      "id": "ch2_arrival",
+      "title": "第二章 · 灰礁港抵达",
       "kind": "scene",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "灰礁港订单遇到收货压价。竞争船长赛拉掌握替代买家，却要求共享航线和客户。无旗快船被确认是商会的运力调查船，而非直接袭击者。\n\n前因：根据第一章路线分别面对保证金占用、盐货履约或复核期限，不给未承运盐货的路线凭空发放订单收益。债务压力决定可承受账期。",
-      "changes": [],
-      "conditions": []
+      "line": 221,
+      "endLine": 239,
+      "text": "=== ch2_arrival ===\n《风与契约》——第二章：没有标价的航线\n出港第三日，灰礁港。\n{chapter_one_route == \"保证金暂缓\":\n    ~ bond = 600\n}\n大副：“马修。既然要把风险写进账里，也该把我的名字写进去。”\n账房：“我叫卢卡。我会把每张凭据交给他复核。”\n跟随他们的无旗快船先停了岸。船上下来的是商会测量员，正逐一记录独立船只的吃水和载货量。\n{chapter_one_route == \"小港具保\":盐货已经装在你船上。一百预付款是粮商借仓库担保的生意，不能空船回去。}\n{chapter_one_route != \"小港具保\":你没有承运小港的盐货。此行能做的是寻找下一趟订单，以及取得原始收据。}\n买家：“北岸又来了两船盐。原价我付不了，少一百，你们自己选。”\n马修：“潮水已经过去一半。卸货前改价，是知道我们等不起。”\n一个戴着旧皮手套的女人走来，把另一张码头通行证压在报价单上。\n赛拉：“西堤有买家。但我的船已经排了泊位。一起交，我带路；以后的客户资料，要双方都能看。”\n艾琳：“你要的不是这一趟分成，是下一趟我不能绕过你。”\n赛拉：“你也一样能要求我。这才叫合作。”\n-> ch2_market",
+      "changes": [
+        "bond = 600"
+      ],
+      "conditions": [
+        "{chapter_one_route == \"保证金暂缓\":",
+        "{chapter_one_route == \"小港具保\":盐货已经装在你船上。一百预付款是粮商借仓库担保的生意，不能空船回去。}",
+        "{chapter_one_route != \"小港具保\":你没有承运小港的盐货。此行能做的是寻找下一趟订单，以及取得原始收据。}"
+      ]
     },
     {
-      "id": "ch2-plan-decision",
       "chapter": "ch2",
-      "title": "玩家的艰难选择",
+      "id": "ch2_market",
+      "title": "没有标价的航线 · 选择交易",
       "kind": "decision",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "独占买家争取短期利润、与赛拉公开分润，或接受商会更高报价但交出货源信息。",
-      "changes": [],
-      "conditions": []
+      "line": 240,
+      "endLine": 278,
+      "text": "=== ch2_market ===\n商会分会也递来报价：可以守住原利润，但要登记货源、客户和下一季航线。\n马修：“小港的仓库不该押给一张我们私下改掉的单子。”\n* [独自接下压价订单，保留客户。]\n    ~ trade_route = \"独占客户\"\n    ~ trust -= 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 300\n    }\n    {chapter_one_route == \"小港具保\":实际结算净赚两百，预付的一百也已收回。你亲手寄出交付凭证，解除粮商的仓库担保。}\n    {chapter_one_route != \"小港具保\":你只签到下季的低价意向单，没有本趟盐货收益。}\n    赛拉收回通行证，没有替你阻拦买家的下一次压价。\n    艾琳：“至少这份名单还是我们的。”\n    马修：“那上面的价钱，也只有他们能开。”\n    -> ch2_receipt\n* [与赛拉共享资料和分润，一起去西堤。]\n    ~ trade_route = \"公开分润\"\n    ~ independent_buyer = true\n    ~ trust += 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 350\n    }\n    {chapter_one_route == \"小港具保\":原定三百净利润中分给赛拉五十，加上收回的一百预付，三百五十金币入账。粮商收到交付凭证，担保解除。}\n    {chapter_one_route != \"小港具保\":赛拉替你安排了下一季共同订单。本次没有盐货，货款不会提前入账。}\n    你们在两份客户簿上各签一笔，任何一方改价都须告知另一方。\n    赛拉：“你交出了半条路。也多了一条不会单方面消失的路。”\n    -> ch2_receipt\n* [接受商会报价，并把货源登记给分会。]\n    ~ trade_route = \"商会登记\"\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 400\n    }\n    {chapter_one_route == \"小港具保\":四百金币到账，其中一百是收回的预付款，三百是净利润；担保解除。}\n    {chapter_one_route != \"小港具保\":你拿到正式订单资格，没有领取并不存在的盐货款。}\n    粮商的回信很短：交付凭证收到了。至于下一季货源，他需要重新考虑。\n    -> ch2_receipt",
+      "changes": [
+        "trade_route = \"独占客户\"",
+        "trust -= 1",
+        "money += 300",
+        "trade_route = \"公开分润\"",
+        "independent_buyer = true",
+        "trust += 1",
+        "money += 350",
+        "trade_route = \"商会登记\"",
+        "guild_relation += 1",
+        "port_relation -= 1",
+        "money += 400"
+      ],
+      "conditions": [
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":实际结算净赚两百，预付的一百也已收回。你亲手寄出交付凭证，解除粮商的仓库担保。}",
+        "{chapter_one_route != \"小港具保\":你只签到下季的低价意向单，没有本趟盐货收益。}",
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":原定三百净利润中分给赛拉五十，加上收回的一百预付，三百五十金币入账。粮商收到交付凭证，担保解除。}",
+        "{chapter_one_route != \"小港具保\":赛拉替你安排了下一季共同订单。本次没有盐货，货款不会提前入账。}",
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":四百金币到账，其中一百是收回的预付款，三百是净利润；担保解除。}",
+        "{chapter_one_route != \"小港具保\":你拿到正式订单资格，没有领取并不存在的盐货款。}"
+      ]
     },
     {
-      "id": "ch2-plan-growth",
       "chapter": "ch2",
-      "title": "理解互惠",
+      "id": "ch2_market-choice-1",
+      "title": "独自接下压价订单，保留客户。",
       "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n人物关系：赛拉可以拒绝不对等合作；马修会追问船员欠款何时兑现。\n\n台词方向：“你要的不是这趟分成，是下一趟我不能绕过你。”",
+      "line": 243,
+      "endLine": 254,
+      "text": "* [独自接下压价订单，保留客户。]\n    ~ trade_route = \"独占客户\"\n    ~ trust -= 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 300\n    }\n    {chapter_one_route == \"小港具保\":实际结算净赚两百，预付的一百也已收回。你亲手寄出交付凭证，解除粮商的仓库担保。}\n    {chapter_one_route != \"小港具保\":你只签到下季的低价意向单，没有本趟盐货收益。}\n    赛拉收回通行证，没有替你阻拦买家的下一次压价。\n    艾琳：“至少这份名单还是我们的。”\n    马修：“那上面的价钱，也只有他们能开。”\n    -> ch2_receipt",
+      "changes": [
+        "trade_route = \"独占客户\"",
+        "trust -= 1",
+        "money += 300"
+      ],
+      "conditions": [
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":实际结算净赚两百，预付的一百也已收回。你亲手寄出交付凭证，解除粮商的仓库担保。}",
+        "{chapter_one_route != \"小港具保\":你只签到下季的低价意向单，没有本趟盐货收益。}"
+      ]
+    },
+    {
+      "chapter": "ch2",
+      "id": "ch2_market-choice-2",
+      "title": "与赛拉共享资料和分润，一起去西堤。",
+      "kind": "outcome",
+      "line": 255,
+      "endLine": 266,
+      "text": "* [与赛拉共享资料和分润，一起去西堤。]\n    ~ trade_route = \"公开分润\"\n    ~ independent_buyer = true\n    ~ trust += 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 350\n    }\n    {chapter_one_route == \"小港具保\":原定三百净利润中分给赛拉五十，加上收回的一百预付，三百五十金币入账。粮商收到交付凭证，担保解除。}\n    {chapter_one_route != \"小港具保\":赛拉替你安排了下一季共同订单。本次没有盐货，货款不会提前入账。}\n    你们在两份客户簿上各签一笔，任何一方改价都须告知另一方。\n    赛拉：“你交出了半条路。也多了一条不会单方面消失的路。”\n    -> ch2_receipt",
+      "changes": [
+        "trade_route = \"公开分润\"",
+        "independent_buyer = true",
+        "trust += 1",
+        "money += 350"
+      ],
+      "conditions": [
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":原定三百净利润中分给赛拉五十，加上收回的一百预付，三百五十金币入账。粮商收到交付凭证，担保解除。}",
+        "{chapter_one_route != \"小港具保\":赛拉替你安排了下一季共同订单。本次没有盐货，货款不会提前入账。}"
+      ]
+    },
+    {
+      "chapter": "ch2",
+      "id": "ch2_market-choice-3",
+      "title": "接受商会报价，并把货源登记给分会。",
+      "kind": "outcome",
+      "line": 267,
+      "endLine": 278,
+      "text": "* [接受商会报价，并把货源登记给分会。]\n    ~ trade_route = \"商会登记\"\n    ~ guild_relation += 1\n    ~ port_relation -= 1\n    {chapter_one_route == \"小港具保\":\n        ~ money += 400\n    }\n    {chapter_one_route == \"小港具保\":四百金币到账，其中一百是收回的预付款，三百是净利润；担保解除。}\n    {chapter_one_route != \"小港具保\":你拿到正式订单资格，没有领取并不存在的盐货款。}\n    粮商的回信很短：交付凭证收到了。至于下一季货源，他需要重新考虑。\n    -> ch2_receipt",
+      "changes": [
+        "trade_route = \"商会登记\"",
+        "guild_relation += 1",
+        "port_relation -= 1",
+        "money += 400"
+      ],
+      "conditions": [
+        "{chapter_one_route == \"小港具保\":",
+        "{chapter_one_route == \"小港具保\":四百金币到账，其中一百是收回的预付款，三百是净利润；担保解除。}",
+        "{chapter_one_route != \"小港具保\":你拿到正式订单资格，没有领取并不存在的盐货款。}"
+      ]
+    },
+    {
+      "chapter": "ch2",
+      "id": "ch2_receipt",
+      "title": "原始收据与父亲附件",
+      "kind": "decision",
+      "line": 279,
+      "endLine": 290,
+      "text": "=== ch2_receipt ===\n分会库房里，卢卡终于取出父亲的原始收据，四百金币的骑缝章没有缺角。\n夹在收据后面的，是独家承运附件：签字人，埃德蒙·维恩。\n卢卡：“他收过一笔优先运输补贴。我把补贴记成了普通货款。”\n艾琳：“所以他不只是被商会困住的人。”\n卢卡：“最后一年，他申请解除附件。申请没有获准。可在那之前，他确实赚过这笔钱。”\n马修把离港计时表翻到第六天。\n马修：“先回去。我们可以不喜欢这张纸，但不能让期限替我们决定船归谁。”\n艾琳第一次没有把父亲的账册抱回自己舱里。她把收据和附件分给马修、卢卡各抄一份。\n* [带着完整账目返航。]\n    -> ch3_return",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "ch2-plan-next",
       "chapter": "ch2",
-      "title": "本章后果与下一步",
-      "kind": "end",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "在灰礁港取得原始收据，并发现父亲曾签署的独家承运附件。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch2-plan-choice-0",
-      "chapter": "ch2",
-      "title": "独占买家争取短期利润",
+      "id": "ch2_receipt-choice-1",
+      "title": "带着完整账目返航。",
       "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：独占买家争取短期利润\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "line": 288,
+      "endLine": 290,
+      "text": "* [带着完整账目返航。]\n    -> ch3_return",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "ch2-plan-choice-1",
-      "chapter": "ch2",
-      "title": "与赛拉公开分润",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：与赛拉公开分润\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch2-plan-choice-2",
-      "chapter": "ch2",
-      "title": "接受商会更高报价但交出货源信息",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：接受商会更高报价但交出货源信息\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch3-plan-event",
       "chapter": "ch3",
-      "title": "第三章 · 旧账",
+      "id": "ch3_return",
+      "title": "第三章 · 核定旧债",
       "kind": "scene",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "收据证明部分欠款确已偿付，旧协议却揭示父亲曾从排他运输中获利。卢卡承认参与掩盖账目；真实债务与被操纵的追索必须分开核对。\n\n前因：复核结果只能按证据减少欠款，不直接清零全部债务；公开不等于免责，补偿不等于购买原谅。",
-      "changes": [],
-      "conditions": []
+      "line": 291,
+      "endLine": 303,
+      "text": "=== ch3_return ===\n《风与契约》——第三章：旧账\n第七日，暮潮港港务所。\n港务官比对骑缝章，将八百金币的船贷余额更正为四百。父亲的还款是真的，剩余的欠款也是真的。\n~ old_debt = 400\n{bond > 0:六百保证金仍被单独冻结，不与船贷混记；港务官同意审结时按清偿方式处理。}\n粮商来作证，指着附件中的优先条款。\n粮商：“你父亲的船优先，我们的粮晚了三天。那不是你亲手做的，但补贴买过你家的船板。”\n艾琳摸向帽檐，又把手放下。\n艾琳：“这笔钱，我们收过。你们的损失也是真的。”\n卢卡：“若附件公开，我会被追究虚记账目的责任。不是只有他一个人的签名。”\n-> ch3_account",
+      "changes": [
+        "old_debt = 400"
+      ],
+      "conditions": [
+        "{bond > 0:六百保证金仍被单独冻结，不与船贷混记；港务官同意审结时按清偿方式处理。}"
+      ]
     },
     {
-      "id": "ch3-plan-decision",
       "chapter": "ch3",
-      "title": "玩家的艰难选择",
+      "id": "ch3_account",
+      "title": "决定如何公开旧账",
       "kind": "decision",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "公开证据并接受独立核查、私下补偿换取保密，或掩盖不利协议继续争夺清白。对卢卡另作留任受监督、解雇配合作证或包庇的处理。",
-      "changes": [],
+      "line": 304,
+      "endLine": 329,
+      "text": "=== ch3_account ===\n港务官说明：四百船贷已核定，不论选择哪一种解释都不会再变成零。小港损失另案协商。\n* [公开全部附件，请独立核查；承认补贴与损失。]\n    ~ audit_public = true\n    ~ compensation = 100\n    ~ trust += 1\n    ~ port_relation += 1\n    ~ guild_relation -= 1\n    艾琳同意承担一百金币的首笔补偿，金额和支付日期写入公开账簿。\n    粮商：“我可以同意这笔安排。原谅不是收据上盖个章。”\n    港务官封存三份副本。商会不能再独自解释它们，你也不能。\n    -> ch3_luca\n* [私下承诺两百补偿，换取附件暂不外传。]\n    ~ compensation = 200\n    ~ trust -= 1\n    粮商同意谈钱，没有承诺替你否认附件。\n    马修：“我们付的是补偿，还是让别人不说话的价钱？”\n    艾琳没有回答。两百金币被记为待付责任，现钱没有因此增加。\n    -> ch3_luca\n* [只公开还款收据，将附件留在家族账箱。]\n    ~ trust -= 2\n    ~ port_relation -= 1\n    马修：“你让卢卡不许替你选，现在却替所有人选了能看哪一页。”\n    船贷得到更正，小港的争议没有解决。粮商拒绝再替维恩家担保。\n    -> ch3_luca",
+      "changes": [
+        "audit_public = true",
+        "compensation = 100",
+        "trust += 1",
+        "port_relation += 1",
+        "guild_relation -= 1",
+        "compensation = 200",
+        "trust -= 1",
+        "trust -= 2",
+        "port_relation -= 1"
+      ],
       "conditions": []
     },
     {
-      "id": "ch3-plan-growth",
       "chapter": "ch3",
-      "title": "放下完美父亲",
+      "id": "ch3_account-choice-1",
+      "title": "公开全部附件，请独立核查；承认补贴与损失。",
       "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n人物关系：卢卡的证词与自己的责任绑定；小港居民可以不接受她的解释。\n\n台词方向：“这笔钱，我们收过。你们的损失也是真的。”",
-      "changes": [],
+      "line": 306,
+      "endLine": 315,
+      "text": "* [公开全部附件，请独立核查；承认补贴与损失。]\n    ~ audit_public = true\n    ~ compensation = 100\n    ~ trust += 1\n    ~ port_relation += 1\n    ~ guild_relation -= 1\n    艾琳同意承担一百金币的首笔补偿，金额和支付日期写入公开账簿。\n    粮商：“我可以同意这笔安排。原谅不是收据上盖个章。”\n    港务官封存三份副本。商会不能再独自解释它们，你也不能。\n    -> ch3_luca",
+      "changes": [
+        "audit_public = true",
+        "compensation = 100",
+        "trust += 1",
+        "port_relation += 1",
+        "guild_relation -= 1"
+      ],
       "conditions": []
     },
     {
-      "id": "ch3-plan-next",
       "chapter": "ch3",
-      "title": "本章后果与下一步",
-      "kind": "end",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "商会用货源和泊位压力阻止更多港口提供证词，艾琳需要盟友。",
-      "changes": [],
+      "id": "ch3_account-choice-2",
+      "title": "私下承诺两百补偿，换取附件暂不外传。",
+      "kind": "outcome",
+      "line": 316,
+      "endLine": 322,
+      "text": "* [私下承诺两百补偿，换取附件暂不外传。]\n    ~ compensation = 200\n    ~ trust -= 1\n    粮商同意谈钱，没有承诺替你否认附件。\n    马修：“我们付的是补偿，还是让别人不说话的价钱？”\n    艾琳没有回答。两百金币被记为待付责任，现钱没有因此增加。\n    -> ch3_luca",
+      "changes": [
+        "compensation = 200",
+        "trust -= 1"
+      ],
       "conditions": []
     },
     {
-      "id": "ch3-plan-choice-0",
       "chapter": "ch3",
-      "title": "公开证据并接受独立核查",
+      "id": "ch3_account-choice-3",
+      "title": "只公开还款收据，将附件留在家族账箱。",
+      "kind": "outcome",
+      "line": 323,
+      "endLine": 329,
+      "text": "* [只公开还款收据，将附件留在家族账箱。]\n    ~ trust -= 2\n    ~ port_relation -= 1\n    马修：“你让卢卡不许替你选，现在却替所有人选了能看哪一页。”\n    船贷得到更正，小港的争议没有解决。粮商拒绝再替维恩家担保。\n    -> ch3_luca",
+      "changes": [
+        "trust -= 2",
+        "port_relation -= 1"
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_luca",
+      "title": "决定卢卡去留",
+      "kind": "decision",
+      "line": 330,
+      "endLine": 350,
+      "text": "=== ch3_luca ===\n卢卡把自己的账房钥匙放下。\n卢卡：“当年我怕丢掉职位，这次怕你把我赶下船。两次我都拿你的名字当借口。”\n* [留任，但所有支出由马修复核，证词交港务所。]\n    ~ luca_status = \"留任受监督\"\n    ~ trust += 1\n    艾琳：“你可以留下。钥匙分两把，证词不能撤。不是我说信你，就能让其他人放心。”\n    卢卡留下的是工作，不是免责书。\n    -> ch3_close\n* [终止雇佣，请他领取已结工资后独立作证。]\n    ~ luca_status = \"离船作证\"\n    卢卡把工资签收单叠好，接受港务所传询。他不再负责船账，也没有失去应得的报酬。\n    马修：“我们会另请账房。他做错的事，不该变成我们拖欠他的理由。”\n    -> ch3_close\n* [让他继续管账，隐瞒他的责任以免再起风波。]\n    ~ luca_status = \"被包庇\"\n    ~ trust -= 2\n    卢卡拿回钥匙，却发现水手们不再把家信托给他。\n    马修：“安静不代表这件事过去了。”\n    -> ch3_close",
+      "changes": [
+        "luca_status = \"留任受监督\"",
+        "trust += 1",
+        "luca_status = \"离船作证\"",
+        "luca_status = \"被包庇\"",
+        "trust -= 2"
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_luca-choice-1",
+      "title": "留任，但所有支出由马修复核，证词交港务所。",
+      "kind": "outcome",
+      "line": 333,
+      "endLine": 338,
+      "text": "* [留任，但所有支出由马修复核，证词交港务所。]\n    ~ luca_status = \"留任受监督\"\n    ~ trust += 1\n    艾琳：“你可以留下。钥匙分两把，证词不能撤。不是我说信你，就能让其他人放心。”\n    卢卡留下的是工作，不是免责书。\n    -> ch3_close",
+      "changes": [
+        "luca_status = \"留任受监督\"",
+        "trust += 1"
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_luca-choice-2",
+      "title": "终止雇佣，请他领取已结工资后独立作证。",
+      "kind": "outcome",
+      "line": 339,
+      "endLine": 343,
+      "text": "* [终止雇佣，请他领取已结工资后独立作证。]\n    ~ luca_status = \"离船作证\"\n    卢卡把工资签收单叠好，接受港务所传询。他不再负责船账，也没有失去应得的报酬。\n    马修：“我们会另请账房。他做错的事，不该变成我们拖欠他的理由。”\n    -> ch3_close",
+      "changes": [
+        "luca_status = \"离船作证\""
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_luca-choice-3",
+      "title": "让他继续管账，隐瞒他的责任以免再起风波。",
+      "kind": "outcome",
+      "line": 344,
+      "endLine": 350,
+      "text": "* [让他继续管账，隐瞒他的责任以免再起风波。]\n    ~ luca_status = \"被包庇\"\n    ~ trust -= 2\n    卢卡拿回钥匙，却发现水手们不再把家信托给他。\n    马修：“安静不代表这件事过去了。”\n    -> ch3_close",
+      "changes": [
+        "luca_status = \"被包庇\"",
+        "trust -= 2"
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_close",
+      "title": "责任与欠款结算",
+      "kind": "decision",
+      "line": 351,
+      "endLine": 360,
+      "text": "=== ch3_close ===\n港务官准许在担保审结期间执行短程订单，每趟利润须优先计入清偿。\n船贷余额：{old_debt}。小港待付补偿：{compensation}。欠船员：{crew_debt}。\n{bond > 0:另有冻结保证金：{bond}。}\n商会通知独立盐场：没有统一运价的船，下一季不再使用商会泊位。\n赛拉在旧船坞摊开四张海图。\n赛拉：“他们可以不把码头借给一艘船。可四个港口并不是只有一座码头。”\n* [去听听独立船长和港口的条件。]\n    -> ch4_council",
+      "changes": [],
+      "conditions": [
+        "{bond > 0:另有冻结保证金：{bond}。}"
+      ]
+    },
+    {
+      "chapter": "ch3",
+      "id": "ch3_close-choice-1",
+      "title": "去听听独立船长和港口的条件。",
       "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：公开证据并接受独立核查\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "line": 358,
+      "endLine": 360,
+      "text": "* [去听听独立船长和港口的条件。]\n    -> ch4_council",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "ch3-plan-choice-1",
-      "chapter": "ch3",
-      "title": "私下补偿换取保密",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：私下补偿换取保密\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch3-plan-choice-2",
-      "chapter": "ch3",
-      "title": "掩盖不利协议继续争夺清白",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：掩盖不利协议继续争夺清白\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch4-plan-event",
       "chapter": "ch4",
-      "title": "第四章 · 逆风同盟",
+      "id": "ch4_council",
+      "title": "第四章 · 旧船坞议事",
       "kind": "scene",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "独立船长与港口愿意合作，但要求明确分润、账目公开、退出和风险分担。船员要求重大航程不能仅由船长决定。\n\n前因：前三章的履约、借款与证据公开决定加入者和担保要求；伙伴不会因一句演说无条件归队。",
+      "line": 361,
+      "endLine": 370,
+      "text": "=== ch4_council ===\n《风与契约》——第四章：逆风同盟\n旧船坞里没有主席席位。盐场要准时收款，港口要粮期优先，船长们要保留退出权。\n{independent_buyer:赛拉带来西堤买家的签字单。第一次共同交货让你的建议有了可核实的凭据。}\n{not independent_buyer:赛拉不肯拿自己的客户作共同担保。你需要先以短程运输证明承诺，而非把她的名单当作筹码。}\n{port_relation < 0:小港只派来记录员，没有派具保人。失去的信任不能由今天的演说补齐。}\n马修：“船员也要投票。你可以提方案，但不能把十二个人写成自己的附属货物。”\n艾琳原本准备的第一句话是“听我安排”。她把那页纸翻过去。\n-> ch4_rules",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "{independent_buyer:赛拉带来西堤买家的签字单。第一次共同交货让你的建议有了可核实的凭据。}",
+        "{not independent_buyer:赛拉不肯拿自己的客户作共同担保。你需要先以短程运输证明承诺，而非把她的名单当作筹码。}",
+        "{port_relation < 0:小港只派来记录员，没有派具保人。失去的信任不能由今天的演说补齐。}"
+      ]
     },
     {
-      "id": "ch4-plan-decision",
       "chapter": "ch4",
-      "title": "玩家的艰难选择",
+      "id": "ch4_rules",
+      "title": "选择同盟规则",
       "kind": "decision",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "建立共同议事与分润规则、由艾琳集中调度换取效率，或以短期担保维持松散合作。",
-      "changes": [],
-      "conditions": []
+      "line": 371,
+      "endLine": 395,
+      "text": "=== ch4_rules ===\n议事拖过了午潮。集中调度能更快，公开分润会减少单船利润，松散合作则不能保证谁会来救援。\n* [采用共同议事、公开账目和退出条款。]\n    ~ shared = true\n    ~ alliance = \"共同议事\"\n    ~ trust += 2\n    每艘船保留一票，涉及他人货源和担保必须取得本人授权。\n    {independent_buyer:西堤买家签下联运试单。赛拉投赞成票，也保留否决改用独家货源的权利。}\n    {not independent_buyer:没有现成独立买家，同盟先从一趟小单试运，不许预支下一季利润。}\n    马修投票反对三日连续夜航。艾琳让全体修改了班次，没有把反对视作背叛。\n    -> ch4_trial\n* [由艾琳集中调度，重大失误由她承担。]\n    ~ alliance = \"集中调度\"\n    ~ trust -= 1\n    赛拉只同意按单合作，不同意将客户转到你的名下。\n    马修：“你可以承担赔款。不能替睡在甲板上的人承担没睡够。”\n    首趟航程依然出发，但两艘船没有加入长期协议。\n    -> ch4_trial\n* [只签短期互助与担保，不成立共同船队。]\n    ~ alliance = \"松散互助\"\n    每趟订单单独确认，任何人都能拒绝下一趟。\n    艾琳：“我不能许诺每次都有援手。但每张担保，都写到它真正结束的那天。”\n    船坞没有升起同盟旗，三位船长各留下一个联络港。\n    -> ch4_trial",
+      "changes": [
+        "shared = true",
+        "alliance = \"共同议事\"",
+        "trust += 2",
+        "alliance = \"集中调度\"",
+        "trust -= 1",
+        "alliance = \"松散互助\""
+      ],
+      "conditions": [
+        "{independent_buyer:西堤买家签下联运试单。赛拉投赞成票，也保留否决改用独家货源的权利。}",
+        "{not independent_buyer:没有现成独立买家，同盟先从一趟小单试运，不许预支下一季利润。}"
+      ]
     },
     {
-      "id": "ch4-plan-growth",
       "chapter": "ch4",
-      "title": "共享决定权",
+      "id": "ch4_rules-choice-1",
+      "title": "采用共同议事、公开账目和退出条款。",
       "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n人物关系：马修能公开反对她，赛拉保留客户与退出权，港口也能提出赔偿条件。\n\n台词方向：“这是我能争取到的条件。代价我说清楚，你们可以不同意。”",
-      "changes": [],
+      "line": 373,
+      "endLine": 381,
+      "text": "* [采用共同议事、公开账目和退出条款。]\n    ~ shared = true\n    ~ alliance = \"共同议事\"\n    ~ trust += 2\n    每艘船保留一票，涉及他人货源和担保必须取得本人授权。\n    {independent_buyer:西堤买家签下联运试单。赛拉投赞成票，也保留否决改用独家货源的权利。}\n    {not independent_buyer:没有现成独立买家，同盟先从一趟小单试运，不许预支下一季利润。}\n    马修投票反对三日连续夜航。艾琳让全体修改了班次，没有把反对视作背叛。\n    -> ch4_trial",
+      "changes": [
+        "shared = true",
+        "alliance = \"共同议事\"",
+        "trust += 2"
+      ],
+      "conditions": [
+        "{independent_buyer:西堤买家签下联运试单。赛拉投赞成票，也保留否决改用独家货源的权利。}",
+        "{not independent_buyer:没有现成独立买家，同盟先从一趟小单试运，不许预支下一季利润。}"
+      ]
+    },
+    {
+      "chapter": "ch4",
+      "id": "ch4_rules-choice-2",
+      "title": "由艾琳集中调度，重大失误由她承担。",
+      "kind": "outcome",
+      "line": 382,
+      "endLine": 388,
+      "text": "* [由艾琳集中调度，重大失误由她承担。]\n    ~ alliance = \"集中调度\"\n    ~ trust -= 1\n    赛拉只同意按单合作，不同意将客户转到你的名下。\n    马修：“你可以承担赔款。不能替睡在甲板上的人承担没睡够。”\n    首趟航程依然出发，但两艘船没有加入长期协议。\n    -> ch4_trial",
+      "changes": [
+        "alliance = \"集中调度\"",
+        "trust -= 1"
+      ],
       "conditions": []
     },
     {
-      "id": "ch4-plan-next",
       "chapter": "ch4",
-      "title": "本章后果与下一步",
-      "kind": "end",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "同盟让商会无法轻易收回航线，于是对方提出足够诱人的收编条件。",
-      "changes": [],
+      "id": "ch4_rules-choice-3",
+      "title": "只签短期互助与担保，不成立共同船队。",
+      "kind": "outcome",
+      "line": 389,
+      "endLine": 395,
+      "text": "* [只签短期互助与担保，不成立共同船队。]\n    ~ alliance = \"松散互助\"\n    每趟订单单独确认，任何人都能拒绝下一趟。\n    艾琳：“我不能许诺每次都有援手。但每张担保，都写到它真正结束的那天。”\n    船坞没有升起同盟旗，三位船长各留下一个联络港。\n    -> ch4_trial",
+      "changes": [
+        "alliance = \"松散互助\""
+      ],
       "conditions": []
     },
     {
-      "id": "ch4-plan-choice-0",
       "chapter": "ch4",
-      "title": "建立共同议事与分润规则",
+      "id": "ch4_trial",
+      "title": "短程试运与收益",
+      "kind": "decision",
+      "line": 396,
+      "endLine": 407,
+      "text": "=== ch4_trial ===\n一个月里，艾琳执行两趟短程运输。货款、船员当期薪酬、港费和口粮均当场核清。\n~ money += 250\n可支配净收益二百五十金币入账，没有借用仍被冻结的钱。\n{crew_debt > 0:马修把两百金币的旧借据重新放到灯下。这次不是催促，是提醒下一轮清偿别漏掉它。}\n{luca_status == \"留任受监督\":卢卡在复核账旁签自己的名字，不再替父亲补签。}\n{luca_status == \"离船作证\":新请的临时账房收到卢卡送来的分账说明。没有一句要求她替自己求情。}\n{luca_status == \"被包庇\":水手要求另留一份账。艾琳终于发现，保护一个人可能让所有人都更不安全。}\n维克的车停在船坞外。他没有带追索令，带了一份能解决眼前全部现金压力的契约。\n* [与商会代表谈最后一份契约。]\n    -> ch5_offer",
+      "changes": [
+        "money += 250"
+      ],
+      "conditions": [
+        "{crew_debt > 0:马修把两百金币的旧借据重新放到灯下。这次不是催促，是提醒下一轮清偿别漏掉它。}",
+        "{luca_status == \"留任受监督\":卢卡在复核账旁签自己的名字，不再替父亲补签。}",
+        "{luca_status == \"离船作证\":新请的临时账房收到卢卡送来的分账说明。没有一句要求她替自己求情。}",
+        "{luca_status == \"被包庇\":水手要求另留一份账。艾琳终于发现，保护一个人可能让所有人都更不安全。}"
+      ]
+    },
+    {
+      "chapter": "ch4",
+      "id": "ch4_trial-choice-1",
+      "title": "与商会代表谈最后一份契约。",
       "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：建立共同议事与分润规则\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "line": 405,
+      "endLine": 407,
+      "text": "* [与商会代表谈最后一份契约。]\n    -> ch5_offer",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "ch4-plan-choice-1",
-      "chapter": "ch4",
-      "title": "由艾琳集中调度换取效率",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：由艾琳集中调度换取效率\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch4-plan-choice-2",
-      "chapter": "ch4",
-      "title": "以短期担保维持松散合作",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：以短期担保维持松散合作\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
-    },
-    {
-      "id": "ch5-plan-event",
       "chapter": "ch5",
-      "title": "第五章 · 最后一份契约",
+      "id": "ch5_offer",
+      "title": "第五章 · 维克的条件",
       "kind": "scene",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "维克提出解决核实后的船债、保障薪酬和长期订单，让艾琳负责独立航线，交换条件是交出同盟货源协议并接受独家经营。\n\n前因：谈判空间来自此前的真实资源和同盟授权；没有盟友或独立买家时，不能凭对白无代价争取完美契约。",
+      "line": 408,
+      "endLine": 418,
+      "text": "=== ch5_offer ===\n《风与契约》——第五章：最后一份契约\n维克：“商会承担核定的四百船贷，保证下一季订单与薪酬。你来经营独立航线。”\n附件写得清楚：交出合作货源，三年独家运输。退出的伙伴可领取一百金币安置款，超出部分由艾琳承担。\n维克：“稳定不是假话。只是稳定需要统一的货源。”\n{shared:同盟章程要求：涉及货源的契约必须经每位货主授权。你的签字不能代替他们的票。}\n{not shared:你没有获得替其他船长出售货源的授权。最多能承诺自己的船和自有客户。}\n艾琳看见父亲当年想要的东西：按时发薪，不必再求担保，一艘永远有订单的船。\n马修：“我不会替你说哪种日子更高尚。先说清楚，你打算让谁为它付钱。”\n-> ch5_decide",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "{shared:同盟章程要求：涉及货源的契约必须经每位货主授权。你的签字不能代替他们的票。}",
+        "{not shared:你没有获得替其他船长出售货源的授权。最多能承诺自己的船和自有客户。}"
+      ]
     },
     {
-      "id": "ch5-plan-decision",
       "chapter": "ch5",
-      "title": "玩家的艰难选择",
+      "id": "ch5_decide",
+      "title": "最后一份契约",
       "kind": "decision",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "接受并与伙伴协商补偿和退出、拒绝并承担资金与封锁压力，或用既有买家和证据谈有限合作。隐瞒签约是一条需要承担后果的行为，不是隐藏最优解。",
-      "changes": [],
-      "conditions": []
+      "line": 419,
+      "endLine": 455,
+      "text": "=== ch5_decide ===\n* [公开契约，逐一征询退出与补偿，接受自有船的独家经营。]\n    ~ final_contract = \"公开商会契约\"\n    ~ compensation += 100\n    ~ old_debt = 0\n    ~ trust += 1\n    商会代偿四百船贷的凭证交港务所归档，不算成你的现金收入。自有船的改约安置费用另记一百待付责任，在最后清偿时支付；伙伴不加入独家体系，不视为你方船员领取安置款。\n    赛拉拒绝独家条款，带走自己保有的客户。你没有把她的名单写进附件。\n    维克缩减跨港经营范围，但仍兑现自有船的订单和工资保障。\n    马修：“我可以考虑留下。但小港的粮期，不能再被你口头答应两次。”\n    -> ch5_close\n* [拒绝独家经营，接受下一季收入不稳。]\n    ~ final_contract = \"拒绝独家\"\n    维克带走了薪酬保障书，也带走了免船贷的条件。四百债务仍要处理。\n    {shared:船员和伙伴逐一确认各自能承受的账期，有人退出，自己的票没有被抹掉。}\n    {not shared:马修要求先写下风险和退出安排。船长说“我负责”，不再足以让所有人登船。}\n    -> ch5_close\n* {independent_buyer && audit_public && shared} [凭独立订单与公开证据，谈一年非独家合作。]\n    ~ final_contract = \"有限合作\"\n    ~ guild_relation -= 1\n    赛拉授权使用共同订单的总量，不授权交出客户姓名。港口代表同时在场。\n    维克撤掉免债和最低收入保障，接受一年的普通运价协议；双方随时可另找买家。\n    艾琳：“你可以买我们的运输。不能买我们替别人作决定的权力。”\n    四百船贷不被免除，谈判赢来的不是没有代价的安稳。\n    -> ch5_close\n* [秘密签约，交出合作货源换取免债。]\n    ~ final_contract = \"秘密商会契约\"\n    ~ secret_contract = true\n    ~ old_debt = 0\n    ~ trust -= 4\n    商会实际支付四百清偿船贷；未经授权的伙伴货源交接随后被赛拉叫停。\n    ~ compensation += 200\n    你另外承担两百金币的泄露赔偿责任。维克撤销跨港代理，仅保留你自己的独家船约。\n    马修把一份离船申请放到桌上，没有请求批准。\n    艾琳保住了船，没能保住曾被她写进承诺的人。\n    -> ch5_close",
+      "changes": [
+        "final_contract = \"公开商会契约\"",
+        "compensation += 100",
+        "old_debt = 0",
+        "trust += 1",
+        "final_contract = \"拒绝独家\"",
+        "final_contract = \"有限合作\"",
+        "guild_relation -= 1",
+        "final_contract = \"秘密商会契约\"",
+        "secret_contract = true",
+        "old_debt = 0",
+        "trust -= 4",
+        "compensation += 200"
+      ],
+      "conditions": [
+        "{shared:船员和伙伴逐一确认各自能承受的账期，有人退出，自己的票没有被抹掉。}",
+        "{not shared:马修要求先写下风险和退出安排。船长说“我负责”，不再足以让所有人登船。}",
+        "* {independent_buyer && audit_public && shared} [凭独立订单与公开证据，谈一年非独家合作。]"
+      ]
     },
     {
-      "id": "ch5-plan-growth",
       "chapter": "ch5",
-      "title": "经受旧愿望的诱惑",
+      "id": "ch5_decide-choice-1",
+      "title": "公开契约，逐一征询退出与补偿，接受自有船的独家经营。",
       "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n人物关系：马修与赛拉按各自底线回应；维克的保障真实有效，但有排他代价。\n\n台词方向：“如果我要替他们签字，先得有他们给我的权力。”",
-      "changes": [],
+      "line": 420,
+      "endLine": 429,
+      "text": "* [公开契约，逐一征询退出与补偿，接受自有船的独家经营。]\n    ~ final_contract = \"公开商会契约\"\n    ~ compensation += 100\n    ~ old_debt = 0\n    ~ trust += 1\n    商会代偿四百船贷的凭证交港务所归档，不算成你的现金收入。自有船的改约安置费用另记一百待付责任，在最后清偿时支付；伙伴不加入独家体系，不视为你方船员领取安置款。\n    赛拉拒绝独家条款，带走自己保有的客户。你没有把她的名单写进附件。\n    维克缩减跨港经营范围，但仍兑现自有船的订单和工资保障。\n    马修：“我可以考虑留下。但小港的粮期，不能再被你口头答应两次。”\n    -> ch5_close",
+      "changes": [
+        "final_contract = \"公开商会契约\"",
+        "compensation += 100",
+        "old_debt = 0",
+        "trust += 1"
+      ],
       "conditions": []
     },
     {
-      "id": "ch5-plan-next",
       "chapter": "ch5",
-      "title": "本章后果与下一步",
-      "kind": "end",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "玩家确认可兑现的承诺，进入船队、港口与伙伴的结算。",
-      "changes": [],
-      "conditions": []
+      "id": "ch5_decide-choice-2",
+      "title": "拒绝独家经营，接受下一季收入不稳。",
+      "kind": "outcome",
+      "line": 430,
+      "endLine": 435,
+      "text": "* [拒绝独家经营，接受下一季收入不稳。]\n    ~ final_contract = \"拒绝独家\"\n    维克带走了薪酬保障书，也带走了免船贷的条件。四百债务仍要处理。\n    {shared:船员和伙伴逐一确认各自能承受的账期，有人退出，自己的票没有被抹掉。}\n    {not shared:马修要求先写下风险和退出安排。船长说“我负责”，不再足以让所有人登船。}\n    -> ch5_close",
+      "changes": [
+        "final_contract = \"拒绝独家\""
+      ],
+      "conditions": [
+        "{shared:船员和伙伴逐一确认各自能承受的账期，有人退出，自己的票没有被抹掉。}",
+        "{not shared:马修要求先写下风险和退出安排。船长说“我负责”，不再足以让所有人登船。}"
+      ]
     },
     {
-      "id": "ch5-plan-choice-0",
       "chapter": "ch5",
-      "title": "接受并与伙伴协商补偿和退出",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：接受并与伙伴协商补偿和退出\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
-      "conditions": []
+      "id": "ch5_decide-choice-3",
+      "title": "凭独立订单与公开证据，谈一年非独家合作。",
+      "kind": "outcome",
+      "line": 436,
+      "endLine": 443,
+      "text": "* {independent_buyer && audit_public && shared} [凭独立订单与公开证据，谈一年非独家合作。]\n    ~ final_contract = \"有限合作\"\n    ~ guild_relation -= 1\n    赛拉授权使用共同订单的总量，不授权交出客户姓名。港口代表同时在场。\n    维克撤掉免债和最低收入保障，接受一年的普通运价协议；双方随时可另找买家。\n    艾琳：“你可以买我们的运输。不能买我们替别人作决定的权力。”\n    四百船贷不被免除，谈判赢来的不是没有代价的安稳。\n    -> ch5_close",
+      "changes": [
+        "final_contract = \"有限合作\"",
+        "guild_relation -= 1"
+      ],
+      "conditions": [
+        "* {independent_buyer && audit_public && shared} [凭独立订单与公开证据，谈一年非独家合作。]"
+      ]
     },
     {
-      "id": "ch5-plan-choice-1",
       "chapter": "ch5",
-      "title": "拒绝并承担资金与封锁压力",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：拒绝并承担资金与封锁压力\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
+      "id": "ch5_decide-choice-4",
+      "title": "秘密签约，交出合作货源换取免债。",
+      "kind": "outcome",
+      "line": 444,
+      "endLine": 455,
+      "text": "* [秘密签约，交出合作货源换取免债。]\n    ~ final_contract = \"秘密商会契约\"\n    ~ secret_contract = true\n    ~ old_debt = 0\n    ~ trust -= 4\n    商会实际支付四百清偿船贷；未经授权的伙伴货源交接随后被赛拉叫停。\n    ~ compensation += 200\n    你另外承担两百金币的泄露赔偿责任。维克撤销跨港代理，仅保留你自己的独家船约。\n    马修把一份离船申请放到桌上，没有请求批准。\n    艾琳保住了船，没能保住曾被她写进承诺的人。\n    -> ch5_close",
+      "changes": [
+        "final_contract = \"秘密商会契约\"",
+        "secret_contract = true",
+        "old_debt = 0",
+        "trust -= 4",
+        "compensation += 200"
+      ],
       "conditions": []
     },
     {
-      "id": "ch5-plan-choice-2",
       "chapter": "ch5",
-      "title": "用既有买家和证据谈有限合作",
-      "kind": "choice",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "选择方向：用既有买家和证据谈有限合作\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
-      "changes": [],
+      "id": "ch5_close",
+      "title": "退还保证金与清偿顺序",
+      "kind": "decision",
+      "line": 456,
+      "endLine": 472,
+      "text": "=== ch5_close ===\n~ money += bond\n~ bond = 0\n港务所完成核验，原冻结保证金按原数退还；没有保证金的路线不会多领这笔钱。\n* [先偿还船员，再处理补偿与船贷。]\n    ~ temp paid = MIN(money, crew_debt)\n    ~ money -= paid\n    ~ crew_debt -= paid\n    艾琳按借据偿还船员 {paid} 金币，未清余额 {crew_debt}。\n    -> finale_settle\n* [先处理小港与伙伴补偿，再还其余债务。]\n    ~ temp paid_compensation = MIN(money, compensation)\n    ~ money -= paid_compensation\n    ~ compensation -= paid_compensation\n    收款人签收补偿 {paid_compensation} 金币，未清余额 {compensation}。这张收据没有要求他们原谅。\n    -> finale_settle",
+      "changes": [
+        "money += bond",
+        "bond = 0",
+        "temp paid = MIN(money, crew_debt)",
+        "money -= paid",
+        "crew_debt -= paid",
+        "temp paid_compensation = MIN(money, compensation)",
+        "money -= paid_compensation",
+        "compensation -= paid_compensation"
+      ],
       "conditions": []
     },
     {
-      "id": "finale-plan-event",
+      "chapter": "ch5",
+      "id": "ch5_close-choice-1",
+      "title": "先偿还船员，再处理补偿与船贷。",
+      "kind": "outcome",
+      "line": 460,
+      "endLine": 465,
+      "text": "* [先偿还船员，再处理补偿与船贷。]\n    ~ temp paid = MIN(money, crew_debt)\n    ~ money -= paid\n    ~ crew_debt -= paid\n    艾琳按借据偿还船员 {paid} 金币，未清余额 {crew_debt}。\n    -> finale_settle",
+      "changes": [
+        "temp paid = MIN(money, crew_debt)",
+        "money -= paid",
+        "crew_debt -= paid"
+      ],
+      "conditions": []
+    },
+    {
+      "chapter": "ch5",
+      "id": "ch5_close-choice-2",
+      "title": "先处理小港与伙伴补偿，再还其余债务。",
+      "kind": "outcome",
+      "line": 466,
+      "endLine": 472,
+      "text": "* [先处理小港与伙伴补偿，再还其余债务。]\n    ~ temp paid_compensation = MIN(money, compensation)\n    ~ money -= paid_compensation\n    ~ compensation -= paid_compensation\n    收款人签收补偿 {paid_compensation} 金币，未清余额 {compensation}。这张收据没有要求他们原谅。\n    -> finale_settle",
+      "changes": [
+        "temp paid_compensation = MIN(money, compensation)",
+        "money -= paid_compensation",
+        "compensation -= paid_compensation"
+      ],
+      "conditions": []
+    },
+    {
       "chapter": "finale",
-      "title": "终章 · 自己的旗帜",
+      "id": "finale_settle",
+      "title": "终章 · 清偿账目",
       "kind": "scene",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "最后一份契约落实或破裂，旧债、同盟协议与船员意愿共同决定谁同行、谁离开，艾琳终于不必借父亲的名义证明自己。\n\n前因：逐项结算可用资金、真实债务、被冻结保证金处理、待交订单与补偿责任；远航不等于逃债。",
-      "changes": [],
-      "conditions": []
+      "line": 473,
+      "endLine": 491,
+      "text": "=== finale_settle ===\n《风与契约》——终章：自己的旗帜\n剩余现钱依次用于船员欠款、补偿责任和核定船贷，每一笔只扣一次。\n~ temp pay_crew = MIN(money, crew_debt)\n~ money -= pay_crew\n~ crew_debt -= pay_crew\n~ temp pay_comp = MIN(money, compensation)\n~ money -= pay_comp\n~ compensation -= pay_comp\n~ temp pay_loan = MIN(money, old_debt)\n~ money -= pay_loan\n~ old_debt -= pay_loan\n可用金币：{money}。船员欠款：{crew_debt}。待付补偿：{compensation}。船贷余额：{old_debt}。冻结保证金：{bond}。\n{old_debt + crew_debt + compensation > 0:尚未清偿的责任被列入公开分期表。下一季利润优先还款；任何航程都必须保留返港联系和收款凭证。}\n{old_debt + crew_debt + compensation == 0:旧账清偿完毕。下一季的风险仍在，但不会再用旧欠款掩盖新承诺。}\n马修：“现在可以谈去哪了。”\n{secret_contract:他站在岸上说这句话。你已经没有资格把他的沉默算成同意。}\n-> finale_direction",
+      "changes": [
+        "temp pay_crew = MIN(money, crew_debt)",
+        "money -= pay_crew",
+        "crew_debt -= pay_crew",
+        "temp pay_comp = MIN(money, compensation)",
+        "money -= pay_comp",
+        "compensation -= pay_comp",
+        "temp pay_loan = MIN(money, old_debt)",
+        "money -= pay_loan",
+        "old_debt -= pay_loan"
+      ],
+      "conditions": [
+        "{old_debt + crew_debt + compensation > 0:尚未清偿的责任被列入公开分期表。下一季利润优先还款；任何航程都必须保留返港联系和收款凭证。}",
+        "{old_debt + crew_debt + compensation == 0:旧账清偿完毕。下一季的风险仍在，但不会再用旧欠款掩盖新承诺。}",
+        "{secret_contract:他站在岸上说这句话。你已经没有资格把他的沉默算成同意。}"
+      ]
     },
     {
-      "id": "finale-plan-decision",
       "chapter": "finale",
-      "title": "玩家的艰难选择",
+      "id": "finale_direction",
+      "title": "选择下一季航向",
       "kind": "decision",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "商会经营、独立同盟或开辟新航线。最终方向结合过去履约与授权行为，不能靠最后一个按钮抹去此前损失。",
+      "line": 492,
+      "endLine": 501,
+      "text": "=== finale_direction ===\n船尾的旧旗拆下，父亲的名字没有被刮掉，只收进航海箱。\n{final_contract == \"公开商会契约\" || secret_contract:独家船约仍在有效期内，不能在最后一刻用换旗解除它。}\n* {final_contract == \"公开商会契约\" || secret_contract} [按签下的船约经营商会航线。]\n    -> ending_guild\n* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [留下，经营独立港口间的联运。]\n    -> ending_alliance\n* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [公开返港和还款安排，选择新的海路。]\n    -> ending_voyage",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "{final_contract == \"公开商会契约\" || secret_contract:独家船约仍在有效期内，不能在最后一刻用换旗解除它。}",
+        "* {final_contract == \"公开商会契约\" || secret_contract} [按签下的船约经营商会航线。]",
+        "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [留下，经营独立港口间的联运。]",
+        "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [公开返港和还款安排，选择新的海路。]"
+      ]
     },
     {
-      "id": "finale-plan-growth",
       "chapter": "finale",
-      "title": "定义自己的船长身份",
-      "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "她可能学会协商，也可能成为更熟练的控制者；每个方向都能呈现成熟或代价沉重的版本。\n\n人物关系：伙伴有独立后日谈，离开不自动代表背叛，留下也不自动代表原谅。\n\n台词方向：“这一次，船上每个人都知道我们要去哪里。”",
+      "id": "finale_direction-choice-1",
+      "title": "按签下的船约经营商会航线。",
+      "kind": "choice",
+      "line": 495,
+      "endLine": 496,
+      "text": "* {final_contract == \"公开商会契约\" || secret_contract} [按签下的船约经营商会航线。]\n    -> ending_guild",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "* {final_contract == \"公开商会契约\" || secret_contract} [按签下的船约经营商会航线。]"
+      ]
     },
     {
-      "id": "finale-plan-next",
       "chapter": "finale",
-      "title": "本章后果与下一步",
-      "kind": "end",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "以航线与人物后日谈收束，保留未来航程的空间。",
+      "id": "finale_direction-choice-2",
+      "title": "留下，经营独立港口间的联运。",
+      "kind": "choice",
+      "line": 497,
+      "endLine": 498,
+      "text": "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [留下，经营独立港口间的联运。]\n    -> ending_alliance",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [留下，经营独立港口间的联运。]"
+      ]
     },
     {
-      "id": "finale-plan-ending-0",
       "chapter": "finale",
+      "id": "finale_direction-choice-3",
+      "title": "公开返港和还款安排，选择新的海路。",
+      "kind": "choice",
+      "line": 499,
+      "endLine": 501,
+      "text": "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [公开返港和还款安排，选择新的海路。]\n    -> ending_voyage",
+      "changes": [],
+      "conditions": [
+        "* {final_contract == \"拒绝独家\" || final_contract == \"有限合作\"} [公开返港和还款安排，选择新的海路。]"
+      ]
+    },
+    {
+      "chapter": "finale",
+      "id": "ending_guild",
       "title": "商会之旗",
-      "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "稳定订单、经营权与薪酬保障。\n\n代价：承担排他规则和伙伴退出的后果。\n\n公开协商并安排退出，可成为受监督的经营者；秘密签约则可能保住船却失去原有船员。",
+      "kind": "scene",
+      "line": 502,
+      "endLine": 512,
+      "text": "=== ending_guild ===\n结局 · 商会之旗\n新的货单按时送来，工资有了保障。维克要求的统一运价也一并生效。\n{not secret_contract:赛拉的船驶向西堤，她接受了退出安排，没有把离开说成决裂。马修留下试航一季，要求每次涉及小港的承诺都写进排期。}\n{secret_contract:马修带着愿意离开的船员下了船。商会雇来的新水手按合同工作，并不知道旧船坞的夜谈。赛拉通过港务所继续追索泄露赔偿，而非回头替你担保。}\n{luca_status == \"留任受监督\":卢卡继续在双签账簿上工作。受监督的职位没有变成重新获得的私人信任。}\n艾琳在第一张新契约上写下自己的全名：艾琳·维恩。\n{secret_contract:她终于不必躲在父亲身后，也再不能把自己的失信推给他。}\n{not secret_contract:她没有选择最自由的路。但这一次，留下的人读过自己要签的那一页。}\n-> story_end",
       "changes": [],
-      "conditions": []
+      "conditions": [
+        "{not secret_contract:赛拉的船驶向西堤，她接受了退出安排，没有把离开说成决裂。马修留下试航一季，要求每次涉及小港的承诺都写进排期。}",
+        "{secret_contract:马修带着愿意离开的船员下了船。商会雇来的新水手按合同工作，并不知道旧船坞的夜谈。赛拉通过港务所继续追索泄露赔偿，而非回头替你担保。}",
+        "{luca_status == \"留任受监督\":卢卡继续在双签账簿上工作。受监督的职位没有变成重新获得的私人信任。}",
+        "{secret_contract:她终于不必躲在父亲身后，也再不能把自己的失信推给他。}",
+        "{not secret_contract:她没有选择最自由的路。但这一次，留下的人读过自己要签的那一页。}"
+      ]
     },
     {
-      "id": "finale-plan-ending-1",
       "chapter": "finale",
+      "id": "ending_alliance",
       "title": "同盟之旗",
-      "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "独立货源与共同维护的航路。\n\n代价：共享利润和权力，承受协调成本与经营波动。\n\n履约与授权充分时形成共同议事；依靠个人担保勉强维系时，同盟可能分裂。",
+      "kind": "scene",
+      "line": 513,
+      "endLine": 524,
+      "text": "=== ending_alliance ===\n结局 · 同盟之旗\n{shared:同盟旗挂在船坞，不属于任何一艘船。艾琳有一票，也只有一票。}\n{not shared:船坞挂起联运标记，尚不是共同船队。赛拉逐单确认合作，拒绝把松散协议说成永不散伙的同盟。}\n{independent_buyer:西堤的共同订单支撑第一季运输。分给伙伴的利润不再被写成艾琳的损失。}\n{not independent_buyer:没有现成的独立买家，你们从小单找起。船员轮流休航，不能把收入不稳变成无限加班。}\n{trust >= 2:马修在议事时依然反对艾琳。不同的是，反对之后他不必担心失去职位。}\n{trust < 2:马修只签一季。他要求下一次续约前查账，赛拉支持了这项要求。}\n{old_debt + compensation + crew_debt > 0:分期清偿表留在公示板上，利润必须先经过那里，才轮得到分红。}\n艾琳：“这不是我借来的船队。是我们决定一起走的一段路。”\n-> story_end",
+      "changes": [],
+      "conditions": [
+        "{shared:同盟旗挂在船坞，不属于任何一艘船。艾琳有一票，也只有一票。}",
+        "{not shared:船坞挂起联运标记，尚不是共同船队。赛拉逐单确认合作，拒绝把松散协议说成永不散伙的同盟。}",
+        "{independent_buyer:西堤的共同订单支撑第一季运输。分给伙伴的利润不再被写成艾琳的损失。}",
+        "{not independent_buyer:没有现成的独立买家，你们从小单找起。船员轮流休航，不能把收入不稳变成无限加班。}",
+        "{trust >= 2:马修在议事时依然反对艾琳。不同的是，反对之后他不必担心失去职位。}",
+        "{trust < 2:马修只签一季。他要求下一次续约前查账，赛拉支持了这项要求。}",
+        "{old_debt + compensation + crew_debt > 0:分期清偿表留在公示板上，利润必须先经过那里，才轮得到分红。}"
+      ]
+    },
+    {
+      "chapter": "finale",
+      "id": "ending_voyage",
+      "title": "远航之旗",
+      "kind": "scene",
+      "line": 525,
+      "endLine": 535,
+      "text": "=== ending_voyage ===\n结局 · 远航之旗\n艾琳公布航程、返港日期和分期收款方式，逐人结清已到期工资。愿意留下的人重新签约，不愿远行的人留在岸上。\n{shared && trust >= 2:马修选择同行一季。赛拉留下一个新港联络人，但没有承诺替未知航路兜底。}\n{not shared || trust < 2:马修留在暮潮港。艾琳聘请新的领航员，第一次认真读完了对方提出的拒航条件。}\n{luca_status == \"离船作证\":卢卡寄来一份已经完成的证词副本。艾琳将它归档，没有把回信当作召回命令。}\n{old_debt + compensation + crew_debt > 0:首笔新航利润将按分期表汇回。新海路不能把收款人的地址从账上抹去。}\n艾琳看着父亲旧账册的空白页，没有续写他的落款。\n艾琳：“这一次，船上每个人都知道我们要去哪里。”\n-> story_end",
+      "changes": [],
+      "conditions": [
+        "{shared && trust >= 2:马修选择同行一季。赛拉留下一个新港联络人，但没有承诺替未知航路兜底。}",
+        "{not shared || trust < 2:马修留在暮潮港。艾琳聘请新的领航员，第一次认真读完了对方提出的拒航条件。}",
+        "{luca_status == \"离船作证\":卢卡寄来一份已经完成的证词副本。艾琳将它归档，没有把回信当作召回命令。}",
+        "{old_debt + compensation + crew_debt > 0:首笔新航利润将按分期表汇回。新海路不能把收款人的地址从账上抹去。}"
+      ]
+    },
+    {
+      "chapter": "finale",
+      "id": "story_end",
+      "title": "第一部后日谈",
+      "kind": "scene",
+      "line": 536,
+      "endLine": 541,
+      "text": "=== story_end ===\n——《风与契约》第一部完——\n你选择了：{final_contract}。合作方式：{alliance}。灰礁港交易：{trade_route}。\n卢卡的去向：{luca_status}。可用金币：{money}。\n未清船贷 {old_debt}；船员欠款 {crew_debt}；补偿 {compensation}。所有余额延续到下一季，而非随结局消失。\n-> END",
       "changes": [],
       "conditions": []
     },
     {
-      "id": "finale-plan-ending-2",
       "chapter": "finale",
-      "title": "远航之旗",
-      "kind": "outcome",
-      "planned": true,
-      "sourceLabel": "剧情规划 · 人物与章节设定草案",
-      "text": "不再被当前港口争夺定义，探索新的生意。\n\n代价：处理旧债、订单和伙伴退出后，资源可能十分有限。\n\n结清或公开协商责任后，愿意同行者各有理由；逃避清偿的远航则背负追索与失信。",
+      "id": "END",
+      "title": "第一部结束",
+      "kind": "end",
+      "line": 541,
+      "endLine": 541,
+      "text": "七篇章试玩结束，未清责任延续至下一季。",
       "changes": [],
       "conditions": []
     }
@@ -1142,410 +1472,358 @@
       "label": ""
     },
     {
-      "id": "ch1_close--END",
+      "id": "ch1_close--ch1_close-choice-1",
       "source": "ch1_close",
-      "target": "END",
+      "target": "ch1_close-choice-1",
       "label": ""
     },
     {
-      "id": "ch2-plan-event--ch2-plan-decision",
-      "source": "ch2-plan-event",
-      "target": "ch2-plan-decision",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch1_close-choice-1--ch2_arrival",
+      "source": "ch1_close-choice-1",
+      "target": "ch2_arrival",
+      "label": ""
     },
     {
-      "id": "ch2-plan-growth--ch2-plan-next",
-      "source": "ch2-plan-growth",
-      "target": "ch2-plan-next",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_arrival--ch2_market",
+      "source": "ch2_arrival",
+      "target": "ch2_market",
+      "label": ""
     },
     {
-      "id": "ch2-plan-decision--ch2-plan-choice-0",
-      "source": "ch2-plan-decision",
-      "target": "ch2-plan-choice-0",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market--ch2_market-choice-1",
+      "source": "ch2_market",
+      "target": "ch2_market-choice-1",
+      "label": ""
     },
     {
-      "id": "ch2-plan-choice-0--ch2-plan-growth",
-      "source": "ch2-plan-choice-0",
-      "target": "ch2-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market-choice-1--ch2_receipt",
+      "source": "ch2_market-choice-1",
+      "target": "ch2_receipt",
+      "label": ""
     },
     {
-      "id": "ch2-plan-decision--ch2-plan-choice-1",
-      "source": "ch2-plan-decision",
-      "target": "ch2-plan-choice-1",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market--ch2_market-choice-2",
+      "source": "ch2_market",
+      "target": "ch2_market-choice-2",
+      "label": ""
     },
     {
-      "id": "ch2-plan-choice-1--ch2-plan-growth",
-      "source": "ch2-plan-choice-1",
-      "target": "ch2-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market-choice-2--ch2_receipt",
+      "source": "ch2_market-choice-2",
+      "target": "ch2_receipt",
+      "label": ""
     },
     {
-      "id": "ch2-plan-decision--ch2-plan-choice-2",
-      "source": "ch2-plan-decision",
-      "target": "ch2-plan-choice-2",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market--ch2_market-choice-3",
+      "source": "ch2_market",
+      "target": "ch2_market-choice-3",
+      "label": ""
     },
     {
-      "id": "ch2-plan-choice-2--ch2-plan-growth",
-      "source": "ch2-plan-choice-2",
-      "target": "ch2-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_market-choice-3--ch2_receipt",
+      "source": "ch2_market-choice-3",
+      "target": "ch2_receipt",
+      "label": ""
     },
     {
-      "id": "ch3-plan-event--ch3-plan-decision",
-      "source": "ch3-plan-event",
-      "target": "ch3-plan-decision",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_receipt--ch2_receipt-choice-1",
+      "source": "ch2_receipt",
+      "target": "ch2_receipt-choice-1",
+      "label": ""
     },
     {
-      "id": "ch3-plan-growth--ch3-plan-next",
-      "source": "ch3-plan-growth",
-      "target": "ch3-plan-next",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch2_receipt-choice-1--ch3_return",
+      "source": "ch2_receipt-choice-1",
+      "target": "ch3_return",
+      "label": ""
     },
     {
-      "id": "ch3-plan-decision--ch3-plan-choice-0",
-      "source": "ch3-plan-decision",
-      "target": "ch3-plan-choice-0",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_return--ch3_account",
+      "source": "ch3_return",
+      "target": "ch3_account",
+      "label": ""
     },
     {
-      "id": "ch3-plan-choice-0--ch3-plan-growth",
-      "source": "ch3-plan-choice-0",
-      "target": "ch3-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account--ch3_account-choice-1",
+      "source": "ch3_account",
+      "target": "ch3_account-choice-1",
+      "label": ""
     },
     {
-      "id": "ch3-plan-decision--ch3-plan-choice-1",
-      "source": "ch3-plan-decision",
-      "target": "ch3-plan-choice-1",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account-choice-1--ch3_luca",
+      "source": "ch3_account-choice-1",
+      "target": "ch3_luca",
+      "label": ""
     },
     {
-      "id": "ch3-plan-choice-1--ch3-plan-growth",
-      "source": "ch3-plan-choice-1",
-      "target": "ch3-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account--ch3_account-choice-2",
+      "source": "ch3_account",
+      "target": "ch3_account-choice-2",
+      "label": ""
     },
     {
-      "id": "ch3-plan-decision--ch3-plan-choice-2",
-      "source": "ch3-plan-decision",
-      "target": "ch3-plan-choice-2",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account-choice-2--ch3_luca",
+      "source": "ch3_account-choice-2",
+      "target": "ch3_luca",
+      "label": ""
     },
     {
-      "id": "ch3-plan-choice-2--ch3-plan-growth",
-      "source": "ch3-plan-choice-2",
-      "target": "ch3-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account--ch3_account-choice-3",
+      "source": "ch3_account",
+      "target": "ch3_account-choice-3",
+      "label": ""
     },
     {
-      "id": "ch4-plan-event--ch4-plan-decision",
-      "source": "ch4-plan-event",
-      "target": "ch4-plan-decision",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_account-choice-3--ch3_luca",
+      "source": "ch3_account-choice-3",
+      "target": "ch3_luca",
+      "label": ""
     },
     {
-      "id": "ch4-plan-growth--ch4-plan-next",
-      "source": "ch4-plan-growth",
-      "target": "ch4-plan-next",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca--ch3_luca-choice-1",
+      "source": "ch3_luca",
+      "target": "ch3_luca-choice-1",
+      "label": ""
     },
     {
-      "id": "ch4-plan-decision--ch4-plan-choice-0",
-      "source": "ch4-plan-decision",
-      "target": "ch4-plan-choice-0",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca-choice-1--ch3_close",
+      "source": "ch3_luca-choice-1",
+      "target": "ch3_close",
+      "label": ""
     },
     {
-      "id": "ch4-plan-choice-0--ch4-plan-growth",
-      "source": "ch4-plan-choice-0",
-      "target": "ch4-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca--ch3_luca-choice-2",
+      "source": "ch3_luca",
+      "target": "ch3_luca-choice-2",
+      "label": ""
     },
     {
-      "id": "ch4-plan-decision--ch4-plan-choice-1",
-      "source": "ch4-plan-decision",
-      "target": "ch4-plan-choice-1",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca-choice-2--ch3_close",
+      "source": "ch3_luca-choice-2",
+      "target": "ch3_close",
+      "label": ""
     },
     {
-      "id": "ch4-plan-choice-1--ch4-plan-growth",
-      "source": "ch4-plan-choice-1",
-      "target": "ch4-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca--ch3_luca-choice-3",
+      "source": "ch3_luca",
+      "target": "ch3_luca-choice-3",
+      "label": ""
     },
     {
-      "id": "ch4-plan-decision--ch4-plan-choice-2",
-      "source": "ch4-plan-decision",
-      "target": "ch4-plan-choice-2",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_luca-choice-3--ch3_close",
+      "source": "ch3_luca-choice-3",
+      "target": "ch3_close",
+      "label": ""
     },
     {
-      "id": "ch4-plan-choice-2--ch4-plan-growth",
-      "source": "ch4-plan-choice-2",
-      "target": "ch4-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_close--ch3_close-choice-1",
+      "source": "ch3_close",
+      "target": "ch3_close-choice-1",
+      "label": ""
     },
     {
-      "id": "ch5-plan-event--ch5-plan-decision",
-      "source": "ch5-plan-event",
-      "target": "ch5-plan-decision",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch3_close-choice-1--ch4_council",
+      "source": "ch3_close-choice-1",
+      "target": "ch4_council",
+      "label": ""
     },
     {
-      "id": "ch5-plan-growth--ch5-plan-next",
-      "source": "ch5-plan-growth",
-      "target": "ch5-plan-next",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_council--ch4_rules",
+      "source": "ch4_council",
+      "target": "ch4_rules",
+      "label": ""
     },
     {
-      "id": "ch5-plan-decision--ch5-plan-choice-0",
-      "source": "ch5-plan-decision",
-      "target": "ch5-plan-choice-0",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules--ch4_rules-choice-1",
+      "source": "ch4_rules",
+      "target": "ch4_rules-choice-1",
+      "label": ""
     },
     {
-      "id": "ch5-plan-choice-0--ch5-plan-growth",
-      "source": "ch5-plan-choice-0",
-      "target": "ch5-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules-choice-1--ch4_trial",
+      "source": "ch4_rules-choice-1",
+      "target": "ch4_trial",
+      "label": ""
     },
     {
-      "id": "ch5-plan-decision--ch5-plan-choice-1",
-      "source": "ch5-plan-decision",
-      "target": "ch5-plan-choice-1",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules--ch4_rules-choice-2",
+      "source": "ch4_rules",
+      "target": "ch4_rules-choice-2",
+      "label": ""
     },
     {
-      "id": "ch5-plan-choice-1--ch5-plan-growth",
-      "source": "ch5-plan-choice-1",
-      "target": "ch5-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules-choice-2--ch4_trial",
+      "source": "ch4_rules-choice-2",
+      "target": "ch4_trial",
+      "label": ""
     },
     {
-      "id": "ch5-plan-decision--ch5-plan-choice-2",
-      "source": "ch5-plan-decision",
-      "target": "ch5-plan-choice-2",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules--ch4_rules-choice-3",
+      "source": "ch4_rules",
+      "target": "ch4_rules-choice-3",
+      "label": ""
     },
     {
-      "id": "ch5-plan-choice-2--ch5-plan-growth",
-      "source": "ch5-plan-choice-2",
-      "target": "ch5-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_rules-choice-3--ch4_trial",
+      "source": "ch4_rules-choice-3",
+      "target": "ch4_trial",
+      "label": ""
     },
     {
-      "id": "finale-plan-event--finale-plan-decision",
-      "source": "finale-plan-event",
-      "target": "finale-plan-decision",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_trial--ch4_trial-choice-1",
+      "source": "ch4_trial",
+      "target": "ch4_trial-choice-1",
+      "label": ""
     },
     {
-      "id": "finale-plan-decision--finale-plan-ending-0",
-      "source": "finale-plan-decision",
-      "target": "finale-plan-ending-0",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch4_trial-choice-1--ch5_offer",
+      "source": "ch4_trial-choice-1",
+      "target": "ch5_offer",
+      "label": ""
     },
     {
-      "id": "finale-plan-ending-0--finale-plan-growth",
-      "source": "finale-plan-ending-0",
-      "target": "finale-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_offer--ch5_decide",
+      "source": "ch5_offer",
+      "target": "ch5_decide",
+      "label": ""
     },
     {
-      "id": "finale-plan-decision--finale-plan-ending-1",
-      "source": "finale-plan-decision",
-      "target": "finale-plan-ending-1",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_decide--ch5_decide-choice-1",
+      "source": "ch5_decide",
+      "target": "ch5_decide-choice-1",
+      "label": ""
     },
     {
-      "id": "finale-plan-ending-1--finale-plan-growth",
-      "source": "finale-plan-ending-1",
-      "target": "finale-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_decide-choice-1--ch5_close",
+      "source": "ch5_decide-choice-1",
+      "target": "ch5_close",
+      "label": ""
     },
     {
-      "id": "finale-plan-decision--finale-plan-ending-2",
-      "source": "finale-plan-decision",
-      "target": "finale-plan-ending-2",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_decide--ch5_decide-choice-2",
+      "source": "ch5_decide",
+      "target": "ch5_decide-choice-2",
+      "label": ""
     },
     {
-      "id": "finale-plan-ending-2--finale-plan-growth",
-      "source": "finale-plan-ending-2",
-      "target": "finale-plan-growth",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_decide-choice-2--ch5_close",
+      "source": "ch5_decide-choice-2",
+      "target": "ch5_close",
+      "label": ""
     },
     {
-      "id": "finale-plan-growth--finale-plan-next",
-      "source": "finale-plan-growth",
-      "target": "finale-plan-next",
-      "reference": true,
-      "label": "规划关系",
-      "style": {
-        "strokeDasharray": "6 4"
-      }
+      "id": "ch5_decide--ch5_decide-choice-3",
+      "source": "ch5_decide",
+      "target": "ch5_decide-choice-3",
+      "label": ""
+    },
+    {
+      "id": "ch5_decide-choice-3--ch5_close",
+      "source": "ch5_decide-choice-3",
+      "target": "ch5_close",
+      "label": ""
+    },
+    {
+      "id": "ch5_decide--ch5_decide-choice-4",
+      "source": "ch5_decide",
+      "target": "ch5_decide-choice-4",
+      "label": ""
+    },
+    {
+      "id": "ch5_decide-choice-4--ch5_close",
+      "source": "ch5_decide-choice-4",
+      "target": "ch5_close",
+      "label": ""
+    },
+    {
+      "id": "ch5_close--ch5_close-choice-1",
+      "source": "ch5_close",
+      "target": "ch5_close-choice-1",
+      "label": ""
+    },
+    {
+      "id": "ch5_close-choice-1--finale_settle",
+      "source": "ch5_close-choice-1",
+      "target": "finale_settle",
+      "label": ""
+    },
+    {
+      "id": "ch5_close--ch5_close-choice-2",
+      "source": "ch5_close",
+      "target": "ch5_close-choice-2",
+      "label": ""
+    },
+    {
+      "id": "ch5_close-choice-2--finale_settle",
+      "source": "ch5_close-choice-2",
+      "target": "finale_settle",
+      "label": ""
+    },
+    {
+      "id": "finale_settle--finale_direction",
+      "source": "finale_settle",
+      "target": "finale_direction",
+      "label": ""
+    },
+    {
+      "id": "finale_direction--finale_direction-choice-1",
+      "source": "finale_direction",
+      "target": "finale_direction-choice-1",
+      "label": ""
+    },
+    {
+      "id": "finale_direction-choice-1--ending_guild",
+      "source": "finale_direction-choice-1",
+      "target": "ending_guild",
+      "label": ""
+    },
+    {
+      "id": "finale_direction--finale_direction-choice-2",
+      "source": "finale_direction",
+      "target": "finale_direction-choice-2",
+      "label": ""
+    },
+    {
+      "id": "finale_direction-choice-2--ending_alliance",
+      "source": "finale_direction-choice-2",
+      "target": "ending_alliance",
+      "label": ""
+    },
+    {
+      "id": "finale_direction--finale_direction-choice-3",
+      "source": "finale_direction",
+      "target": "finale_direction-choice-3",
+      "label": ""
+    },
+    {
+      "id": "finale_direction-choice-3--ending_voyage",
+      "source": "finale_direction-choice-3",
+      "target": "ending_voyage",
+      "label": ""
+    },
+    {
+      "id": "ending_guild--story_end",
+      "source": "ending_guild",
+      "target": "story_end",
+      "label": ""
+    },
+    {
+      "id": "ending_alliance--story_end",
+      "source": "ending_alliance",
+      "target": "story_end",
+      "label": ""
+    },
+    {
+      "id": "ending_voyage--story_end",
+      "source": "ending_voyage",
+      "target": "story_end",
+      "label": ""
+    },
+    {
+      "id": "story_end--END",
+      "source": "story_end",
+      "target": "END",
+      "label": ""
     }
   ],
   "routes": [
@@ -1618,8 +1896,7 @@
         "ch1_decide",
         "ch1_decide-choice-2",
         "ch1_depart",
-        "ch1_close",
-        "END"
+        "ch1_close"
       ]
     },
     {
@@ -1637,8 +1914,7 @@
         "ch1_decide",
         "ch1_decide-choice-3",
         "ch1_depart",
-        "ch1_close",
-        "END"
+        "ch1_close"
       ]
     },
     {
@@ -1656,8 +1932,7 @@
         "ch1_decide",
         "ch1_decide-choice-4",
         "ch1_depart",
-        "ch1_close",
-        "END"
+        "ch1_close"
       ]
     }
   ],
@@ -1674,28 +1949,28 @@
     },
     {
       "id": "ch2",
-      "title": "第二章 · 没有标价的航线 · 规划",
-      "planned": true
+      "title": "第二章 · 没有标价的航线",
+      "planned": false
     },
     {
       "id": "ch3",
-      "title": "第三章 · 旧账 · 规划",
-      "planned": true
+      "title": "第三章 · 旧账",
+      "planned": false
     },
     {
       "id": "ch4",
-      "title": "第四章 · 逆风同盟 · 规划",
-      "planned": true
+      "title": "第四章 · 逆风同盟",
+      "planned": false
     },
     {
       "id": "ch5",
-      "title": "第五章 · 最后一份契约 · 规划",
-      "planned": true
+      "title": "第五章 · 最后一份契约",
+      "planned": false
     },
     {
       "id": "finale",
-      "title": "终章 · 自己的旗帜 · 规划",
-      "planned": true
+      "title": "终章 · 自己的旗帜",
+      "planned": false
     }
   ]
 }
