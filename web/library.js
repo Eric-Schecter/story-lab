@@ -8,5 +8,4 @@ export function mountLibrary(){
   const subtitle=document.createElement('div');subtitle.className='subtitle';subtitle.textContent=story.subtitle;
   const heading=document.createElement('h2');heading.textContent=story.title;title.append(subtitle,heading);book.append(title);card.append(book);list.append(card);
  }
- document.getElementById('count').textContent=window.STORIES.length;
 }
