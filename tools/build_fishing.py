@@ -97,8 +97,10 @@ characters = [
     dict(id='FogWhale', title='雾鲸｜海中的秘密', text='碎片记载：雾是它梦中的呼吸，强光会惊扰它，柔光能够引路。原作未确认老林所说死亡与睡梦的关系。'),
 ]
 model = dict(title='雾海传说', chapters=chapters, nodes=nodes, edges=edges, characters=characters, milestones=milestones, fish_species=len(fish), source_commit='333e97f6ee6605843e7b0d9f73eaac3e825cff5d')
+from fishing_side_stories import merge_side_stories
+merge_side_stories(model, BASE)
 write_json(BASE / 'design/story-model.json', model)
-write_json(SRC / 'manifest.json', dict(project='/Users/eric/Documents/repos/ai/fishing', commit=model['source_commit'], files={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(SRC.iterdir()) if p.name != 'manifest.json'}))
+write_json(SRC / 'manifest.json', dict(project='/Users/eric/Documents/repos/ai/fishing', commit=model['source_commit'], files={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(SRC.iterdir()) if p.name not in ['manifest.json', 'side_stories.json', 'commissions-v2.gd']}))
 
 ink = ['// 从 fishing 原文整理。所有“模拟完成”只用于剧情审阅，不执行钓鱼与建设。',
        'VAR fragments = 0', 'VAR codex_complete = false', 'VAR ahai_done = false', 'VAR market_done = false',

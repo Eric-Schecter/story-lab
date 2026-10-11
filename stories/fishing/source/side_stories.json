@@ -1,0 +1,39 @@
+{
+  "quests": [
+    {
+      "id": "ahai_old_route", "title": "阿海的旧航线", "npc": "老船工阿海", "chapter": 2,
+      "requires_tutorial": true, "requires_building": "lighthouse_1",
+      "lock_text": "建成灯塔后，阿海才愿意拿出旧海图。",
+      "request": "这条旧航线，我已经三年没走了。那年没能等到的人，我总觉得还欠他一句话。阿舟，替我看看那里的水流吧——坐标 X -100 · Y -300 附近，停船观察三秒，再回来找我。",
+      "quest_type": "visit", "position": [-100, -300], "radius": 140, "observe_seconds": 3,
+      "visit_text": "旧航线水流已记录，返港与阿海聊聊。", "reward_text": "按处理方式获得金币或鱼饵",
+      "choices": [
+        {"id": "reopen", "text": "把航线重新画进海图", "reward_coins": 100, "reward_bait": 0, "reward_text": "100 金币", "lines": ["阿海：原来那里的水流早就稳下来了……困住我的，是三年前的自己。", "阿海把旧航线重新描了一遍。这次，他在海图上写下了阿舟的名字。"]},
+        {"id": "remember", "text": "留作纪念，不急着重开", "reward_coins": 0, "reward_bait": 8, "reward_text": "8 鱼饵", "lines": ["阿海：也好。有些路，知道它还在那里，就够了。", "阿海把一包鱼饵放进你的手里：下次出海，替我看看那里的日落。"]}
+      ]
+    },
+    {
+      "id": "market_late_supper", "title": "老板娘的留灯晚饭", "npc": "鱼市老板娘", "chapter": 3,
+      "requires_tutorial": true, "requires_building": "market_1",
+      "lock_text": "建成鱼市后，老板娘会准备一桌晚饭。",
+      "request": "市场是热闹了，可总有几条船回来得晚。我想留一盏灯，等他们吃口热的。你选一道菜吧：白天浅滩的黄花鱼做汤，或夜晚岛礁的带鱼清蒸。这顿饭不赶时间。",
+      "quest_type": "choice", "reward_text": "120 金币，3 鱼饵",
+      "choices": [
+        {"id": "soup", "text": "送 2 条黄花鱼，煮一锅热汤", "fish_id": "yellow_croaker", "count": 2, "reward_coins": 120, "reward_bait": 3, "reward_text": "120 金币，3 鱼饵", "lines": ["老板娘：汤够多，晚归的人都能分上一碗。", "阿舟帮忙把碗摆好。今晚，码头的人第一次坐下来，说起钓鱼以外的事。"]},
+        {"id": "steam", "text": "送 2 条带鱼，留一道夜里的鲜味", "fish_id": "hairtail", "count": 2, "reward_coins": 120, "reward_bait": 3, "reward_text": "120 金币，3 鱼饵", "lines": ["老板娘：这么新鲜，你也刚从夜里回来吧？坐下，一起吃。", "最后一条船靠岸时，饭菜还热着。阿舟发现，这个港口已经有人在等他。"]}
+      ]
+    },
+    {
+      "id": "lin_old_lampshade", "title": "老林的旧灯罩", "npc": "守塔人老林", "chapter": 4,
+      "requires_tutorial": true, "requires_deep": true, "requires_building": "",
+      "lock_text": "修好探照灯后，老林才会谈起旧灯罩。",
+      "request": "以前的灯罩，内壁有一圈细纹。你去西侧岛礁看看反光，兴许能看出为什么：X -1490 · Y -1200 附近，夜晚停船观察三秒。别急着给答案，回来和我说说你看见了什么。",
+      "quest_type": "visit", "position": [-1490, -1200], "radius": 100, "observe_seconds": 3, "period": "night",
+      "visit_text": "柔和反光已记录，返港听听老林的想法。", "reward_text": "150 金币，柔光线索（不替代隐藏结局条件）",
+      "choices": [
+        {"id": "ask", "text": "问老林：灯一定要那么亮吗？", "reward_coins": 150, "reward_bait": 0, "reward_text": "150 金币", "lines": ["老林：不一定。照亮航道，和照进海底，是两回事。", "老林在纸上画下一圈细纹：如果你想找第三条路，去读打捞队的图纸，再听听海里的声音。", "柔光线索：集齐当前五份漂流瓶碎片并补全鱼类图鉴，才能在终局尝试另一种光。"]},
+        {"id": "keep", "text": "记下反光，把决定留到最后", "reward_coins": 150, "reward_bait": 0, "reward_text": "150 金币", "lines": ["老林：你愿意先看清楚，再做决定，这就很好。", "阿舟把反光的形状画进航海笔记。灯的归处，还可以再想一想。", "柔光线索：当前五份漂流瓶碎片与完整鱼类图鉴，可能帮助你理解旧灯罩。"]}
+      ]
+    }
+  ]
+}

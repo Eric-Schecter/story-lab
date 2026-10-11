@@ -1,0 +1,9 @@
+{
+  "project": "/Users/eric/Documents/repos/ai/fishing",
+  "commit": "bcb2c8028e0614404eb339950753140cff9e016e",
+  "files": {
+    "side_stories.json": "c817e9c34ef13446aee0cc5a850dfbc4f4ba54d0753976ede75d1af76fe8d07a",
+    "commissions-v2.gd": "9805e8836cdbebaa2a1ba409453be9412170823f230abc5db6effe061ac9c61f"
+  },
+  "note": "新增支线的游戏原文快照；原主线快照仍保持333e97f版本，未改写原作矛盾。"
+}

@@ -32,14 +32,15 @@
     }
   ],
   "title": "雾海传说",
-  "subtitle": "六章 · 故事流程",
+  "subtitle": "六章 · 五条可选支线",
   "storyId": "fishing",
   "initial": "opening",
   "source": "stories/fishing/design/story-model.json",
   "source_commit": "333e97f6ee6605843e7b0d9f73eaac3e825cff5d",
+  "side_stories_commit": "bcb2c8028e0614404eb339950753140cff9e016e",
   "textHeading": "原文与任务整理",
   "routeNote": "高亮主线通往该结局的路径；虚线为支线解锁或资料关联，不代表必经顺序。",
-  "legend": "实线：主线推进 · 虚线：支线解锁或资料关联",
+  "legend": "实线：主线或支线内部推进 · 虚线：可选解锁 / 资料关联。新增三条人物故事已在游戏实装；Ink/articy 试玩仍为原版快照。",
   "nodes": [
     {
       "chapter": "prologue",
@@ -444,7 +445,7 @@
       "text": "听说深海有金枪鱼？给我弄 1 条来镇场子，价钱好说！\n奖励：300 金币，5 鱼饵\n解锁：需要先建造鱼市，老板娘才会来码头。\n支线按阿海→老板娘顺序提供，不阻断主线。",
       "changes": [],
       "conditions": [
-        "阿海委托已完成，且鱼市已建成；提交 1 条金枪鱼。"
+        "鱼市已建成即可独立提交 1 条金枪鱼；不再要求先完成阿海委托。"
       ],
       "sourceLabel": "支线与审阅资料"
     },
@@ -457,6 +458,186 @@
       "changes": [],
       "conditions": [],
       "sourceLabel": "支线与审阅资料"
+    },
+    {
+      "chapter": "ch2",
+      "id": "ahai_old_route",
+      "title": "支线｜阿海的旧航线",
+      "kind": "sidequest",
+      "text": "这条旧航线，我已经三年没走了。那年没能等到的人，我总觉得还欠他一句话。阿舟，替我看看那里的水流吧——坐标 X -100 · Y -300 附近，停船观察三秒，再回来找我。",
+      "changes": [],
+      "conditions": [
+        "建成灯塔后，阿海才愿意拿出旧海图。 接取后独立进行，不卡主线。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#ahai_old_route · bcb2c80"
+    },
+    {
+      "chapter": "ch2",
+      "id": "ahai_old_route_observe",
+      "title": "调查｜阿海的旧航线",
+      "kind": "scene",
+      "text": "旧航线水流已记录，返港与阿海聊聊。\n钓鱼和港口菜单中不累计观察。调查只记录结果，不发奖励。",
+      "changes": [],
+      "conditions": [
+        "接取后抵达 X -100 · Y -300，范围 140；停船连续观察 3 秒；离开区域重新计时。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#ahai_old_route · bcb2c80"
+    },
+    {
+      "chapter": "ch2",
+      "id": "ahai_old_route_choice",
+      "title": "选择｜阿海的旧航线",
+      "kind": "decision",
+      "text": "返港打开委托板后选择一种处理方式。各选项互斥；完成后不能重复提交。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "已实装 · data/side_stories.json#ahai_old_route · bcb2c80"
+    },
+    {
+      "chapter": "ch2",
+      "id": "ahai_old_route_reopen",
+      "title": "把航线重新画进海图",
+      "kind": "outcome",
+      "text": "阿海：原来那里的水流早就稳下来了……困住我的，是三年前的自己。\n阿海把旧航线重新描了一遍。这次，他在海图上写下了阿舟的名字。",
+      "changes": [
+        "奖励：100 金币",
+        "记录互斥选择：ahai_old_route = reopen"
+      ],
+      "conditions": [
+        "关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#ahai_old_route · bcb2c80"
+    },
+    {
+      "chapter": "ch2",
+      "id": "ahai_old_route_remember",
+      "title": "留作纪念，不急着重开",
+      "kind": "outcome",
+      "text": "阿海：也好。有些路，知道它还在那里，就够了。\n阿海把一包鱼饵放进你的手里：下次出海，替我看看那里的日落。",
+      "changes": [
+        "奖励：8 鱼饵",
+        "记录互斥选择：ahai_old_route = remember"
+      ],
+      "conditions": [
+        "关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#ahai_old_route · bcb2c80"
+    },
+    {
+      "chapter": "ch3",
+      "id": "market_late_supper",
+      "title": "支线｜老板娘的留灯晚饭",
+      "kind": "sidequest",
+      "text": "市场是热闹了，可总有几条船回来得晚。我想留一盏灯，等他们吃口热的。你选一道菜吧：白天浅滩的黄花鱼做汤，或夜晚岛礁的带鱼清蒸。这顿饭不赶时间。",
+      "changes": [],
+      "conditions": [
+        "建成鱼市后，老板娘会准备一桌晚饭。 接取后独立进行，不卡主线。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#market_late_supper · bcb2c80"
+    },
+    {
+      "chapter": "ch3",
+      "id": "market_late_supper_choice",
+      "title": "选择｜老板娘的留灯晚饭",
+      "kind": "decision",
+      "text": "返港打开委托板后选择一种处理方式。各选项互斥；完成后不能重复提交。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "已实装 · data/side_stories.json#market_late_supper · bcb2c80"
+    },
+    {
+      "chapter": "ch3",
+      "id": "market_late_supper_soup",
+      "title": "送 2 条黄花鱼，煮一锅热汤",
+      "kind": "outcome",
+      "text": "老板娘：汤够多，晚归的人都能分上一碗。\n阿舟帮忙把碗摆好。今晚，码头的人第一次坐下来，说起钓鱼以外的事。",
+      "changes": [
+        "奖励：120 金币，3 鱼饵",
+        "记录互斥选择：market_late_supper = soup"
+      ],
+      "conditions": [
+        "提交 2 条 yellow_croaker；只扣所选菜品。关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#market_late_supper · bcb2c80"
+    },
+    {
+      "chapter": "ch3",
+      "id": "market_late_supper_steam",
+      "title": "送 2 条带鱼，留一道夜里的鲜味",
+      "kind": "outcome",
+      "text": "老板娘：这么新鲜，你也刚从夜里回来吧？坐下，一起吃。\n最后一条船靠岸时，饭菜还热着。阿舟发现，这个港口已经有人在等他。",
+      "changes": [
+        "奖励：120 金币，3 鱼饵",
+        "记录互斥选择：market_late_supper = steam"
+      ],
+      "conditions": [
+        "提交 2 条 hairtail；只扣所选菜品。关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#market_late_supper · bcb2c80"
+    },
+    {
+      "chapter": "ch4",
+      "id": "lin_old_lampshade",
+      "title": "支线｜老林的旧灯罩",
+      "kind": "sidequest",
+      "text": "以前的灯罩，内壁有一圈细纹。你去西侧岛礁看看反光，兴许能看出为什么：X -1490 · Y -1200 附近，夜晚停船观察三秒。别急着给答案，回来和我说说你看见了什么。",
+      "changes": [],
+      "conditions": [
+        "修好探照灯后，老林才会谈起旧灯罩。 接取后独立进行，不卡主线。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#lin_old_lampshade · bcb2c80"
+    },
+    {
+      "chapter": "ch4",
+      "id": "lin_old_lampshade_observe",
+      "title": "调查｜老林的旧灯罩",
+      "kind": "scene",
+      "text": "柔和反光已记录，返港听听老林的想法。\n钓鱼和港口菜单中不累计观察。调查只记录结果，不发奖励。",
+      "changes": [],
+      "conditions": [
+        "接取后抵达 X -1490 · Y -1200，范围 100；停船连续观察 3 秒；离开区域重新计时。 必须夜晚。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#lin_old_lampshade · bcb2c80"
+    },
+    {
+      "chapter": "ch4",
+      "id": "lin_old_lampshade_choice",
+      "title": "选择｜老林的旧灯罩",
+      "kind": "decision",
+      "text": "返港打开委托板后选择一种处理方式。各选项互斥；完成后不能重复提交。",
+      "changes": [],
+      "conditions": [],
+      "sourceLabel": "已实装 · data/side_stories.json#lin_old_lampshade · bcb2c80"
+    },
+    {
+      "chapter": "ch4",
+      "id": "lin_old_lampshade_ask",
+      "title": "问老林：灯一定要那么亮吗？",
+      "kind": "outcome",
+      "text": "老林：不一定。照亮航道，和照进海底，是两回事。\n老林在纸上画下一圈细纹：如果你想找第三条路，去读打捞队的图纸，再听听海里的声音。\n柔光线索：集齐当前五份漂流瓶碎片并补全鱼类图鉴，才能在终局尝试另一种光。",
+      "changes": [
+        "奖励：150 金币",
+        "记录互斥选择：lin_old_lampshade = ask"
+      ],
+      "conditions": [
+        "关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#lin_old_lampshade · bcb2c80"
+    },
+    {
+      "chapter": "ch4",
+      "id": "lin_old_lampshade_keep",
+      "title": "记下反光，把决定留到最后",
+      "kind": "outcome",
+      "text": "老林：你愿意先看清楚，再做决定，这就很好。\n阿舟把反光的形状画进航海笔记。灯的归处，还可以再想一想。\n柔光线索：当前五份漂流瓶碎片与完整鱼类图鉴，可能帮助你理解旧灯罩。",
+      "changes": [
+        "奖励：150 金币",
+        "记录互斥选择：lin_old_lampshade = keep"
+      ],
+      "conditions": [
+        "关闭全部港口菜单后播放后续对白。"
+      ],
+      "sourceLabel": "已实装 · data/side_stories.json#lin_old_lampshade · bcb2c80"
     }
   ],
   "edges": [
@@ -624,72 +805,152 @@
     },
     {
       "id": "e27",
-      "source": "tutorial_upgrade",
-      "target": "sardines_for_ahai",
-      "label": "支线解锁参考",
-      "reference": true
+      "source": "ahai_old_route",
+      "target": "ahai_old_route_observe",
+      "label": "接取并调查"
     },
     {
       "id": "e28",
-      "source": "sardines_for_ahai",
-      "target": "tuna_for_market",
-      "label": "另需鱼市建成",
-      "reference": true
+      "source": "ahai_old_route_observe",
+      "target": "ahai_old_route_choice",
+      "label": "返港交谈"
     },
     {
       "id": "e29",
-      "source": "m_market",
-      "target": "tuna_for_market",
-      "label": "另需阿海委托完成",
-      "reference": true
+      "source": "ahai_old_route_choice",
+      "target": "ahai_old_route_reopen",
+      "label": "把航线重新画进海图"
     },
     {
       "id": "e30",
+      "source": "ahai_old_route_choice",
+      "target": "ahai_old_route_remember",
+      "label": "留作纪念，不急着重开"
+    },
+    {
+      "id": "e31",
+      "source": "market_late_supper",
+      "target": "market_late_supper_choice",
+      "label": "备齐任一种菜品后返港"
+    },
+    {
+      "id": "e32",
+      "source": "market_late_supper_choice",
+      "target": "market_late_supper_soup",
+      "label": "送 2 条黄花鱼，煮一锅热汤"
+    },
+    {
+      "id": "e33",
+      "source": "market_late_supper_choice",
+      "target": "market_late_supper_steam",
+      "label": "送 2 条带鱼，留一道夜里的鲜味"
+    },
+    {
+      "id": "e34",
+      "source": "lin_old_lampshade",
+      "target": "lin_old_lampshade_observe",
+      "label": "接取并调查"
+    },
+    {
+      "id": "e35",
+      "source": "lin_old_lampshade_observe",
+      "target": "lin_old_lampshade_choice",
+      "label": "返港交谈"
+    },
+    {
+      "id": "e36",
+      "source": "lin_old_lampshade_choice",
+      "target": "lin_old_lampshade_ask",
+      "label": "问老林：灯一定要那么亮吗？"
+    },
+    {
+      "id": "e37",
+      "source": "lin_old_lampshade_choice",
+      "target": "lin_old_lampshade_keep",
+      "label": "记下反光，把决定留到最后"
+    },
+    {
+      "id": "e38",
+      "source": "t_gear_return",
+      "target": "sardines_for_ahai",
+      "label": "完成全部教程后解锁",
+      "reference": true
+    },
+    {
+      "id": "e39",
+      "source": "m_market",
+      "target": "tuna_for_market",
+      "label": "鱼市建成后独立解锁",
+      "reference": true
+    },
+    {
+      "id": "e40",
       "source": "m_searchlight",
       "target": "confession",
       "label": "相关对白资料",
       "reference": true
     },
     {
-      "id": "e31",
+      "id": "e41",
       "source": "confession",
       "target": "review",
       "label": "原作矛盾审阅",
       "reference": true
     },
     {
-      "id": "e32",
+      "id": "e42",
       "source": "m_sea_clue",
       "target": "log_1",
       "label": "可选线索·顺序自由",
       "reference": true
     },
     {
-      "id": "e33",
+      "id": "e43",
       "source": "m_sea_clue",
       "target": "log_2",
       "label": "可选线索·顺序自由",
       "reference": true
     },
     {
-      "id": "e34",
+      "id": "e44",
       "source": "m_sea_clue",
       "target": "fisher_tale",
       "label": "可选线索·顺序自由",
       "reference": true
     },
     {
-      "id": "e35",
+      "id": "e45",
       "source": "m_sea_clue",
       "target": "last_note",
       "label": "可选线索·顺序自由",
       "reference": true
     },
     {
-      "id": "e36",
+      "id": "e46",
       "source": "m_sea_clue",
       "target": "salvage",
       "label": "可选线索·顺序自由",
+      "reference": true
+    },
+    {
+      "id": "e47",
+      "source": "m_lighthouse",
+      "target": "ahai_old_route",
+      "label": "可选人物故事 · 不阻塞主线",
+      "reference": true
+    },
+    {
+      "id": "e48",
+      "source": "m_market",
+      "target": "market_late_supper",
+      "label": "可选人物故事 · 不阻塞主线",
+      "reference": true
+    },
+    {
+      "id": "e49",
+      "source": "m_searchlight",
+      "target": "lin_old_lampshade",
+      "label": "可选人物故事 · 不阻塞主线",
       "reference": true
     }
   ],
@@ -795,6 +1056,76 @@
       ],
       "result": "当前碎片数量 ≥ 5，且收集完整十种鱼图鉴；碎片庇护 300 秒后到期并清空；历史累计数量不算。",
       "chapter": "finale"
+    },
+    {
+      "id": "ahai_old_route_reopen",
+      "title": "阿海的旧航线 · 把航线重新画进海图",
+      "chapter": "ch2",
+      "nodes": [
+        "ahai_old_route",
+        "ahai_old_route_observe",
+        "ahai_old_route_choice",
+        "ahai_old_route_reopen"
+      ],
+      "result": "奖励：100 金币；可选、互斥，不影响主线。"
+    },
+    {
+      "id": "ahai_old_route_remember",
+      "title": "阿海的旧航线 · 留作纪念，不急着重开",
+      "chapter": "ch2",
+      "nodes": [
+        "ahai_old_route",
+        "ahai_old_route_observe",
+        "ahai_old_route_choice",
+        "ahai_old_route_remember"
+      ],
+      "result": "奖励：8 鱼饵；可选、互斥，不影响主线。"
+    },
+    {
+      "id": "market_late_supper_soup",
+      "title": "老板娘的留灯晚饭 · 送 2 条黄花鱼，煮一锅热汤",
+      "chapter": "ch3",
+      "nodes": [
+        "market_late_supper",
+        "market_late_supper_choice",
+        "market_late_supper_soup"
+      ],
+      "result": "奖励：120 金币，3 鱼饵；可选、互斥，不影响主线。"
+    },
+    {
+      "id": "market_late_supper_steam",
+      "title": "老板娘的留灯晚饭 · 送 2 条带鱼，留一道夜里的鲜味",
+      "chapter": "ch3",
+      "nodes": [
+        "market_late_supper",
+        "market_late_supper_choice",
+        "market_late_supper_steam"
+      ],
+      "result": "奖励：120 金币，3 鱼饵；可选、互斥，不影响主线。"
+    },
+    {
+      "id": "lin_old_lampshade_ask",
+      "title": "老林的旧灯罩 · 问老林：灯一定要那么亮吗？",
+      "chapter": "ch4",
+      "nodes": [
+        "lin_old_lampshade",
+        "lin_old_lampshade_observe",
+        "lin_old_lampshade_choice",
+        "lin_old_lampshade_ask"
+      ],
+      "result": "奖励：150 金币；可选、互斥，不影响主线。"
+    },
+    {
+      "id": "lin_old_lampshade_keep",
+      "title": "老林的旧灯罩 · 记下反光，把决定留到最后",
+      "chapter": "ch4",
+      "nodes": [
+        "lin_old_lampshade",
+        "lin_old_lampshade_observe",
+        "lin_old_lampshade_choice",
+        "lin_old_lampshade_keep"
+      ],
+      "result": "奖励：150 金币；可选、互斥，不影响主线。"
     }
   ]
 }

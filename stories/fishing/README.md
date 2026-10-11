@@ -21,3 +21,7 @@
 在仓库根目录运行 `python3 tools/build_fishing.py`，再使用 Inky 附带 inklecate 编译 `ink/fishing.ink`。运行 `python3 tools/check_fishing.py` 可验证三种结局及隐藏结局锁定边界。
 
 `tools/build_articy_import.mjs <articy官方往返模板路径>` 用 bundled artifact-tool 生成导入候选文件。随后运行 `python3 tools/fix_articy_headers.py stories/fishing/articy/fishing-import.xlsx stories/fishing/articy/project/ProjectInfo.aph`，修复空模板名并匹配目标工程标识。新建独立工程时应使用目标工程自身的往返模板。
+
+## 新版人物支线
+
+游戏已增加「阿海的旧航线」「老板娘的留灯晚饭」「老林的旧灯罩」，各有两种互斥处理方式，委托独立选择、不卡主线。网页流程图与结构模型已同步，路线菜单可查看六个支线结果。新增游戏原文与提交版本记录于 `design/side-stories-manifest.json`。原有主线快照仍保持原版本；Inky 试玩和 articy 原生工程暂不包含这三条新增支线，具体差异见 `design/review.md`。
