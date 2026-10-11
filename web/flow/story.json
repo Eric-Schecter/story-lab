@@ -1,8 +1,8 @@
 {
   "title": "风与契约",
-  "subtitle": "序章 / 第一章 · 故事流程",
+  "subtitle": "章节故事流程",
   "routeNote": "高亮序章决策及第一章调查入口；后续保船方案需满足各自条件。",
-  "legend": "带回线的调查可反复查看；第一章选项有金币、信任或证据门槛",
+  "legend": "带回线的调查可反复查看；第一章选项有金币、信任或证据门槛；虚线为后续剧情规划，尚未开放试玩",
   "source": "stories/wind-and-contract/ink/wind-and-contract.ink",
   "sha256": "2f0141ca6690da7e944c33c95aaf7b83d506e9f2d11d2e56cb1933f9edad2952",
   "initial": {
@@ -483,6 +483,391 @@
       "text": "现有试玩包含序章与第一章；第二章尚在规划。",
       "changes": [],
       "conditions": []
+    },
+    {
+      "id": "ch2-plan-event",
+      "chapter": "ch2",
+      "title": "第二章 · 没有标价的航线",
+      "kind": "scene",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "灰礁港订单遇到收货压价。竞争船长赛拉掌握替代买家，却要求共享航线和客户。无旗快船被确认是商会的运力调查船，而非直接袭击者。\n\n前因：根据第一章路线分别面对保证金占用、盐货履约或复核期限，不给未承运盐货的路线凭空发放订单收益。债务压力决定可承受账期。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-decision",
+      "chapter": "ch2",
+      "title": "玩家的艰难选择",
+      "kind": "decision",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "独占买家争取短期利润、与赛拉公开分润，或接受商会更高报价但交出货源信息。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-growth",
+      "chapter": "ch2",
+      "title": "理解互惠",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n人物关系：赛拉可以拒绝不对等合作；马修会追问船员欠款何时兑现。\n\n台词方向：“你要的不是这趟分成，是下一趟我不能绕过你。”",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-next",
+      "chapter": "ch2",
+      "title": "本章后果与下一步",
+      "kind": "end",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "在灰礁港取得原始收据，并发现父亲曾签署的独家承运附件。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-choice-0",
+      "chapter": "ch2",
+      "title": "独占买家争取短期利润",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：独占买家争取短期利润\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-choice-1",
+      "chapter": "ch2",
+      "title": "与赛拉公开分润",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：与赛拉公开分润\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch2-plan-choice-2",
+      "chapter": "ch2",
+      "title": "接受商会更高报价但交出货源信息",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：接受商会更高报价但交出货源信息\n\n她开始理解价格之外还有账期、风险和依赖；首次面对自己也能控制别人饭碗的诱惑。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-event",
+      "chapter": "ch3",
+      "title": "第三章 · 旧账",
+      "kind": "scene",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "收据证明部分欠款确已偿付，旧协议却揭示父亲曾从排他运输中获利。卢卡承认参与掩盖账目；真实债务与被操纵的追索必须分开核对。\n\n前因：复核结果只能按证据减少欠款，不直接清零全部债务；公开不等于免责，补偿不等于购买原谅。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-decision",
+      "chapter": "ch3",
+      "title": "玩家的艰难选择",
+      "kind": "decision",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "公开证据并接受独立核查、私下补偿换取保密，或掩盖不利协议继续争夺清白。对卢卡另作留任受监督、解雇配合作证或包庇的处理。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-growth",
+      "chapter": "ch3",
+      "title": "放下完美父亲",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n人物关系：卢卡的证词与自己的责任绑定；小港居民可以不接受她的解释。\n\n台词方向：“这笔钱，我们收过。你们的损失也是真的。”",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-next",
+      "chapter": "ch3",
+      "title": "本章后果与下一步",
+      "kind": "end",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "商会用货源和泊位压力阻止更多港口提供证词，艾琳需要盟友。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-choice-0",
+      "chapter": "ch3",
+      "title": "公开证据并接受独立核查",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：公开证据并接受独立核查\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-choice-1",
+      "chapter": "ch3",
+      "title": "私下补偿换取保密",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：私下补偿换取保密\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch3-plan-choice-2",
+      "chapter": "ch3",
+      "title": "掩盖不利协议继续争夺清白",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：掩盖不利协议继续争夺清白\n\n艾琳不再把“父亲是好人”当作自己正确的凭据；愿意承认受益和责任同时存在。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-event",
+      "chapter": "ch4",
+      "title": "第四章 · 逆风同盟",
+      "kind": "scene",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "独立船长与港口愿意合作，但要求明确分润、账目公开、退出和风险分担。船员要求重大航程不能仅由船长决定。\n\n前因：前三章的履约、借款与证据公开决定加入者和担保要求；伙伴不会因一句演说无条件归队。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-decision",
+      "chapter": "ch4",
+      "title": "玩家的艰难选择",
+      "kind": "decision",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "建立共同议事与分润规则、由艾琳集中调度换取效率，或以短期担保维持松散合作。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-growth",
+      "chapter": "ch4",
+      "title": "共享决定权",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n人物关系：马修能公开反对她，赛拉保留客户与退出权，港口也能提出赔偿条件。\n\n台词方向：“这是我能争取到的条件。代价我说清楚，你们可以不同意。”",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-next",
+      "chapter": "ch4",
+      "title": "本章后果与下一步",
+      "kind": "end",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "同盟让商会无法轻易收回航线，于是对方提出足够诱人的收编条件。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-choice-0",
+      "chapter": "ch4",
+      "title": "建立共同议事与分润规则",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：建立共同议事与分润规则\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-choice-1",
+      "chapter": "ch4",
+      "title": "由艾琳集中调度换取效率",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：由艾琳集中调度换取效率\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch4-plan-choice-2",
+      "chapter": "ch4",
+      "title": "以短期担保维持松散合作",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：以短期担保维持松散合作\n\n她必须接受别人有权说“不”，也接受协商可能比命令慢。不能既要求伙伴共担损失，又把利润和决定权留给自己。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-event",
+      "chapter": "ch5",
+      "title": "第五章 · 最后一份契约",
+      "kind": "scene",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "维克提出解决核实后的船债、保障薪酬和长期订单，让艾琳负责独立航线，交换条件是交出同盟货源协议并接受独家经营。\n\n前因：谈判空间来自此前的真实资源和同盟授权；没有盟友或独立买家时，不能凭对白无代价争取完美契约。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-decision",
+      "chapter": "ch5",
+      "title": "玩家的艰难选择",
+      "kind": "decision",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "接受并与伙伴协商补偿和退出、拒绝并承担资金与封锁压力，或用既有买家和证据谈有限合作。隐瞒签约是一条需要承担后果的行为，不是隐藏最优解。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-growth",
+      "chapter": "ch5",
+      "title": "经受旧愿望的诱惑",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n人物关系：马修与赛拉按各自底线回应；维克的保障真实有效，但有排他代价。\n\n台词方向：“如果我要替他们签字，先得有他们给我的权力。”",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-next",
+      "chapter": "ch5",
+      "title": "本章后果与下一步",
+      "kind": "end",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "玩家确认可兑现的承诺，进入船队、港口与伙伴的结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-choice-0",
+      "chapter": "ch5",
+      "title": "接受并与伙伴协商补偿和退出",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：接受并与伙伴协商补偿和退出\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-choice-1",
+      "chapter": "ch5",
+      "title": "拒绝并承担资金与封锁压力",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：拒绝并承担资金与封锁压力\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "ch5-plan-choice-2",
+      "chapter": "ch5",
+      "title": "用既有买家和证据谈有限合作",
+      "kind": "choice",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "选择方向：用既有买家和证据谈有限合作\n\n最后检验她是否仍会替别人决定。她可以选择稳定经营，但必须正视稳定由谁付费、谁失去选择。\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-event",
+      "chapter": "finale",
+      "title": "终章 · 自己的旗帜",
+      "kind": "scene",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "最后一份契约落实或破裂，旧债、同盟协议与船员意愿共同决定谁同行、谁离开，艾琳终于不必借父亲的名义证明自己。\n\n前因：逐项结算可用资金、真实债务、被冻结保证金处理、待交订单与补偿责任；远航不等于逃债。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-decision",
+      "chapter": "finale",
+      "title": "玩家的艰难选择",
+      "kind": "decision",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "商会经营、独立同盟或开辟新航线。最终方向结合过去履约与授权行为，不能靠最后一个按钮抹去此前损失。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-growth",
+      "chapter": "finale",
+      "title": "定义自己的船长身份",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "她可能学会协商，也可能成为更熟练的控制者；每个方向都能呈现成熟或代价沉重的版本。\n\n人物关系：伙伴有独立后日谈，离开不自动代表背叛，留下也不自动代表原谅。\n\n台词方向：“这一次，船上每个人都知道我们要去哪里。”",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-next",
+      "chapter": "finale",
+      "title": "本章后果与下一步",
+      "kind": "end",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "以航线与人物后日谈收束，保留未来航程的空间。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-ending-0",
+      "chapter": "finale",
+      "title": "商会之旗",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "稳定订单、经营权与薪酬保障。\n\n代价：承担排他规则和伙伴退出的后果。\n\n公开协商并安排退出，可成为受监督的经营者；秘密签约则可能保住船却失去原有船员。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-ending-1",
+      "chapter": "finale",
+      "title": "同盟之旗",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "独立货源与共同维护的航路。\n\n代价：共享利润和权力，承受协调成本与经营波动。\n\n履约与授权充分时形成共同议事；依靠个人担保勉强维系时，同盟可能分裂。",
+      "changes": [],
+      "conditions": []
+    },
+    {
+      "id": "finale-plan-ending-2",
+      "chapter": "finale",
+      "title": "远航之旗",
+      "kind": "outcome",
+      "planned": true,
+      "sourceLabel": "剧情规划 · 人物与章节设定草案",
+      "text": "不再被当前港口争夺定义，探索新的生意。\n\n代价：处理旧债、订单和伙伴退出后，资源可能十分有限。\n\n结清或公开协商责任后，愿意同行者各有理由；逃避清偿的远航则背负追索与失信。",
+      "changes": [],
+      "conditions": []
     }
   ],
   "edges": [
@@ -761,6 +1146,406 @@
       "source": "ch1_close",
       "target": "END",
       "label": ""
+    },
+    {
+      "id": "ch2-plan-event--ch2-plan-decision",
+      "source": "ch2-plan-event",
+      "target": "ch2-plan-decision",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-growth--ch2-plan-next",
+      "source": "ch2-plan-growth",
+      "target": "ch2-plan-next",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-decision--ch2-plan-choice-0",
+      "source": "ch2-plan-decision",
+      "target": "ch2-plan-choice-0",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-choice-0--ch2-plan-growth",
+      "source": "ch2-plan-choice-0",
+      "target": "ch2-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-decision--ch2-plan-choice-1",
+      "source": "ch2-plan-decision",
+      "target": "ch2-plan-choice-1",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-choice-1--ch2-plan-growth",
+      "source": "ch2-plan-choice-1",
+      "target": "ch2-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-decision--ch2-plan-choice-2",
+      "source": "ch2-plan-decision",
+      "target": "ch2-plan-choice-2",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch2-plan-choice-2--ch2-plan-growth",
+      "source": "ch2-plan-choice-2",
+      "target": "ch2-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-event--ch3-plan-decision",
+      "source": "ch3-plan-event",
+      "target": "ch3-plan-decision",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-growth--ch3-plan-next",
+      "source": "ch3-plan-growth",
+      "target": "ch3-plan-next",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-decision--ch3-plan-choice-0",
+      "source": "ch3-plan-decision",
+      "target": "ch3-plan-choice-0",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-choice-0--ch3-plan-growth",
+      "source": "ch3-plan-choice-0",
+      "target": "ch3-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-decision--ch3-plan-choice-1",
+      "source": "ch3-plan-decision",
+      "target": "ch3-plan-choice-1",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-choice-1--ch3-plan-growth",
+      "source": "ch3-plan-choice-1",
+      "target": "ch3-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-decision--ch3-plan-choice-2",
+      "source": "ch3-plan-decision",
+      "target": "ch3-plan-choice-2",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch3-plan-choice-2--ch3-plan-growth",
+      "source": "ch3-plan-choice-2",
+      "target": "ch3-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-event--ch4-plan-decision",
+      "source": "ch4-plan-event",
+      "target": "ch4-plan-decision",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-growth--ch4-plan-next",
+      "source": "ch4-plan-growth",
+      "target": "ch4-plan-next",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-decision--ch4-plan-choice-0",
+      "source": "ch4-plan-decision",
+      "target": "ch4-plan-choice-0",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-choice-0--ch4-plan-growth",
+      "source": "ch4-plan-choice-0",
+      "target": "ch4-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-decision--ch4-plan-choice-1",
+      "source": "ch4-plan-decision",
+      "target": "ch4-plan-choice-1",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-choice-1--ch4-plan-growth",
+      "source": "ch4-plan-choice-1",
+      "target": "ch4-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-decision--ch4-plan-choice-2",
+      "source": "ch4-plan-decision",
+      "target": "ch4-plan-choice-2",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch4-plan-choice-2--ch4-plan-growth",
+      "source": "ch4-plan-choice-2",
+      "target": "ch4-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-event--ch5-plan-decision",
+      "source": "ch5-plan-event",
+      "target": "ch5-plan-decision",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-growth--ch5-plan-next",
+      "source": "ch5-plan-growth",
+      "target": "ch5-plan-next",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-decision--ch5-plan-choice-0",
+      "source": "ch5-plan-decision",
+      "target": "ch5-plan-choice-0",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-choice-0--ch5-plan-growth",
+      "source": "ch5-plan-choice-0",
+      "target": "ch5-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-decision--ch5-plan-choice-1",
+      "source": "ch5-plan-decision",
+      "target": "ch5-plan-choice-1",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-choice-1--ch5-plan-growth",
+      "source": "ch5-plan-choice-1",
+      "target": "ch5-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-decision--ch5-plan-choice-2",
+      "source": "ch5-plan-decision",
+      "target": "ch5-plan-choice-2",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "ch5-plan-choice-2--ch5-plan-growth",
+      "source": "ch5-plan-choice-2",
+      "target": "ch5-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-event--finale-plan-decision",
+      "source": "finale-plan-event",
+      "target": "finale-plan-decision",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-decision--finale-plan-ending-0",
+      "source": "finale-plan-decision",
+      "target": "finale-plan-ending-0",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-ending-0--finale-plan-growth",
+      "source": "finale-plan-ending-0",
+      "target": "finale-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-decision--finale-plan-ending-1",
+      "source": "finale-plan-decision",
+      "target": "finale-plan-ending-1",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-ending-1--finale-plan-growth",
+      "source": "finale-plan-ending-1",
+      "target": "finale-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-decision--finale-plan-ending-2",
+      "source": "finale-plan-decision",
+      "target": "finale-plan-ending-2",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-ending-2--finale-plan-growth",
+      "source": "finale-plan-ending-2",
+      "target": "finale-plan-growth",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
+    },
+    {
+      "id": "finale-plan-growth--finale-plan-next",
+      "source": "finale-plan-growth",
+      "target": "finale-plan-next",
+      "reference": true,
+      "label": "规划关系",
+      "style": {
+        "strokeDasharray": "6 4"
+      }
     }
   ],
   "routes": [
@@ -879,11 +1664,38 @@
   "chapters": [
     {
       "id": "prologue",
-      "title": "序章 · 装满的货舱"
+      "title": "序章 · 装满的货舱",
+      "planned": false
     },
     {
       "id": "ch1",
-      "title": "第一章 · 追索令"
+      "title": "第一章 · 追索令",
+      "planned": false
+    },
+    {
+      "id": "ch2",
+      "title": "第二章 · 没有标价的航线 · 规划",
+      "planned": true
+    },
+    {
+      "id": "ch3",
+      "title": "第三章 · 旧账 · 规划",
+      "planned": true
+    },
+    {
+      "id": "ch4",
+      "title": "第四章 · 逆风同盟 · 规划",
+      "planned": true
+    },
+    {
+      "id": "ch5",
+      "title": "第五章 · 最后一份契约 · 规划",
+      "planned": true
+    },
+    {
+      "id": "finale",
+      "title": "终章 · 自己的旗帜 · 规划",
+      "planned": true
     }
   ]
 }

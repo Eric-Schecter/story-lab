@@ -60,5 +60,35 @@ model['chapters']=[{'id':'prologue','title':'序章 · 装满的货舱'},{'id':'
 for i,(title,result) in enumerate([('保证金暂缓','需至少 600 金币；冻结保证金，换七日。'),('小港具保','需小港信任和至少 100 金币；盐货收益尚未结算。'),('公开复核','需核对还款记录；商会关系 −1。')]):
     model['routes'].append(dict(id=f'ch1-route-{i+1}',chapter='ch1',title=title,result=result,nodes=['ch1_notice','ch1_investigate','ch1_investigate-choice-1','ch1_ledger','ch1_investigate','ch1_investigate-choice-4','ch1_decide',f'ch1_decide-choice-{i+2}','ch1_depart','ch1_close','END']))
 for route in model['routes'][:3]: route['chapter']='prologue'
+# Future chapters are design references, never executable Ink branches.
+bible = json.loads(Path('stories/wind-and-contract/design/story-bible.json').read_text())
+model['chapters'] = [dict(id=c['id'], title=c['title'] + (' · 规划' if c['state'] != '可试玩' else ''), planned=c['state'] != '可试玩') for c in bible['chapters']]
+for c in bible['chapters'][2:]:
+    cid = c['id']
+    def planned_node(suffix, title, kind, text):
+        nid = cid + '-plan-' + suffix
+        nodes.append(dict(id=nid, chapter=cid, title=title, kind=kind, planned=True, sourceLabel='剧情规划 · 人物与章节设定草案', text=text, changes=[], conditions=[]))
+        return nid
+    event = planned_node('event', c['title'], 'scene', c['event'] + '\n\n前因：' + c['carry'])
+    decision = planned_node('decision', '玩家的艰难选择', 'decision', c['choice'])
+    growth = planned_node('growth', c['stage'], 'outcome', c['growth'] + '\n\n人物关系：' + c['relationship'] + '\n\n台词方向：“' + c['line'] + '”')
+    closing = planned_node('next', '本章后果与下一步', 'end', c['next'])
+    pairs = [(event,decision),(decision,growth),(growth,closing)]
+    if cid != 'finale':
+        options = re.split('、|，或', c['choice'].split('。')[0].rstrip('。'))
+        pairs = [(event,decision),(growth,closing)]
+        for i, option in enumerate(options):
+            branch = planned_node('choice-' + str(i), option, 'choice', '选择方向：' + option + '\n\n' + c['growth'] + '\n\n后果将结合前章记录细化，当前不代表已实现的变量结算。')
+            pairs.extend([(decision,branch),(branch,growth)])
+    if cid == 'finale':
+        pairs = [(event,decision)]
+        for i, ending in enumerate(bible['endings']):
+            end = planned_node('ending-' + str(i), ending['title'], 'outcome', ending['gain'] + '\n\n代价：' + ending['cost'] + '\n\n' + ending['variation'])
+            pairs.extend([(decision,end),(end,growth)])
+        pairs.append((growth,closing))
+    for a,b in pairs:
+        edges.append(dict(id=a+'--'+b,source=a,target=b,reference=True,label='规划关系',style={'strokeDasharray':'6 4'}))
+model['subtitle'] = '章节故事流程'
+model['legend'] += '；虚线为后续剧情规划，尚未开放试玩'
 Path('web/flow/story.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n')
 print(f'{len(nodes)} nodes, {len(edges)} edges; source {source}')
