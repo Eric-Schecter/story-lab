@@ -1,0 +1,79 @@
+[
+  {
+    "id": "matthew",
+    "name": "马修",
+    "file": "matthew.png",
+    "source": "live2d-lab/web/public/art/cast/matthew-scene-v2.png",
+    "position": "50% 0%"
+  },
+  {
+    "id": "luca",
+    "name": "卢卡",
+    "file": "luca.png",
+    "source": "live2d-lab/web/public/art/cast/luca-scene-v3.png",
+    "position": "50% 20%"
+  },
+  {
+    "id": "noa",
+    "name": "诺娅",
+    "file": "noa.png",
+    "source": "live2d-lab/web/public/art/cast/noa-scene-v3.png",
+    "position": "50% 8%"
+  },
+  {
+    "id": "oren",
+    "name": "奥伦",
+    "file": "oren.png",
+    "source": "live2d-lab/web/public/art/cast/oren-scene-v3.png",
+    "position": "50% 22%"
+  },
+  {
+    "id": "mia",
+    "name": "米娅",
+    "file": "mia.png",
+    "source": "live2d-lab/web/public/art/cast/mia-scene-v3.png",
+    "position": "50% 10%"
+  },
+  {
+    "id": "saira",
+    "name": "赛拉·洛恩",
+    "file": "saira.png",
+    "source": "live2d-lab/web/public/art/cast/saira-scene-v4.png",
+    "position": "50% 4%"
+  },
+  {
+    "id": "eno",
+    "name": "埃诺",
+    "file": "eno.png",
+    "source": "live2d-lab/web/public/art/cast/eno-scene-v3.png",
+    "position": "44% 20%"
+  },
+  {
+    "id": "adela",
+    "name": "阿德拉",
+    "file": "adela.png",
+    "source": "live2d-lab/web/public/art/cast/adela-scene-v3.png",
+    "position": "50% 10%"
+  },
+  {
+    "id": "lina",
+    "name": "莉娜",
+    "file": "lina.png",
+    "source": "live2d-lab/web/public/art/cast/lina-scene-v3.png",
+    "position": "52% 18%"
+  },
+  {
+    "id": "edmund",
+    "name": "埃德蒙·维恩",
+    "file": "edmund.png",
+    "source": "live2d-lab/web/public/art/cast/edmund-scene-v4.png",
+    "position": "49% 18%"
+  },
+  {
+    "id": "vick",
+    "name": "维克",
+    "file": "vick.png",
+    "source": "live2d-lab/web/public/art/cast/vick-scene-v3.png",
+    "position": "50% 4%"
+  }
+]

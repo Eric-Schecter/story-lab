@@ -9,7 +9,7 @@ import {mountPlayer} from './player';
 import {homeMarkup,playerMarkup} from './templates';
 import {currentRoute} from './routes';
 const sources=[...new Set(window.STORIES.flatMap(s=>[s.background,s.cover,s.ink]).filter(Boolean))];
-const styleSets={story:['/web/library.css?v=left-shelf-2'],character:['/web/character.css?v=cast-1'],home:['/web/library.css?v=left-shelf-2'],play:['/stories/wind-and-contract/avg/style.css','/web/player.css'],flow:['/web/flow/dist/app.css']};
+const styleSets={story:['/web/library.css?v=left-shelf-2'],character:['/web/character.css?v=cast-portraits-1'],home:['/web/library.css?v=left-shelf-2'],play:['/stories/wind-and-contract/avg/style.css','/web/player.css?v=cast-portraits-1'],flow:['/web/flow/dist/app.css']};
 function stylesFor(name){return Promise.all((styleSets[name]||styleSets.home).map(href=>new Promise(resolve=>{
  const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.media='not all';link.dataset.routeStyle='';link.onload=()=>resolve(link);link.onerror=()=>resolve(link);document.head.append(link);
 })));}
