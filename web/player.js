@@ -1,13 +1,25 @@
 export function mountPlayer(search,onReady=()=>{}){
 let active=true;document.body.setAttribute('data-story-loading','');
 let story,storyData,config;const $=id=>document.getElementById(id),log=[];
-function start(){story=new inkjs.Story(storyData);log.length=0;$('choices').replaceChildren();if(config.id==='wind-and-contract'&&new URLSearchParams(search).get('chapter')==='ch1'){chapterSetup();return;}if(config.id==='fishing'&&fishingChapterSetup())return;step();}
+function start(){story=new inkjs.Story(storyData);log.length=0;$('choices').replaceChildren();if(config.id==='wind-and-contract'&&new URLSearchParams(search).get('chapter')==='ch1'){chapterSetup();return;}if(config.id==='wind-and-contract'&&windLaterSetup())return;if(config.id==='fishing'&&fishingChapterSetup())return;step();}
 function chapterSetup(){
  $('chapter').textContent='第一章';$('episode').textContent='追索令';$('location').textContent='承接序章的选择';
  display('进入第一章前，选择序章中艾琳的决定。此入口使用对应结算状态开始第一章；从序章游玩则自动延续你的实际选择。');$('next').hidden=true;
  for(const [label,money,guild,port,debt,decision] of [['履行契约 · 1200 金币',1200,1,-1,0,'履行契约'],['违约运粮 · 100 金币',100,-1,1,0,'违约运粮'],['借款雇船 · 900 金币，欠船员 200',900,0,1,200,'借款雇船']]){
  const b=document.createElement('button');b.textContent=label;b.onclick=()=>{for(const [key,value] of Object.entries({money,guild_relation:guild,port_relation:port,crew_debt:debt,decision}))story.variablesState[key]=value;story.ChoosePathString('ch1_notice');$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);
  }
+}
+
+function windLaterSetup(){
+ const id=new URLSearchParams(search).get('chapter');
+ const entries={ch2:'ch2_arrival',ch3:'ch3_return',ch4:'ch4_council',ch5:'ch5_offer',finale:'finale_settle'};
+ if(!entries[id])return false;
+ const chapter=config.chapters.find(c=>c.id===id);
+ $('chapter').textContent=chapter.title;$('episode').textContent='章节试玩';$('location').textContent='选择模拟前情';
+ display('直接进入本章使用模拟前情，不读取存档。从序章连续游玩会保留所有真实选择。请选择一组前情：');$('next').hidden=true;
+ const presets=[['共同经营 · 公开账目、共享订单',{money:350,guild_relation:-1,port_relation:2,decision:'违约运粮',chapter_one_route:'小港具保',crew_debt:0,evidence:true,independent_buyer:true,audit_public:true,shared:true,trust:4,alliance:'共同议事',trade_route:'公开分润',compensation:100,luca_status:'留任受监督',final_contract:'拒绝独家'}],['独立经营 · 保留客户、暂未公开附件',{money:600,guild_relation:1,port_relation:-1,decision:'履行契约',chapter_one_route:'保证金暂缓',crew_debt:0,bond:600,trade_route:'独占客户',trust:-1,alliance:'集中调度',final_contract:'拒绝独家'}],['商会经营 · 接受公开独家契约',{money:550,guild_relation:2,port_relation:0,decision:'借款雇船',chapter_one_route:'公开复核',crew_debt:200,trade_route:'商会登记',alliance:'松散互助',trust:0,final_contract:'公开商会契约'}]];
+ for(const [label,values] of presets){const b=document.createElement('button');b.textContent=id==='ch2'?(values.chapter_one_route+' · '+values.decision):label;b.onclick=()=>{const vars={...values};if(id==='ch2'){Object.assign(vars,{money:vars.decision==='违约运粮'?0:vars.decision==='履行契约'?600:900,old_debt:800,compensation:0,independent_buyer:false,audit_public:false,shared:false,trust:0,bond:0,alliance:'未成立',trade_route:'未选择',final_contract:'未选择'});}else{vars.old_debt=id==='finale'&&vars.final_contract==='公开商会契约'?0:400;if(id==='ch3')Object.assign(vars,{audit_public:false,compensation:0,shared:false,alliance:'未成立'});if(id==='ch4')Object.assign(vars,{shared:false,alliance:'未成立'});if(id==='ch5')vars.final_contract='未选择';if(id==='finale'){vars.money+=vars.bond||0;vars.bond=0;}}for(const [key,value] of Object.entries(vars))story.variablesState[key]=value;story.ChoosePathString(entries[id]);$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);}
+ return true;
 }
 
 function fishingChapterSetup(){
@@ -20,7 +32,7 @@ function fishingChapterSetup(){
  for(const [label,vars] of presets){const b=document.createElement('button');b.textContent=label;b.onclick=()=>{for(const [key,value] of Object.entries(vars))story.variablesState[key]=value;story.ChoosePathString(chapter.entry);$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);}
  return true;
 }
-function display(text){if(config.id==='fishing'){const chapter=config.chapters.find(c=>c.title===text);if(chapter){$('chapter').textContent=chapter.title;$('episode').textContent='剧情审阅';$('location').textContent=config.location;}}if(text.startsWith('《风与契约》——第一章：')){$('chapter').textContent='第一章';$('episode').textContent='追索令';$('location').textContent='暮潮港 · 七日之限';}else if(text.startsWith('《风与契约》——序章：')){$('chapter').textContent='序章';$('episode').textContent='装满的货舱';$('location').textContent=config.location;}text=text.replace('《风与契约》——第一章：装满的货舱','《风与契约》——序章：装满的货舱').replace('点击 Inky 右侧的“重新开始剧本”，可以比较其他选择。','点击右上角“重新开始”，可以比较其他选择。');const m=text.match(/^([^：“]{1,12})：“([\s\S]*)”$/);const name=m?m[1]:null; $('portrait').hidden=!name; $('dialogue').classList.toggle('has-portrait',!!name); $('portrait').classList.toggle('is-captain',!!config.portraits[name]); if(name){$('portrait-image').src=!!config.portraits[name]?config.portraits[name]:'/story-lab/stories/wind-and-contract/avg/assets/unknown.svg';$('portrait-image').alt=!!config.portraits[name]?name+'头像':name+'（临时剪影头像）';}else{$('portrait-image').removeAttribute('src');$('portrait-image').alt='';} $('speaker').textContent=name||'旁白';$('line').textContent=m?m[2]:text;log.push(text);}
+function display(text){if(config.id==='wind-and-contract'){const c=config.chapters.find(c=>'《风与契约》——'+c.title.replace(' · ','：')===text);if(c){$('chapter').textContent=c.title;$('episode').textContent=c.title.split(' · ')[1];$('location').textContent='风与契约 · 航程继续';}}if(config.id==='fishing'){const chapter=config.chapters.find(c=>c.title===text);if(chapter){$('chapter').textContent=chapter.title;$('episode').textContent='剧情审阅';$('location').textContent=config.location;}}if(text.startsWith('《风与契约》——第一章：')){$('chapter').textContent='第一章';$('episode').textContent='追索令';$('location').textContent='暮潮港 · 七日之限';}else if(text.startsWith('《风与契约》——序章：')){$('chapter').textContent='序章';$('episode').textContent='装满的货舱';$('location').textContent=config.location;}text=text.replace('《风与契约》——第一章：装满的货舱','《风与契约》——序章：装满的货舱').replace('点击 Inky 右侧的“重新开始剧本”，可以比较其他选择。','点击右上角“重新开始”，可以比较其他选择。');const m=text.match(/^([^：“]{1,12})：“([\s\S]*)”$/);const name=m?m[1]:null; $('portrait').hidden=!name; $('dialogue').classList.toggle('has-portrait',!!name); $('portrait').classList.toggle('is-captain',!!config.portraits[name]); if(name){$('portrait-image').src=!!config.portraits[name]?config.portraits[name]:'/story-lab/stories/wind-and-contract/avg/assets/unknown.svg';$('portrait-image').alt=!!config.portraits[name]?name+'头像':name+'（临时剪影头像）';}else{$('portrait-image').removeAttribute('src');$('portrait-image').alt='';} $('speaker').textContent=name||'旁白';$('line').textContent=m?m[2]:text;log.push(text);}
 function step(){if($('choices').childElementCount)return;if(story.canContinue){let t=story.Continue().trim();if(!t)return step();display(t);return;}if(story.currentChoices.length){$('next').hidden=true;story.currentChoices.forEach(c=>{const b=document.createElement('button');b.textContent=c.text;b.onclick=()=>{story.ChooseChoiceIndex(c.index);$('choices').replaceChildren();$('next').hidden=false;step();};$('choices').append(b);});}else{$('next').textContent='故事结束 · 再体验另一条路';$('next').onclick=()=>{reset();};}}
 function reset(){$('next').hidden=false;$('next').innerHTML='继续 <span>▸</span>';$('next').onclick=step;start();}
 $('restart').onclick=reset;$('next').onclick=step;$('history').onclick=()=>{$('entries').replaceChildren(...log.map(t=>{const p=document.createElement('p');p.textContent=t;return p;}));$('log').showModal();};$('close').onclick=()=>$('log').close();const onKey=e=>{if(e.code==='Space'&&!$('log').open&&e.target===document.body){e.preventDefault();if(!$('next').hidden)$('next').click();}};document.addEventListener('keydown',onKey);
@@ -46,7 +58,7 @@ async function loadStory(){
  const images=Array.from(new Set([config.background,...Object.values(config.portraits),'/story-lab/stories/wind-and-contract/avg/assets/unknown.svg']));
  // Start image decode and script loading together; do not reveal an undecoded background.
  const [data]=await Promise.all([
-  fetch(config.ink+'?v=wind-chapter-1',{signal:AbortSignal.timeout(15000)}).then(response=>{if(!response.ok)throw Error(response.status);return response.json();}),
+  fetch(config.ink+'?v=wind-seven-chapters-1',{signal:AbortSignal.timeout(15000)}).then(response=>{if(!response.ok)throw Error(response.status);return response.json();}),
   Promise.allSettled(images.map(preloadStoryImage))
  ]);
  if(!active)return;storyData=data;reset();$('next').disabled=false;$('restart').disabled=false;
